@@ -23,22 +23,22 @@ dir5Seed=1
 
 targetFile="makeme"
 
-dir1=$(sed ''$dir1Seed'!d' dictionary1)
-dir2=$(sed ''$dir2Seed'!d' dictionary3)
-dir3=$(sed ''$dir3Seed'!d' dictionary1)
-dir4=$(sed ''$dir4Seed'!d' dictionary2)
-dir5=$(sed ''$dir5Seed'!d' dictionary2)
+dir1=$(sed ''$dir1Seed'!d' dictionary1.txt)
+dir2=$(sed ''$dir2Seed'!d' dictionary3.txt)
+dir3=$(sed ''$dir3Seed'!d' dictionary1.txt)
+dir4=$(sed ''$dir4Seed'!d' dictionary2.txt)
+dir5=$(sed ''$dir5Seed'!d' dictionary2.txt)
 
 
 x=$targetFile
 y=$dir1
 
 ## create static directories
-mkdir $levelDir/$dir1
-mkdir $levelDir/$dir2
-mkdir $levelDir/$dir3
-mkdir $levelDir/$dir4
-mkdir $levelDir/$dir5
+mkdir $dir1
+mkdir $dir2
+mkdir $dir3
+mkdir $dir4
+mkdir $dir5
 
 echo "Done!"
 export levelDir
