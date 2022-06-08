@@ -23,11 +23,11 @@ dir5Seed=1
 
 targetFile="makeme"
 
-dir1=sed ''$dir1Seed'!d' dictionary1
-dir2=sed ''$dir2Seed'!d' dictionary3
-dir3=sed ''$dir3Seed'!d' dictionary1
-dir4=sed ''$dir4Seed'!d' dictionary2
-dir5=sed ''$dir5Seed'!d' dictionary2
+dir1=$(sed ''$dir1Seed'!d' dictionary1)
+dir2=$(sed ''$dir2Seed'!d' dictionary3)
+dir3=$(sed ''$dir3Seed'!d' dictionary1)
+dir4=$(sed ''$dir4Seed'!d' dictionary2)
+dir5=$(sed ''$dir5Seed'!d' dictionary2)
 
 
 x=$targetFile
