@@ -1,6 +1,6 @@
 #!/bin/sh
 
-levelDir="/home/ethan/level6"
+levelDir="C:\Users\Ethan\OneDrive - The Pennsylvania State University\Documents\GitHub\PolyLinuxGame"
 
 COMB_PASS="pennstate" 
 ## read in user ID and generate hash with combined password
@@ -16,11 +16,11 @@ y="dir2"
 echo "Please create a new directory named $x in the $y location. Use verify.sh to recieve the next password once the directory is created."
 
 ## create static directories
-mkdir $levelDir/dir1
-mkdir $levelDir/dir2
-mkdir $levelDir/dir3
-mkdir $levelDir/dir4
-mkdir $levelDir/dir5
+mkdir $levelDir"\dir1"
+mkdir $levelDir"\dir2"
+mkdir $levelDir"\dir3"
+mkdir $levelDir"\dir4"
+mkdir $levelDir"\dir5"
 
 echo "Done!"
 
