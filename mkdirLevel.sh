@@ -9,6 +9,8 @@
 # once done, the user should run verify.sh to recieve the next level password
 
 
+
+
 COMB_PASS="pennstate" 
 ## read in user ID and generate hash with combined password
 USER_ID=""
@@ -16,30 +18,36 @@ levelDir=""
 echo "Enter your PSU User ID (xyz1234): "
 read USER_ID
 USER_HASH=$(echo -n $USER_ID$COMB_PASS | md5sum)
+# write user hash to file
+echo -n $USER_HASH > userHash.txt
 #echo "Enter the directory to place files REMOVE ME: "
 #read levelDir
 levelDir=$(pwd)
 echo "$USER_HASH"
 
-pseudoRAND=$(echo "ibase=16; ${USER_HASH:8:1}" | bc) ## returns a decimal value based on the hex value
+pseudoRANDcapture=$(cut -c 5 userHash.txt)
+pseudoRAND=$(echo "ibase=16; $pseudoRANDcapture" | bc) ## returns a decimal value based on the hex value
 echo "$pseudoRAND"
 
-loc1=${USER_HASH:1:1}
-loc2=${USER_HASH:2:1}
-loc3=${USER_HASH:3:1}
-loc4=${USER_HASH:4:1}
-loc5=${USER_HASH:5:1}
-loc6=${USER_HASH:6:1}
-loc7=${USER_HASH:7:1}
-loc8=${USER_HASH:8:1}
-loc9=${USER_HASH:9:1}
-loc10=${USER_HASH:10:1}
-loc11=${USER_HASH:11:1}
-loc12=${USER_HASH:12:1}
-loc13=${USER_HASH:13:1}
-loc14=${USER_HASH:14:1}
-loc15=${USER_HASH:15:1}
-loc16=${USER_HASH:16:1}
+## cut must read from a file
+## use cut instead of offset:length 
+loc1=$(cut -c 1 userHash.txt)
+loc2=$(cut -c 2 userHash.txt)
+loc3=$(cut -c 3 userHash.txt)
+loc4=$(cut -c 4 userHash.txt)
+loc5=$(cut -c 5 userHash.txt)
+loc6=$(cut -c 6 userHash.txt)
+loc7=$(cut -c 7 userHash.txt)
+loc8=$(cut -c 8 userHash.txt)
+loc9=$(cut -c 9 userHash.txt)
+loc10=$(cut -c 10 userHash.txt)
+loc11=$(cut -c 11 userHash.txt)
+loc12=$(cut -c 11 userHash.txt)
+loc13=$(cut -c 11 userHash.txt)
+loc14=$(cut -c 11 userHash.txt)
+loc15=$(cut -c 11 userHash.txt)
+loc16=$(cut -c 11 userHash.txt)
+
 
 
 dir1Seed=$(echo "ibase=16; $loc1" | bc) ## can be chosen based on hash value at beginning
@@ -79,7 +87,7 @@ dir14=$(sed "$dir14Seed!d" dictionary3.txt)
 dir15=$(sed "$dir15Seed!d" dictionary1.txt)
 dir16=$(sed "$dir16Seed!d" dictionary3.txt)
 
-targetDirectory="dir$pseudoRAND"
+targetDirectory=$(echo -n dir"$pseudoRAND")
 
 #export $dir1
 #export $dir2
@@ -119,8 +127,7 @@ mkdir $dir16
 
 createdDirectory="makeme"
 
-echo "Please create a new directory named $createdDirectory in the $targetDirectory location. Use verify.sh to recieve the next password once the directory is created."
-
+echo "Please create a new directory named $createdDirectory in the $(echo -n $targetDirectory)"
 echo "Done!"
 export levelDir
 
