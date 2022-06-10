@@ -38,3 +38,7 @@ fi
 
 #echo ${masterHash:0:32}
 #echo ${dirHash:0:32}
+
+
+## verfiy output is hash, convert to base64
+## 
