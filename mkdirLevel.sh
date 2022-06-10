@@ -16,50 +16,70 @@ levelDir=""
 echo "Enter your PSU User ID (xyz1234): "
 read USER_ID
 USER_HASH=$(echo -n $USER_ID$COMB_PASS | md5sum)
-echo "Enter the directory to place files REMOVE ME: "
-read levelDir
-echo $USER_HASH
+#echo "Enter the directory to place files REMOVE ME: "
+#read levelDir
+levelDir=$(pwd)
+echo "$USER_HASH"
 
-pseudoRAND=$(echo "ibase=16; ${USER_HASH:6:6}" | bc) ## returns a decimal value based on the hex value
+pseudoRAND=$(echo "ibase=16; ${USER_HASH:8:1}" | bc) ## returns a decimal value based on the hex value
+echo "$pseudoRAND"
 
-dir1Seed=$(echo "ibase=16; ${USER_HASH:0:0}" | bc) ## can be chosen based on hash value at beginning
-dir2Seed=$(echo "ibase=16; ${USER_HASH:1:1}" | bc)
-dir3Seed=$(echo "ibase=16; ${USER_HASH:2:2}" | bc)
-dir4Seed=$(echo "ibase=16; ${USER_HASH:3:3}" | bc)
-dir5Seed=$(echo "ibase=16; ${USER_HASH:4:4}" | bc)
-dir6Seed=$(echo "ibase=16; ${USER_HASH:5:5}" | bc) ## can be chosen based on hash value at beginning
-dir7Seed=$(echo "ibase=16; ${USER_HASH:6:6}" | bc)
-dir8Seed=$(echo "ibase=16; ${USER_HASH:7:7}" | bc)
-dir9Seed=$(echo "ibase=16; ${USER_HASH:8:8}" | bc)
-dir10Seed=$(echo "ibase=16; ${USER_HASH:9:9}" | bc)
-dir11Seed=$(echo "ibase=16; ${USER_HASH:10:10}" | bc) ## can be chosen based on hash value at beginning
-dir12Seed=$(echo "ibase=16; ${USER_HASH:11:11}" | bc)
-dir13Seed=$(echo "ibase=16; ${USER_HASH:12:12}" | bc)
-dir14Seed=$(echo "ibase=16; ${USER_HASH:13:13}" | bc)
-dir15Seed=$(echo "ibase=16; ${USER_HASH:14:14}" | bc)
-dir16Seed=$(echo "ibase=16; ${USER_HASH:15:15}" | bc)
+loc1=${USER_HASH:1:1}
+loc2=${USER_HASH:2:1}
+loc3=${USER_HASH:3:1}
+loc4=${USER_HASH:4:1}
+loc5=${USER_HASH:5:1}
+loc6=${USER_HASH:6:1}
+loc7=${USER_HASH:7:1}
+loc8=${USER_HASH:8:1}
+loc9=${USER_HASH:9:1}
+loc10=${USER_HASH:10:1}
+loc11=${USER_HASH:11:1}
+loc12=${USER_HASH:12:1}
+loc13=${USER_HASH:13:1}
+loc14=${USER_HASH:14:1}
+loc15=${USER_HASH:15:1}
+loc16=${USER_HASH:16:1}
+
+
+dir1Seed=$(echo "ibase=16; $loc1" | bc) ## can be chosen based on hash value at beginning
+dir2Seed=$(echo "ibase=16; $loc2" | bc)
+dir3Seed=$(echo "ibase=16; $loc3" | bc)
+dir4Seed=$(echo "ibase=16; $loc4" | bc)
+dir5Seed=$(echo "ibase=16; $loc5" | bc)
+dir6Seed=$(echo "ibase=16; $loc6" | bc) ## can be chosen based on hash value at beginning
+dir7Seed=$(echo "ibase=16; $loc7" | bc)
+dir8Seed=$(echo "ibase=16; $loc8" | bc)
+dir9Seed=$(echo "ibase=16; $loc9" | bc)
+dir10Seed=$(echo "ibase=16; $loc10" | bc)
+dir11Seed=$(echo "ibase=16; $loc11" | bc) ## can be chosen based on hash value at beginning
+dir12Seed=$(echo "ibase=16; $loc12" | bc)
+dir13Seed=$(echo "ibase=16; $loc13" | bc)
+dir14Seed=$(echo "ibase=16; $loc14" | bc)
+dir15Seed=$(echo "ibase=16; $loc15" | bc)
+dir16Seed=$(echo "ibase=16; $loc16" | bc)
 
 #targetDirectorySeed=$(echo "ibase=16; ${USER_HASH:4:4}" | bc) ## change based on hash value
 
 
-dir1=$(sed ''$dir1Seed'!d' dictionary1.txt)
-dir2=$(sed ''$dir2Seed'!d' dictionary3.txt)
-dir3=$(sed ''$dir3Seed'!d' dictionary1.txt)
-dir4=$(sed ''$dir4Seed'!d' dictionary3.txt)
-dir5=$(sed ''$dir5Seed'!d' dictionary2.txt)
-dir6=$(sed ''$dir6Seed'!d' dictionary1.txt)
-dir7=$(sed ''$dir7Seed'!d' dictionary2.txt)
-dir8=$(sed ''$dir8Seed'!d' dictionary1.txt)
-dir9=$(sed ''$dir9Seed'!d' dictionary3.txt)
-dir10=$(sed ''$dir10Seed'!d' dictionary1.txt)
-dir11=$(sed ''$dir11Seed'!d' dictionary2.txt)
-dir12=$(sed ''$dir12Seed'!d' dictionary3.txt)
-dir13=$(sed ''$dir13Seed'!d' dictionary2.txt)
-dir14=$(sed ''$dir14Seed'!d' dictionary3.txt)
-dir15=$(sed ''$dir15Seed'!d' dictionary1.txt)
-dir16=$(sed ''$dir16Seed'!d' dictionary3.txt)
+dir1=$(sed "$dir1Seed!d" dictionary1.txt)
+dir2=$(sed "$dir2Seed!d" dictionary3.txt)
+dir3=$(sed "$dir3Seed!d" dictionary1.txt)
+dir4=$(sed "$dir4Seed!d" dictionary3.txt)
+dir5=$(sed "$dir5Seed!d" dictionary2.txt)
+dir6=$(sed "$dir6Seed!d" dictionary1.txt)
+dir7=$(sed "$dir7Seed!d" dictionary2.txt)
+dir8=$(sed "$dir8Seed!d" dictionary1.txt)
+dir9=$(sed "$dir9Seed!d" dictionary3.txt)
+dir10=$(sed "$dir10Seed!d" dictionary1.txt)
+dir11=$(sed "$dir11Seed!d" dictionary2.txt)
+dir12=$(sed "$dir12Seed!d" dictionary3.txt)
+dir13=$(sed "$dir13Seed!d" dictionary2.txt)
+dir14=$(sed "$dir14Seed!d" dictionary3.txt)
+dir15=$(sed "$dir15Seed!d" dictionary1.txt)
+dir16=$(sed "$dir16Seed!d" dictionary3.txt)
 
-targetDirectory=$('dir'$pseudoRAND)
+targetDirectory="dir$pseudoRAND"
 
 #export $dir1
 #export $dir2
