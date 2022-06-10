@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 ## some notes
 # first user enters their id which is hashed with password
@@ -39,7 +39,7 @@ dir14Seed=$(echo "ibase=16; ${USER_HASH:13:13}" | bc)
 dir15Seed=$(echo "ibase=16; ${USER_HASH:14:14}" | bc)
 dir16Seed=$(echo "ibase=16; ${USER_HASH:15:15}" | bc)
 
-targetDirectorySeed=$(echo "ibase=16; ${USER_HASH:4:4}" | bc) ## change based on hash value
+#targetDirectorySeed=$(echo "ibase=16; ${USER_HASH:4:4}" | bc) ## change based on hash value
 
 
 dir1=$(sed ''$dir1Seed'!d' dictionary1.txt)
@@ -47,36 +47,36 @@ dir2=$(sed ''$dir2Seed'!d' dictionary3.txt)
 dir3=$(sed ''$dir3Seed'!d' dictionary1.txt)
 dir4=$(sed ''$dir4Seed'!d' dictionary3.txt)
 dir5=$(sed ''$dir5Seed'!d' dictionary2.txt)
-dir6=$(sed ''$dir5Seed'!d' dictionary1.txt)
-dir7=$(sed ''$dir5Seed'!d' dictionary2.txt)
-dir8=$(sed ''$dir1Seed'!d' dictionary1.txt)
-dir9=$(sed ''$dir2Seed'!d' dictionary3.txt)
-dir10=$(sed ''$dir3Seed'!d' dictionary1.txt)
-dir11=$(sed ''$dir4Seed'!d' dictionary2.txt)
-dir12=$(sed ''$dir5Seed'!d' dictionary3.txt)
-dir13=$(sed ''$dir5Seed'!d' dictionary2.txt)
-dir14=$(sed ''$dir5Seed'!d' dictionary3.txt)
-dir15=$(sed ''$dir1Seed'!d' dictionary1.txt)
-dir16=$(sed ''$dir2Seed'!d' dictionary3.txt)
+dir6=$(sed ''$dir6Seed'!d' dictionary1.txt)
+dir7=$(sed ''$dir7Seed'!d' dictionary2.txt)
+dir8=$(sed ''$dir8Seed'!d' dictionary1.txt)
+dir9=$(sed ''$dir9Seed'!d' dictionary3.txt)
+dir10=$(sed ''$dir10Seed'!d' dictionary1.txt)
+dir11=$(sed ''$dir11Seed'!d' dictionary2.txt)
+dir12=$(sed ''$dir12Seed'!d' dictionary3.txt)
+dir13=$(sed ''$dir13Seed'!d' dictionary2.txt)
+dir14=$(sed ''$dir14Seed'!d' dictionary3.txt)
+dir15=$(sed ''$dir15Seed'!d' dictionary1.txt)
+dir16=$(sed ''$dir16Seed'!d' dictionary3.txt)
 
-targetDirectory=$(dir$pseudoRAND)
+targetDirectory=$('dir'$pseudoRAND)
 
-export $dir1
-export $dir2
-export $dir3
-export $dir4
-export $dir5
-export $dir6
-export $dir7
-export $dir8
-export $dir9
-export $dir10
-export $dir11
-export $dir12
-export $dir13
-export $dir14
-export $dir15
-export $dir16
+#export $dir1
+#export $dir2
+#export $dir3
+#export $dir4
+#export $dir5
+#export $dir6
+#export $dir7
+#export $dir8
+#export $dir9
+#export $dir10
+#export $dir11
+#export $dir12
+#export $dir13
+#export $dir14
+#export $dir15
+#export $dir16
 
 
 ## create static directories
