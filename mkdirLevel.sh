@@ -8,8 +8,14 @@
 # the user is prompted to create a directory named "makeme" in the target directory
 # once done, the user should run verify.sh to recieve the next level password
 
-
-
+declare -a dict1
+declare -a dict2
+declare -a dict3
+readarray -t dict1 <dictionary1.txt
+readarray -t dict2 <dictionary2.txt
+readarray -t dict3 <dictionary3.txt
+# https://stackoverflow.com/questions/22466704/assign-each-line-of-file-to-be-a-variable
+# Thereafter, you can refer to the lines by number. The first line is "${lines[0]}" and the second is "${lines[1]}", etc.
 
 COMB_PASS="pennstate" 
 ## read in user ID and generate hash with combined password
@@ -40,13 +46,13 @@ loc6=$(cut -c 6 userHash.txt)
 loc7=$(cut -c 7 userHash.txt)
 loc8=$(cut -c 8 userHash.txt)
 loc9=$(cut -c 9 userHash.txt)
-loc10=$(cut -c 10 userHash.txt)
-loc11=$(cut -c 11 userHash.txt)
-loc12=$(cut -c 11 userHash.txt)
-loc13=$(cut -c 11 userHash.txt)
-loc14=$(cut -c 11 userHash.txt)
-loc15=$(cut -c 11 userHash.txt)
-loc16=$(cut -c 11 userHash.txt)
+#loc10=$(cut -c 10 userHash.txt)
+#loc11=$(cut -c 11 userHash.txt)
+#loc12=$(cut -c 11 userHash.txt)
+#loc13=$(cut -c 11 userHash.txt)
+#loc14=$(cut -c 11 userHash.txt)
+#loc15=$(cut -c 11 userHash.txt)
+#loc16=$(cut -c 11 userHash.txt)
 
 
 
@@ -59,33 +65,34 @@ dir6Seed=$(echo "ibase=16; $loc6" | bc) ## can be chosen based on hash value at 
 dir7Seed=$(echo "ibase=16; $loc7" | bc)
 dir8Seed=$(echo "ibase=16; $loc8" | bc)
 dir9Seed=$(echo "ibase=16; $loc9" | bc)
-dir10Seed=$(echo "ibase=16; $loc10" | bc)
-dir11Seed=$(echo "ibase=16; $loc11" | bc) ## can be chosen based on hash value at beginning
-dir12Seed=$(echo "ibase=16; $loc12" | bc)
-dir13Seed=$(echo "ibase=16; $loc13" | bc)
-dir14Seed=$(echo "ibase=16; $loc14" | bc)
-dir15Seed=$(echo "ibase=16; $loc15" | bc)
-dir16Seed=$(echo "ibase=16; $loc16" | bc)
+#dir10Seed=$(echo "ibase=16; $loc10" | bc)
+#dir11Seed=$(echo "ibase=16; $loc11" | bc) ## can be chosen based on hash value at beginning
+#dir12Seed=$(echo "ibase=16; $loc12" | bc)
+#dir13Seed=$(echo "ibase=16; $loc13" | bc)
+#dir14Seed=$(echo "ibase=16; $loc14" | bc)
+#dir15Seed=$(echo "ibase=16; $loc15" | bc)
+#dir16Seed=$(echo "ibase=16; $loc16" | bc)
 
 #targetDirectorySeed=$(echo "ibase=16; ${USER_HASH:4:4}" | bc) ## change based on hash value
 
-
-dir1=$(sed "$dir1Seed!d" dictionary1.txt)
-dir2=$(sed "$dir2Seed!d" dictionary3.txt)
-dir3=$(sed "$dir3Seed!d" dictionary1.txt)
-dir4=$(sed "$dir4Seed!d" dictionary3.txt)
-dir5=$(sed "$dir5Seed!d" dictionary2.txt)
-dir6=$(sed "$dir6Seed!d" dictionary1.txt)
-dir7=$(sed "$dir7Seed!d" dictionary2.txt)
-dir8=$(sed "$dir8Seed!d" dictionary1.txt)
-dir9=$(sed "$dir9Seed!d" dictionary3.txt)
-dir10=$(sed "$dir10Seed!d" dictionary1.txt)
-dir11=$(sed "$dir11Seed!d" dictionary2.txt)
-dir12=$(sed "$dir12Seed!d" dictionary3.txt)
-dir13=$(sed "$dir13Seed!d" dictionary2.txt)
-dir14=$(sed "$dir14Seed!d" dictionary3.txt)
-dir15=$(sed "$dir15Seed!d" dictionary1.txt)
-dir16=$(sed "$dir16Seed!d" dictionary3.txt)
+## selects words from dictionaries to name directories; variables are strings
+## sed must be replaced
+dir1=$(echo -n "${dict1[$dir1Seed]}")
+dir2=$(echo -n "${dict2[$dir2Seed]}")
+dir3=$(echo -n "${dict3[$dir3Seed]}")
+dir4=$(echo -n "${dict1[$dir4Seed]}")
+dir5=$(echo -n "${dict2[$dir5Seed]}")
+dir6=$(echo -n "${dict3[$dir6Seed]}")
+dir7=$(echo -n "${dict1[$dir7Seed]}")
+dir8=$(echo -n "${dict2[$dir8Seed]}")
+dir9=$(echo -n "${dict3[$dir9Seed]}")
+#dir10=$(sed "$dir10Seed!d" dictionary1.txt)
+#dir11=$(sed "$dir11Seed!d" dictionary2.txt)
+#dir12=$(sed "$dir12Seed!d" dictionary3.txt)
+#dir13=$(sed "$dir13Seed!d" dictionary2.txt)
+#dir14=$(sed "$dir14Seed!d" dictionary3.txt)
+#dir15=$(sed "$dir15Seed!d" dictionary1.txt)
+#dir16=$(sed "$dir16Seed!d" dictionary3.txt)
 
 targetDirectory=$(echo -n dir"$pseudoRAND")
 
@@ -117,13 +124,13 @@ mkdir $dir6
 mkdir $dir7
 mkdir $dir8
 mkdir $dir9
-mkdir $dir10
-mkdir $dir11
-mkdir $dir12
-mkdir $dir13
-mkdir $dir14
-mkdir $dir15
-mkdir $dir16
+#mkdir $dir10
+#mkdir $dir11
+#mkdir $dir12
+#mkdir $dir13
+#mkdir $dir14
+#mkdir $dir15
+#mkdir $dir16
 
 createdDirectory="makeme"
 
