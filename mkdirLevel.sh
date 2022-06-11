@@ -24,6 +24,7 @@ declare -a dict13
 declare -a dict14
 declare -a dict15
 declare -a dict16
+declare -a dict17
 
 readarray -t dict1 <airlines.txt
 readarray -t dict2 <appliances.txt
@@ -41,6 +42,8 @@ readarray -t dict13 <operatingSystems.txt
 readarray -t dict14 <seasonings.txt
 readarray -t dict15 <sports.txt
 readarray -t dict16 <fastFood.txt
+readarray -t dict17 <createdDirectoryDictionary.txt
+
 # https://stackoverflow.com/questions/22466704/assign-each-line-of-file-to-be-a-variable
 # Thereafter, you can refer to the lines by number. The first line is "${lines[0]}" and the second is "${lines[1]}", etc.
 
@@ -94,6 +97,7 @@ loc13=$(cut -c 13 userHash.txt)
 loc14=$(cut -c 14 userHash.txt)
 loc15=$(cut -c 15 userHash.txt)
 loc16=$(cut -c 16 userHash.txt)
+loc17=$(cut -c 17 userHash.txt)
 
 
 
@@ -113,7 +117,7 @@ dir13Seed=$(echo "ibase=16; $loc13" | bc)
 dir14Seed=$(echo "ibase=16; $loc14" | bc)
 dir15Seed=$(echo "ibase=16; $loc15" | bc)
 dir16Seed=$(echo "ibase=16; $loc16" | bc)
-
+createdDirectorySeed=$(echo "ibase=16; $loc17" | bc)
 #targetDirectorySeed=$(echo "ibase=16; ${USER_HASH:4:4}" | bc) ## change based on hash value
 
 ## selects words from dictionaries to name directories; variables are strings
@@ -135,8 +139,7 @@ dir14=$(echo -n "${dict14[$dir14Seed]}")
 dir15=$(echo -n "${dict15[$dir15Seed]}")
 dir16=$(echo -n "${dict16[$dir16Seed]}")
 
-
-targetDirectory=$(echo -n "dir$pseudoRAND")
+targetDirectory=$(echo -n "${dict17[$createdDirectorySeed]}")
 
 #export $dir1
 #export $dir2
@@ -176,7 +179,7 @@ mkdir $dir16
 
 createdDirectory="makeme"
 
-echo "Please create a new directory named $createdDirectory in the $(echo -n $targetDirectory)"
+echo "Please create a new directory named $createdDirectory in the $targetDirectory"
 echo "Done!"
 export levelDir
 
