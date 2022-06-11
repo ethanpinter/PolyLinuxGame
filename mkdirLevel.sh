@@ -28,8 +28,8 @@ USER_HASH=$(echo -n $USER_ID$COMB_PASS | md5sum)
 processedHash=''
 for (( i=0; i<${#USER_HASH}; i++ )); do
   echo "${USER_HASH:$i:1}"
-  if [[ $USER_HASH != *$i* ]]; then
-  processedHash=$processedHash$i
+  if [[ $processedHash != *$i* ]]; then
+    processedHash=$processedHash$i
   fi
 done
 
