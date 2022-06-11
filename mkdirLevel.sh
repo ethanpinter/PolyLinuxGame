@@ -11,9 +11,36 @@
 declare -a dict1
 declare -a dict2
 declare -a dict3
-readarray -t dict1 <dictionary1.txt
-readarray -t dict2 <dictionary2.txt
-readarray -t dict3 <dictionary3.txt
+declare -a dict4
+declare -a dict5
+declare -a dict6
+declare -a dict7
+declare -a dict8
+declare -a dict9
+declare -a dict10
+declare -a dict11
+declare -a dict12
+declare -a dict13
+declare -a dict14
+declare -a dict15
+declare -a dict16
+
+readarray -t dict1 <airlines.txt
+readarray -t dict2 <applicances.txt
+readarray -t dict3 <beerBrands.txt
+readarray -t dict4 <candy.txt
+readarray -t dict5 <carBrands.txt
+readarray -t dict6 <cheese.txt
+readarray -t dict7 <cities.txt
+readarray -t dict8 <clothingBrands.txt
+readarray -t dict9 <colors.txt
+readarray -t dict10 <countries.txt
+readarray -t dict11 <dogBreeds.txt
+readarray -t dict12 <fruits.txt
+readarray -t dict13 <operatingSystems.txt
+readarray -t dict14 <seasonings.txt
+readarray -t dict15 <sports.txt
+readarray -t dict16 <fastFood.txt
 # https://stackoverflow.com/questions/22466704/assign-each-line-of-file-to-be-a-variable
 # Thereafter, you can refer to the lines by number. The first line is "${lines[0]}" and the second is "${lines[1]}", etc.
 
@@ -24,17 +51,19 @@ levelDir=""
 echo "Enter your PSU User ID (xyz1234): "
 read USER_ID
 USER_HASH=$(echo -n $USER_ID$COMB_PASS | md5sum)
-# write user hash to file
-processedHash=''
-for (( i=0; i<${#USER_HASH}; i++ )); do
-  echo "${USER_HASH:$i:1}"
-  if [[ $processedHash != *$i* ]]; then
-    processedHash=$processedHash$i
-  fi
-done
+## write user hash to file
+#processedHash=''
+#for (( i=0; i<${#USER_HASH}; i++ )); do
+#  echo "${USER_HASH:$i:1}"
+#  if [[ $processedHash != *$i* ]]; then
+#    processedHash=$processedHash$i
+#  fi
+#done
 
 
-echo -n $processedHash > userHash.txt
+#echo -n $processedHash > userHash.txt
+echo -n $USER_HASH > userHash.txt
+
 #echo "Enter the directory to place files REMOVE ME: "
 #read levelDir
 levelDir=$(pwd)
@@ -58,13 +87,13 @@ loc6=$(cut -c 6 userHash.txt)
 loc7=$(cut -c 7 userHash.txt)
 loc8=$(cut -c 8 userHash.txt)
 loc9=$(cut -c 9 userHash.txt)
-#loc10=$(cut -c 10 userHash.txt)
-#loc11=$(cut -c 11 userHash.txt)
-#loc12=$(cut -c 11 userHash.txt)
-#loc13=$(cut -c 11 userHash.txt)
-#loc14=$(cut -c 11 userHash.txt)
-#loc15=$(cut -c 11 userHash.txt)
-#loc16=$(cut -c 11 userHash.txt)
+loc10=$(cut -c 10 userHash.txt)
+loc11=$(cut -c 11 userHash.txt)
+loc12=$(cut -c 12 userHash.txt)
+loc13=$(cut -c 13 userHash.txt)
+loc14=$(cut -c 14 userHash.txt)
+loc15=$(cut -c 15 userHash.txt)
+loc16=$(cut -c 16 userHash.txt)
 
 
 
@@ -77,13 +106,13 @@ dir6Seed=$(echo "ibase=16; $loc6" | bc) ## can be chosen based on hash value at 
 dir7Seed=$(echo "ibase=16; $loc7" | bc)
 dir8Seed=$(echo "ibase=16; $loc8" | bc)
 dir9Seed=$(echo "ibase=16; $loc9" | bc)
-#dir10Seed=$(echo "ibase=16; $loc10" | bc)
-#dir11Seed=$(echo "ibase=16; $loc11" | bc) ## can be chosen based on hash value at beginning
-#dir12Seed=$(echo "ibase=16; $loc12" | bc)
-#dir13Seed=$(echo "ibase=16; $loc13" | bc)
-#dir14Seed=$(echo "ibase=16; $loc14" | bc)
-#dir15Seed=$(echo "ibase=16; $loc15" | bc)
-#dir16Seed=$(echo "ibase=16; $loc16" | bc)
+dir10Seed=$(echo "ibase=16; $loc10" | bc)
+dir11Seed=$(echo "ibase=16; $loc11" | bc) ## can be chosen based on hash value at beginning
+dir12Seed=$(echo "ibase=16; $loc12" | bc)
+dir13Seed=$(echo "ibase=16; $loc13" | bc)
+dir14Seed=$(echo "ibase=16; $loc14" | bc)
+dir15Seed=$(echo "ibase=16; $loc15" | bc)
+dir16Seed=$(echo "ibase=16; $loc16" | bc)
 
 #targetDirectorySeed=$(echo "ibase=16; ${USER_HASH:4:4}" | bc) ## change based on hash value
 
@@ -92,19 +121,20 @@ dir9Seed=$(echo "ibase=16; $loc9" | bc)
 dir1=$(echo -n "${dict1[$dir1Seed]}")
 dir2=$(echo -n "${dict2[$dir2Seed]}")
 dir3=$(echo -n "${dict3[$dir3Seed]}")
-dir4=$(echo -n "${dict1[$dir4Seed]}")
-dir5=$(echo -n "${dict2[$dir5Seed]}")
-dir6=$(echo -n "${dict3[$dir6Seed]}")
-dir7=$(echo -n "${dict1[$dir7Seed]}")
-dir8=$(echo -n "${dict2[$dir8Seed]}")
-dir9=$(echo -n "${dict3[$dir9Seed]}")
-#dir10=$(sed "$dir10Seed!d" dictionary1.txt)
-#dir11=$(sed "$dir11Seed!d" dictionary2.txt)
-#dir12=$(sed "$dir12Seed!d" dictionary3.txt)
-#dir13=$(sed "$dir13Seed!d" dictionary2.txt)
-#dir14=$(sed "$dir14Seed!d" dictionary3.txt)
-#dir15=$(sed "$dir15Seed!d" dictionary1.txt)
-#dir16=$(sed "$dir16Seed!d" dictionary3.txt)
+dir4=$(echo -n "${dict4[$dir4Seed]}")
+dir5=$(echo -n "${dict5[$dir5Seed]}")
+dir6=$(echo -n "${dict6[$dir6Seed]}")
+dir7=$(echo -n "${dict7[$dir7Seed]}")
+dir8=$(echo -n "${dict8[$dir8Seed]}")
+dir9=$(echo -n "${dict9[$dir9Seed]}")
+dir10=$(echo -n "${dict10[$dir10Seed]}")
+dir11=$(echo -n "${dict11[$dir11Seed]}")
+dir12=$(echo -n "${dict12[$dir12Seed]}")
+dir13=$(echo -n "${dict13[$dir13Seed]}")
+dir14=$(echo -n "${dict14[$dir14Seed]}")
+dir15=$(echo -n "${dict15[$dir15Seed]}")
+dir16=$(echo -n "${dict16[$dir16Seed]}")
+
 
 targetDirectory=$(echo -n dir"$pseudoRAND")
 
@@ -136,13 +166,13 @@ mkdir $dir6
 mkdir $dir7
 mkdir $dir8
 mkdir $dir9
-#mkdir $dir10
-#mkdir $dir11
-#mkdir $dir12
-#mkdir $dir13
-#mkdir $dir14
-#mkdir $dir15
-#mkdir $dir16
+mkdir $dir10
+mkdir $dir11
+mkdir $dir12
+mkdir $dir13
+mkdir $dir14
+mkdir $dir15
+mkdir $dir16
 
 createdDirectory="makeme"
 
