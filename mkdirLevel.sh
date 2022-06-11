@@ -179,7 +179,7 @@ mkdir $dir16
 
 createdDirectory=$(echo -n "${dict17[$createdDirectorySeed]}")
 
-echo "Please create a new directory named $createdDirectory in the $targetDirectory"
+echo "Please create a new directory named $createdDirectory in the $targetDirectory directory"
 echo "Done!"
 export levelDir
 
