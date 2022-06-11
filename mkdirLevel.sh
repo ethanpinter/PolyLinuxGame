@@ -26,14 +26,14 @@ declare -a dict15
 declare -a dict16
 
 readarray -t dict1 <airlines.txt
-readarray -t dict2 <applicances.txt
+readarray -t dict2 <appliances.txt
 readarray -t dict3 <beerBrands.txt
 readarray -t dict4 <candy.txt
 readarray -t dict5 <carBrands.txt
 readarray -t dict6 <cheese.txt
 readarray -t dict7 <cities.txt
 readarray -t dict8 <clothingBrands.txt
-readarray -t dict9 <colors.txt
+readarray -t dict9 <instruments.txt
 readarray -t dict10 <countries.txt
 readarray -t dict11 <dogBreeds.txt
 readarray -t dict12 <fruits.txt
@@ -136,7 +136,7 @@ dir15=$(echo -n "${dict15[$dir15Seed]}")
 dir16=$(echo -n "${dict16[$dir16Seed]}")
 
 
-targetDirectory=$(echo -n dir"$pseudoRAND")
+targetDirectory=$(echo -n "dir$pseudoRAND")
 
 #export $dir1
 #export $dir2
