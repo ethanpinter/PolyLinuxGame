@@ -25,11 +25,23 @@ echo "Enter your PSU User ID (xyz1234): "
 read USER_ID
 USER_HASH=$(echo -n $USER_ID$COMB_PASS | md5sum)
 # write user hash to file
-echo -n $USER_HASH > userHash.txt
+processedHash=''
+for (( i=0; i<${#USER_HASH}; i++ )); do
+  echo "${USER_HASH:$i:1}"
+  if [[ $USER_HASH != *$i* ]]; then
+  processedHash=$processedHash$i
+  fi
+done
+
+
+echo -n $processedHash > userHash.txt
 #echo "Enter the directory to place files REMOVE ME: "
 #read levelDir
 levelDir=$(pwd)
 echo "$USER_HASH"
+
+
+
 
 pseudoRANDcapture=$(cut -c 5 userHash.txt)
 pseudoRAND=$(echo "ibase=16; $pseudoRANDcapture" | bc) ## returns a decimal value based on the hex value
