@@ -139,7 +139,7 @@ dir14=$(echo -n "${dict14[$dir14Seed]}")
 dir15=$(echo -n "${dict15[$dir15Seed]}")
 dir16=$(echo -n "${dict16[$dir16Seed]}")
 
-targetDirectory=$(echo -n "${dict17[$createdDirectorySeed]}")
+targetDirectory=$(dir$pseudoRAND)
 
 #export $dir1
 #export $dir2
@@ -177,7 +177,7 @@ mkdir $dir14
 mkdir $dir15
 mkdir $dir16
 
-createdDirectory="makeme"
+createdDirectory=$(echo -n "${dict17[$createdDirectorySeed]}")
 
 echo "Please create a new directory named $createdDirectory in the $targetDirectory"
 echo "Done!"
