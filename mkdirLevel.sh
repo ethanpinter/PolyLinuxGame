@@ -135,28 +135,27 @@ targetDirectorySeed=$pseudoRAND
 targetDirectory=$(echo -n "${directoryDict[$targetDirectorySeed]}")
 
 ## create static directories
-mkdir $dir1
-mkdir $dir2
-mkdir $dir3
-mkdir $dir4
-mkdir $dir5
-mkdir $dir6
-mkdir $dir7
-mkdir $dir8
-mkdir $dir9
-mkdir $dir10
-mkdir $dir11
-mkdir $dir12
-mkdir $dir13
-mkdir $dir14
-mkdir $dir15
-mkdir $dir16
+mkdir "mkdirLevel"
+mkdir mkdirLevel/$dir1
+mkdir mkdirLevel/$dir2
+mkdir mkdirLevel/$dir3
+mkdir mkdirLevel/$dir4
+mkdir mkdirLevel/$dir5
+mkdir mkdirLevel/$dir6
+mkdir mkdirLevel/$dir7
+mkdir mkdirLevel/$dir8
+mkdir mkdirLevel/$dir9
+mkdir mkdirLevel/$dir10
+mkdir mkdirLevel/$dir11
+mkdir mkdirLevel/$dir12
+mkdir mkdirLevel/$dir13
+mkdir mkdirLevel/$dir14
+mkdir mkdirLevel/$dir15
+mkdir mkdirLevel/$dir16
 
 createdDirectory=$(echo -n "${dict17[$createdDirectorySeed]}")
-
-echo "Please create a new directory named $createdDirectory in the $targetDirectory directory"
+echo "Please change to the 'mkdirLevel' directory and create a new directory named $createdDirectory in the $targetDirectory directory"
 echo "Done!"
 export levelDir
-
-
+rm userHash.txt directoryList.txt
 $SHELL
