@@ -25,11 +25,10 @@ userLevelHash=$(md5sum level.zip)
 echo "$userLevelHash"
 
 echo $USER_HASH$userLevelHash > hashCheck.txt
-preFinal=$(cut -c 0-64 hashCheck.txt)
+preFinal=$(cut -c 1-64 hashCheck.txt)
 echo $preFinal > final.txt
-preFinal=$(md5sum final.txt)
+finalHash=$(md5sum final.txt)
 
-finalHash=$(echo "ibase=16;obase=A;${preFinal}" | bc)
 echo "*"
 echo "*"
 echo "*"
