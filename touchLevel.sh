@@ -69,7 +69,7 @@ loc13=$(cut -c 13 userHash.txt)
 loc14=$(cut -c 14 userHash.txt)
 loc15=$(cut -c 15 userHash.txt)
 loc16=$(cut -c 16 userHash.txt)
-loc17=$(cut -c 19 userHash.txt)
+loc17=$(cut -c 5 userHash.txt)
 
 dir1Seed=$(echo "ibase=16; $loc1" | bc) 
 dir2Seed=$(echo "ibase=16; $loc2" | bc)
