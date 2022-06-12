@@ -152,14 +152,14 @@ mkdir rmLevel/$dir16
 
 createdFile=$(echo -n "${dict17[$createdFileSeed]}")
 touch rmLevel/$targetDirectory/$createdFile.txt
+touch rmLevel/README.txt
 echo "remove me" > rmLevel/$targetDirectory/$createdFile.txt
 echo "Done!"
 echo "*"
 echo "*"
 echo "*"
-echo "Please change to the 'rmLevel' directory and remove the file named $createdFile.txt in the $targetDirectory directory into the $secondTargetDirectory directory."
-echo "Next..."
-echo "Once finished, run the verify.sh script."
-export levelDir
+echo "Please change to the 'rmLevel' directory and remove the file named $createdFile.txt in the $targetDirectory directory into the $secondTargetDirectory directory." >> rmLevel/README
+echo "Next..." >> rmLevel/README
+echo "Once finished, run the verify.sh script." >> rmLevel/README
 rm userHash.txt directoryList.txt
 $SHELL
