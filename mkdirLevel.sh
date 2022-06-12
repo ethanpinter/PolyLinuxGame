@@ -149,8 +149,9 @@ mkdir mkdirLevel/$dir15
 mkdir mkdirLevel/$dir16
 
 createdDirectory=$(echo -n "${dict17[$createdDirectorySeed]}")
-echo "Please change to the 'mkdirLevel' directory and create a new directory named $createdDirectory in the $targetDirectory directory"
 echo "Done!"
+echo "Please change to the 'mkdirLevel' directory and create a new directory named $createdDirectory in the $targetDirectory directory"
+echo "Once finished, run the verify.sh script."
 export levelDir
 rm userHash.txt directoryList.txt
 $SHELL
