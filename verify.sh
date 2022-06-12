@@ -8,12 +8,15 @@ USER_HASH=${USER_HASH:0:32}
 selectedLevel=""
 
 echo "1 - mkdir Level"
-echo "Enter the number of the level you wish to verify (1): "
+echo "2 - touch Level"
+echo "3 - copy/move Level"
+echo "Enter the number of the level you wish to verify: "
 read selectedLevel
 
 case $selectedLevel in
     1) echo "Selected level 1 - mkdir level" && levelToCheck="$HOME/PolyLinuxGame/mkdirLevel";;
     2) echo "Selected level 2- touch level" && levelToCheck="$HOME/PolyLinuxGame/touchLevel";;
+    3) echo "Selected level 3 - touch level" && levelToCheck="$HOME/PolyLinuxGame/cpMvLevel";;
     *) echo "Invalid level. Please select again.";;
 esac
 
