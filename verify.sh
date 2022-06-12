@@ -1,44 +1,35 @@
 #!/bin/bash
 
-## hash with correct files and directories created
+#COMB_PASS="pennstate" 
+## read in user ID and generate hash with combined password
+USER_ID=""
+levelDir=""
+echo "Enter your PSU User ID (xyz1234): "
+read USER_ID
+USER_HASH=$(echo -n "$USER_ID" | md5sum)
 
-## here's what your hash should look like based on the directories created in the mkdirLevel script
+levelDir=$(pwd)
+selectedLevel=""
+toZip=""
 
+echo "1 - mkdir Level"
+echo "Enter the number of the level you wish to verify (1): "
+read selectedLevel
+echo $selectedLevel
 
+case $selectedLevel in
+    1) echo "Selected level 1 - mkdir level" && toZip="$levelDir/mkdirlevel";;
+    *) echo "Invalid level. Please select again.";;
+esac
 
+zip -r level.zip $toZip
+userLevelHash=$(md5sum level.zip)
+echo $userLevelHash
 
-masterHash=$(echo -n "38515e80825fe27bd2d43a91f3a6abc2 -") ## change based on user hash
+finalHash=$(($userLevelHash + $USER_HASH))
+echo *
+echo *
+echo *
+echo "Take this hash and input it in the grading system. Be sure to copy it exactly!"
+echo $finalHash  
 
-## might need to create a user input to ask which level is being verified
-
-homeDir="/home/ethan/PolyLinuxGame"
-## echo "Enter the level to validate: "
-echo "Enter the directory path (~/PolyLinuxGame) to check validity: "
-#read homeDir
-#echo $homeDir
-#zip -r home.zip $homeDir
-zip -r home.zip $homeDir
-userHomeHash=$(md5sum home.zip)
-echo $userHomeHash
-## generates md5 hash for entire directory
-# hash each file, then sort those hashes and combine into one value through another iteration of md5 hashing
-## find . -type f -exec md5sum {} + | LC_ALL=C sort | md5sum
-
-## get all files in level6 names, convert to md5 hash and add each hash together
-
-dirHash=$(find $homeDir -type f -exec md5sum {} + | LC_ALL=C sort | md5sum)
-#echo $dirHash
-
-# compares hashes
-if [[ "${masterHash:0:32}" == "${dirHash:0:32}" ]];then
-    echo "Hashes are equal."
-else
-    echo "Hashes are not equal."
-fi
-
-#echo ${masterHash:0:32}
-#echo ${dirHash:0:32}
-
-
-## verfiy output is hash, convert to base64
-## 
