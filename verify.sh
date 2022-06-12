@@ -1,12 +1,10 @@
 #!/bin/bash
 
 USER_ID=""
-levelDir=""
 echo "Enter your PSU User ID (xyz1234): "
 read USER_ID
 USER_HASH=$(echo -n "$USER_ID" | md5sum)
 USER_HASH=${USER_HASH:0:32}
-levelDir=$(pwd)
 selectedLevel=""
 toZip=""
 
@@ -16,7 +14,8 @@ read selectedLevel
 echo "$selectedLevel"
 
 case $selectedLevel in
-    1) echo "Selected level 1 - mkdir level" && toZip="PolyLinuxGame/mkdirLevel";;
+    1) echo "Selected level 1 - mkdir level" && toZip="$HOME/PolyLinuxGame/mkdirLevel";;
+    2) echo "add me later!";;
     *) echo "Invalid level. Please select again.";;
 esac
 
