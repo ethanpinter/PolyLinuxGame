@@ -26,7 +26,6 @@ echo $USER_HASH$preFinalHash > hashCheck.txt
 preFinal=$(cut -c 1-64 hashCheck.txt)
 echo $preFinal > final.txt
 finalHash=$(md5sum final.txt)
-
 echo "*"
 echo "*"
 echo "*"

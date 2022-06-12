@@ -158,10 +158,9 @@ echo "Done!"
 echo "*"
 echo "*"
 echo "*"
-echo "Please change to the 'cpMvLevel' directory and copy the file named $createdFile.txt in the $targetDirectory directory into the $secondTargetDirectory directory." > cpMvLevel/README
-echo "Next..." > cpMvLevel/README
-echo "Once finished, run the verify.sh script." > cpMvLevel/README
+echo "Please change to the 'cpMvLevel' directory and copy the file named $createdFile.txt in the $targetDirectory directory into the $secondTargetDirectory directory." >> cpMvLevel/README
+echo "Next..." >> cpMvLevel/README
+echo "Once finished, run the verify.sh script." >> cpMvLevel/README
 cat cpMvLevel/README
-export levelDir
 rm userHash.txt directoryList.txt
 $SHELL
