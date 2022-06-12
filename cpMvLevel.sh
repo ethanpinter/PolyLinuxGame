@@ -153,12 +153,15 @@ mkdir cpMvLevel/$dir16
 createdFile=$(echo -n "${dict17[$createdFileSeed]}")
 touch cpMvLevel/$targetDirectory/$createdFile.txt
 echo "move me" > cpMvLevel/$targetDirectory/$createdFile.txt
+touch cpMvLevel/README.txt
 echo "Done!"
 echo "*"
 echo "*"
 echo "*"
-echo "Please change to the 'cpMvLevel' directory and copy the file named $createdFile.txt in the $targetDirectory directory into the $secondTargetDirectory directory."
-echo "Once finished, run the verify.sh script."
+echo "Please change to the 'cpMvLevel' directory and copy the file named $createdFile.txt in the $targetDirectory directory into the $secondTargetDirectory directory." > cpMvLevel/README
+echo "Next..." > cpMvLevel/README
+echo "Once finished, run the verify.sh script." > cpMvLevel/README
+cat cpMvLevel/README
 export levelDir
 rm userHash.txt directoryList.txt
 $SHELL

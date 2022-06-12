@@ -148,12 +148,12 @@ mkdir mkdirLevel/$dir15
 mkdir mkdirLevel/$dir16
 
 createdDirectory=$(echo -n "${dict17[$createdDirectorySeed]}")
+touch mkdirLevel/README.txt
 echo "Done!"
 echo "*"
 echo "*"
 echo "*"
-echo "Please change to the 'mkdirLevel' directory and create a new directory named $createdDirectory in the $targetDirectory directory"
-echo "Once finished, run the verify.sh script."
-export levelDir
+echo "Please change to the 'mkdirLevel' directory and create a new directory named $createdDirectory in the $targetDirectory directory" > mkdirLevel/README
+echo "Once finished, run the verify.sh script." > mkdirLevel/README
 rm userHash.txt directoryList.txt
 $SHELL
