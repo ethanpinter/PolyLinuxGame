@@ -24,9 +24,13 @@ tar -zcvf level.zip $toZip
 userLevelHash=$(md5sum level.zip)
 echo "$userLevelHash"
 
-finalHash=$(echo "$userLevelHash" + "$USER_HASH" | bc)
-echo *
-echo *
-echo *
+zipHashConvert=$(echo "ibase=16; $userLevelHash" | bc) 
+userHashConvert=$(echo "ibase=16; $USER_HASH" | bc) 
+preFinal=$(($zipHashConvert + $userHashConvert))       # Also works
+
+finalHash=$(echo "ibase=16;obase=A;$preFinal" | bc)
+echo "*"
+echo "*"
+echo "*"
 echo "Take this hash and input it in the grading system. Be sure to copy it exactly!"
 echo "$finalHash"  
