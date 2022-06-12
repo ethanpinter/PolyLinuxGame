@@ -13,7 +13,7 @@ read selectedLevel
 
 case $selectedLevel in
     1) echo "Selected level 1 - mkdir level" && levelToCheck="$HOME/PolyLinuxGame/mkdirLevel";;
-    2) echo "add me later!";;
+    2) echo "Selected level 2- touch level" && levelToCheck="$HOME/PolyLinuxGame/touchLevel";;
     *) echo "Invalid level. Please select again.";;
 esac
 
