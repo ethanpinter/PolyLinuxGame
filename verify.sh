@@ -1,7 +1,6 @@
 #!/bin/bash
 
-#COMB_PASS="pennstate" 
-## read in user ID and generate hash with combined password
+pacman -Sy zip 
 USER_ID=""
 levelDir=""
 echo "Enter your PSU User ID (xyz1234): "
@@ -23,7 +22,7 @@ case $selectedLevel in
 esac
 
 zip -r level.zip $toZip
-userLevelHash=$(md5sum level.zip)
+userLevelHash=$(tar -zcvf level.zip $toZip)
 echo $userLevelHash
 
 finalHash=$(($userLevelHash + $USER_HASH))

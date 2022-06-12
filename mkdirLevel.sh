@@ -71,8 +71,6 @@ loc15=$(cut -c 15 userHash.txt)
 loc16=$(cut -c 16 userHash.txt)
 loc17=$(cut -c 17 userHash.txt)
 
-
-
 dir1Seed=$(echo "ibase=16; $loc1" | bc) 
 dir2Seed=$(echo "ibase=16; $loc2" | bc)
 dir3Seed=$(echo "ibase=16; $loc3" | bc)
@@ -91,7 +89,6 @@ dir15Seed=$(echo "ibase=16; $loc15" | bc)
 dir16Seed=$(echo "ibase=16; $loc16" | bc)
 
 createdDirectorySeed=$(echo "ibase=16; $loc17" | bc)
-
 
 dir1=$(echo -n "${dict1[$dir1Seed]}")
 dir2=$(echo -n "${dict2[$dir2Seed]}")
