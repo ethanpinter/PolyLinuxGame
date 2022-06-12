@@ -11,7 +11,6 @@ toZip=""
 echo "1 - mkdir Level"
 echo "Enter the number of the level you wish to verify (1): "
 read selectedLevel
-echo "$selectedLevel"
 
 case $selectedLevel in
     1) echo "Selected level 1 - mkdir level" && toZip="$HOME/PolyLinuxGame/mkdirLevel";;
@@ -19,7 +18,8 @@ case $selectedLevel in
     *) echo "Invalid level. Please select again.";;
 esac
 
-tar -zcvf level.zip $toZip
+#tar -zcvf level.zip $toZip
+zip -X level.zip $toZip
 userLevelHash=$(md5sum level.zip)
 echo "$userLevelHash"
 
