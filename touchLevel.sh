@@ -18,22 +18,23 @@ declare -a dict15
 declare -a dict16
 declare -a dict17
 
-readarray -t dict1 <dictionaries/airlines.txt
-readarray -t dict2 <dictionaries/appliances.txt
-readarray -t dict3 <dictionaries/beerBrands.txt
-readarray -t dict4 <dictionaries/candy.txt
-readarray -t dict5 <dictionaries/carBrands.txt
-readarray -t dict6 <dictionaries/cheese.txt
-readarray -t dict7 <dictionaries/cities.txt
-readarray -t dict8 <dictionaries/clothingBrands.txt
-readarray -t dict9 <dictionaries/instruments.txt
-readarray -t dict10 <dictionaries/countries.txt
-readarray -t dict11 <dictionaries/dogBreeds.txt
+readarray -t dict5 <dictionaries/airlines.txt
+readarray -t dict16 <dictionaries/appliances.txt
+readarray -t dict4 <dictionaries/beerBrands.txt
+readarray -t dict3 <dictionaries/candy.txt
+readarray -t dict11 <dictionaries/carBrands.txt
+readarray -t dict8 <dictionaries/cheese.txt
+readarray -t dict15 <dictionaries/cities.txt
+readarray -t dict7 <dictionaries/clothingBrands.txt
+readarray -t dict10 <dictionaries/instruments.txt
+readarray -t dict9 <dictionaries/countries.txt
+readarray -t dict6 <dictionaries/dogBreeds.txt
 readarray -t dict12 <dictionaries/fruits.txt
-readarray -t dict13 <dictionaries/operatingSystems.txt
-readarray -t dict14 <dictionaries/seasonings.txt
-readarray -t dict15 <dictionaries/sports.txt
-readarray -t dict16 <dictionaries/fastFood.txt
+readarray -t dict2 <dictionaries/operatingSystems.txt
+readarray -t dict1 <dictionaries/seasonings.txt
+readarray -t dict14 <dictionaries/sports.txt
+readarray -t dict13 <dictionaries/fastFood.txt
+
 readarray -t dict17 <dictionaries/createdDirectoryDictionary.txt
 
 # https://stackoverflow.com/questions/22466704/assign-each-line-of-file-to-be-a-variable
@@ -131,22 +132,22 @@ targetDirectory=$(echo -n "${directoryDict[$targetDirectorySeed]}")
 
 ## create static directories
 mkdir "touchLevel"
-mkdir mkdirLevel/$dir1
-mkdir mkdirLevel/$dir2
-mkdir mkdirLevel/$dir3
-mkdir mkdirLevel/$dir4
-mkdir mkdirLevel/$dir5
-mkdir mkdirLevel/$dir6
-mkdir mkdirLevel/$dir7
-mkdir mkdirLevel/$dir8
-mkdir mkdirLevel/$dir9
-mkdir mkdirLevel/$dir10
-mkdir mkdirLevel/$dir11
-mkdir mkdirLevel/$dir12
-mkdir mkdirLevel/$dir13
-mkdir mkdirLevel/$dir14
-mkdir mkdirLevel/$dir15
-mkdir mkdirLevel/$dir16
+mkdir touchLevel/$dir1
+mkdir touchLevel/$dir2
+mkdir touchLevel/$dir3
+mkdir touchLevel/$dir4
+mkdir touchLevel/$dir5
+mkdir touchLevel/$dir6
+mkdir touchLevel/$dir7
+mkdir touchLevel/$dir8
+mkdir touchLevel/$dir9
+mkdir touchLevel/$dir10
+mkdir touchLevel/$dir11
+mkdir touchLevel/$dir12
+mkdir touchLevel/$dir13
+mkdir touchLevel/$dir14
+mkdir touchLevel/$dir15
+mkdir touchLevel/$dir16
 
 createdFile=$(echo -n "${dict17[$createdFileSeed]}")
 echo "Done!"
