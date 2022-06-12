@@ -149,7 +149,6 @@ mkdir touchLevel/$dir15
 mkdir touchLevel/$dir16
 
 createdFile=$(echo -n "${dict17[$createdFileSeed]}")
-touch touchLevel/README.txt
 echo "Done!"
 echo "*"
 echo "*"

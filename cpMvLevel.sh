@@ -153,7 +153,6 @@ mkdir cpMvLevel/$dir16
 createdFile=$(echo -n "${dict17[$createdFileSeed]}")
 touch cpMvLevel/$targetDirectory/$createdFile.txt
 echo "move me" > cpMvLevel/$targetDirectory/$createdFile.txt
-touch cpMvLevel/README.txt
 echo "Done!"
 echo "*"
 echo "*"
