@@ -24,11 +24,10 @@ tar -zcvf level.zip $toZip
 userLevelHash=$(md5sum level.zip)
 echo "$userLevelHash"
 
-zipHashConvert=$(echo "ibase=16; $userLevelHash" | bc) 
-userHashConvert=$(echo "ibase=16; $USER_HASH" | bc) 
-preFinal=$(($zipHashConvert + $userHashConvert))       # Also works
+echo $USER_HASH$userLevelHash > hashCheck.txt
+preFinal=$(md5sum hashCheck.txt)
 
-finalHash=$(echo "ibase=16;obase=A;$preFinal" | bc)
+finalHash=$(echo "ibase=16;obase=A;${preFinal}" | bc)
 echo "*"
 echo "*"
 echo "*"
