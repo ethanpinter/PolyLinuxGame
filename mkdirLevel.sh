@@ -94,22 +94,39 @@ dir16Seed=$(echo "ibase=16; $loc16" | bc)
 createdDirectorySeed=$(echo "ibase=16; $loc17" | bc)
 
 
-dir1=$(echo -n "${dict1[$dir1Seed]}" >> directoryList.txt)
-dir2=$(echo -n "${dict2[$dir2Seed]}" >> directoryList.txt)
-dir3=$(echo -n "${dict3[$dir3Seed]}" >> directoryList.txt)
-dir4=$(echo -n "${dict4[$dir4Seed]}" >> directoryList.txt)
-dir5=$(echo -n "${dict5[$dir5Seed]}" >> directoryList.txt)
-dir6=$(echo -n "${dict6[$dir6Seed]}" >> directoryList.txt)
-dir7=$(echo -n "${dict7[$dir7Seed]}" >> directoryList.txt)
-dir8=$(echo -n "${dict8[$dir8Seed]}" >> directoryList.txt)
-dir9=$(echo -n "${dict9[$dir9Seed]}" >> directoryList.txt)
-dir10=$(echo -n "${dict10[$dir10Seed]}" >> directoryList.txt)
-dir11=$(echo -n "${dict11[$dir11Seed]}" >> directoryList.txt)
-dir12=$(echo -n "${dict12[$dir12Seed]}" >> directoryList.txt)
-dir13=$(echo -n "${dict13[$dir13Seed]}" >> directoryList.txt)
-dir14=$(echo -n "${dict14[$dir14Seed]}" >> directoryList.txt)
-dir15=$(echo -n "${dict15[$dir15Seed]}" >> directoryList.txt)
-dir16=$(echo -n "${dict16[$dir16Seed]}" >> directoryList.txt)
+dir1=$(echo -n "${dict1[$dir1Seed]}")
+dir2=$(echo -n "${dict2[$dir2Seed]}")
+dir3=$(echo -n "${dict3[$dir3Seed]}")
+dir4=$(echo -n "${dict4[$dir4Seed]}")
+dir5=$(echo -n "${dict5[$dir5Seed]}")
+dir6=$(echo -n "${dict6[$dir6Seed]}")
+dir7=$(echo -n "${dict7[$dir7Seed]}")
+dir8=$(echo -n "${dict8[$dir8Seed]}")
+dir9=$(echo -n "${dict9[$dir9Seed]}")
+dir10=$(echo -n "${dict10[$dir10Seed]}")
+dir11=$(echo -n "${dict11[$dir11Seed]}")
+dir12=$(echo -n "${dict12[$dir12Seed]}")
+dir13=$(echo -n "${dict13[$dir13Seed]}")
+dir14=$(echo -n "${dict14[$dir14Seed]}")
+dir15=$(echo -n "${dict15[$dir15Seed]}")
+dir16=$(echo -n "${dict16[$dir16Seed]}")
+
+echo -n "$dir1" >> directoryList.txt
+echo -n "$dir2" >> directoryList.txt
+echo -n "$dir3" >> directoryList.txt
+echo -n "$dir4" >> directoryList.txt
+echo -n "$dir5" >> directoryList.txt
+echo -n "$dir6" >> directoryList.txt
+echo -n "$dir7" >> directoryList.txt
+echo -n "$dir8" >> directoryList.txt
+echo -n "$dir9" >> directoryList.txt
+echo -n "$dir10" >> directoryList.txt
+echo -n "$dir11" >> directoryList.txt
+echo -n "$dir12" >> directoryList.txt
+echo -n "$dir13" >> directoryList.txt
+echo -n "$dir14" >> directoryList.txt
+echo -n "$dir15" >> directoryList.txt
+echo -n "$dir16" >> directoryList.txt
 
 declare -a directoryDict
 readarray -t directoryDict <directoryList.txt
