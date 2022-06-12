@@ -34,4 +34,4 @@ echo "*"
 echo "*"
 echo "Take this hash and input it in the grading system. Be sure to copy it exactly!"
 echo "$finalHash"
-rm finalHash hashCheck.txt level.zip
+rm final.txt hashCheck.txt level.zip
