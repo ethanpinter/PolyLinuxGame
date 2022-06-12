@@ -18,7 +18,7 @@ case $selectedLevel in
     *) echo "Invalid level. Please select again.";;
 esac
 
-finalHash=$((find apple -type f -print0  | sort -z | xargs -0 md5sum;  find apple \( -type f -o -type d \) -print0 | sort -z |    xargs -0 stat -c '%n %a') | md5sum)
+finalHash=$((find $levelToCheck -type f -print0  | sort -z | xargs -0 md5sum;  find $levelToCheck \( -type f -o -type d \) -print0 | sort -z |    xargs -0 stat -c '%n %a') | md5sum)
 
 userLevelHash=$(md5sum level.zip)
 echo "$userLevelHash"
@@ -33,7 +33,7 @@ echo "*"
 echo "*"
 echo "Take this hash and input it in the grading system. Be sure to copy it exactly!"
 echo "$finalHash"
-rm final.txt hashCheck.txt level.zip
+rm final.txt hashCheck.txt
 
 ### c9c23247af0fa473d488094a25e26389
 # THE SOLUTION NO ZIP REQUIRED
