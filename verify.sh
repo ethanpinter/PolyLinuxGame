@@ -10,6 +10,7 @@ selectedLevel=""
 echo "1 - mkdir Level"
 echo "2 - touch Level"
 echo "3 - copy/move Level"
+echo "4 - remove/remove directory level"
 echo "Enter the number of the level you wish to verify: "
 read selectedLevel
 
