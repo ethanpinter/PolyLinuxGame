@@ -47,7 +47,6 @@ echo "Enter your PSU User ID (xyz1234): "
 read USER_ID
 USER_HASH=$(echo -n "$USER_ID" | md5sum)
 echo -n "$USER_HASH" > userHash.txt
-echo "$USER_HASH"
 levelDir=$(pwd)
 
 pseudoRANDcapture=$(cut -c 5 userHash.txt)
@@ -151,7 +150,7 @@ mkdir touchLevel/$dir16
 
 createdFile=$(echo -n "${dict17[$createdFileSeed]}")
 echo "Done!"
-echo "Please change to the 'touchLevel' directory and create a new file named $createdFile in the $targetDirectory directory"
+echo "Please change to the 'touchLevel' directory and create a new file named $createdFile.txt in the $targetDirectory directory"
 echo "Once finished, run the verify.sh script."
 export levelDir
 rm userHash.txt directoryList.txt
