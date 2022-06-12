@@ -18,12 +18,10 @@ case $selectedLevel in
     *) echo "Invalid level. Please select again.";;
 esac
 
-finalHash=$((find $levelToCheck -type f -print0  | sort -z | xargs -0 md5sum;  find $levelToCheck \( -type f -o -type d \) -print0 | sort -z |    xargs -0 stat -c '%n %a') | md5sum)
+preFinalHash=$((find $levelToCheck -type f -print0  | sort -z | xargs -0 md5sum;  find $levelToCheck \( -type f -o -type d \) -print0 | sort -z |    xargs -0 stat -c '%n %a') | md5sum)
 
-userLevelHash=$(md5sum level.zip)
-echo "$userLevelHash"
 
-echo $USER_HASH$userLevelHash > hashCheck.txt
+echo $USER_HASH$preFinalHash > hashCheck.txt
 preFinal=$(cut -c 1-64 hashCheck.txt)
 echo $preFinal > final.txt
 finalHash=$(md5sum final.txt)
