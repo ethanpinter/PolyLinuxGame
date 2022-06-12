@@ -152,7 +152,6 @@ mkdir rmLevel/$dir16
 
 createdFile=$(echo -n "${dict17[$createdFileSeed]}")
 touch rmLevel/$targetDirectory/$createdFile.txt
-touch rmLevel/README.txt
 echo "remove me" > rmLevel/$targetDirectory/$createdFile.txt
 echo "Done!"
 echo "*"

@@ -148,7 +148,6 @@ mkdir mkdirLevel/$dir15
 mkdir mkdirLevel/$dir16
 
 createdDirectory=$(echo -n "${dict17[$createdDirectorySeed]}")
-touch mkdirLevel/README.txt
 echo "Done!"
 echo "*"
 echo "*"
