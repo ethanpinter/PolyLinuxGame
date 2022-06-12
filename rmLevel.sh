@@ -41,7 +41,6 @@ readarray -t dict17 <dictionaries/createdDirectoryDictionary.txt
 
 ## read in user ID and generate hash with combined password
 USER_ID=""
-levelDir=""
 echo "Enter your PSU User ID (xyz1234): "
 read USER_ID
 USER_HASH=$(echo -n "$USER_ID" | md5sum)
