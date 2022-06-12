@@ -13,13 +13,13 @@ echo "Enter the number of the level you wish to verify (1): "
 read selectedLevel
 
 case $selectedLevel in
-    1) echo "Selected level 1 - mkdir level" && toZip="$HOME/PolyLinuxGame/mkdirLevel";;
+    1) echo "Selected level 1 - mkdir level" && levelToCheck="$HOME/PolyLinuxGame/mkdirLevel";;
     2) echo "add me later!";;
     *) echo "Invalid level. Please select again.";;
 esac
 
-#tar -zcvf level.zip $toZip
-zip -X level.zip $toZip
+finalHash=$((find apple -type f -print0  | sort -z | xargs -0 md5sum;  find apple \( -type f -o -type d \) -print0 | sort -z |    xargs -0 stat -c '%n %a') | md5sum)
+
 userLevelHash=$(md5sum level.zip)
 echo "$userLevelHash"
 
@@ -34,3 +34,7 @@ echo "*"
 echo "Take this hash and input it in the grading system. Be sure to copy it exactly!"
 echo "$finalHash"
 rm final.txt hashCheck.txt level.zip
+
+### c9c23247af0fa473d488094a25e26389
+# THE SOLUTION NO ZIP REQUIRED
+##(find apple -type f -print0  | sort -z | xargs -0 md5sum;  find apple \( -type f -o -type d \) -print0 | sort -z |    xargs -0 stat -c '%n %a') | md5sum
