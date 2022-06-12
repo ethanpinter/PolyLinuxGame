@@ -18,7 +18,8 @@ case $selectedLevel in
     1) echo "Selected level 1 - mkdir level" && levelToCheck="$HOME/PolyLinuxGame/mkdirLevel";;
     2) echo "Selected level 2- touch level" && levelToCheck="$HOME/PolyLinuxGame/touchLevel";;
     3) echo "Selected level 3 - touch level" && levelToCheck="$HOME/PolyLinuxGame/cpMvLevel";;
-    *) echo "Invalid level. Please select again.";;
+    4) echo "Selected level 4 - remove/remove directory level" && levelToCheck="$HOME/PolyLinuxGame/rmLevel";;
+    *) echo "Invalid level. Please select again." && exit;;
 esac
 
 preFinalHash=$((find $levelToCheck -type f -print0  | sort -z | xargs -0 md5sum;  find $levelToCheck \( -type f -o -type d \) -print0 | sort -z |    xargs -0 stat -c '%n %a') | md5sum)
