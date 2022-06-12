@@ -49,7 +49,9 @@ echo -n "$USER_HASH" > userHash.txt
 levelDir=$(pwd)
 
 pseudoRANDcapture=$(cut -c 2 userHash.txt)
+secondCapture=$(cut -c 6 userHash.txt)
 pseudoRAND=$(echo "ibase=16; $pseudoRANDcapture" | bc)
+secondRAND=$(echo "ibase=16; $secondCapture" | bc)
 
 loc1=$(cut -c 1 userHash.txt)
 loc2=$(cut -c 2 userHash.txt)
@@ -126,8 +128,9 @@ declare -a directoryDict
 readarray -t directoryDict <directoryList.txt
 
 targetDirectorySeed=$pseudoRAND
+secondTargetDirectory=$secondRAND
 targetDirectory=$(echo -n "${directoryDict[$targetDirectorySeed]}")
-
+secondTargetDirectory=$(echo -n "${directoryDict[$secondTargetDirectorySeed]}")
 ## create static directories
 mkdir "cpMvLevel"
 mkdir cpMvLevel/$dir1
@@ -151,7 +154,10 @@ createdFile=$(echo -n "${dict17[$createdFileSeed]}")
 touch cpMvLevel/$targetDirectory/$createdFile.txt
 echo "move me" > cpMvLevel/$targetDirectory/$createdFile.txt
 echo "Done!"
-echo "Please change to the 'cpMvLevel' directory and copy the copy file named $createdFile.txt in the $targetDirectory directory"
+echo "*"
+echo "*"
+echo "*"
+echo "Please change to the 'cpMvLevel' directory and copy the file named $createdFile.txt in the $targetDirectory directory into the $secondTargetDirectory directory."
 echo "Once finished, run the verify.sh script."
 export levelDir
 rm userHash.txt directoryList.txt

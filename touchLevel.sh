@@ -150,6 +150,9 @@ mkdir touchLevel/$dir16
 
 createdFile=$(echo -n "${dict17[$createdFileSeed]}")
 echo "Done!"
+echo "*"
+echo "*"
+echo "*"
 echo "Please change to the 'touchLevel' directory and create a new file named $createdFile.txt in the $targetDirectory directory"
 echo "Once finished, run the verify.sh script."
 export levelDir
