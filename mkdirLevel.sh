@@ -46,7 +46,7 @@ echo "Enter your PSU User ID (xyz1234): "
 read USER_ID
 USER_HASH=$(echo -n "$USER_ID" | md5sum)
 echo -n "$USER_HASH" > userHash.txt
-
+echo "$USER_HASH"
 levelDir=$(pwd)
 
 pseudoRANDcapture=$(cut -c 5 userHash.txt)
