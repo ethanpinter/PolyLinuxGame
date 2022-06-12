@@ -148,7 +148,7 @@ mkdir cpMvLevel/$dir15
 mkdir cpMvLevel/$dir16
 
 createdFile=$(echo -n "${dict17[$createdFileSeed]}")
-touch cpMvLevel/$dir3/$createdFile.txt
+touch cpMvLevel/$targetDirectory/$createdFile.txt
 echo "move me" > $createdFile.txt
 echo "Done!"
 echo "Please change to the 'cpMvLevel' directory and copy the copy file named $createdFile.txt in the $targetDirectory directory"
