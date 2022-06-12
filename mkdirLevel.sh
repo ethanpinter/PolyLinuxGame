@@ -52,7 +52,6 @@ levelDir=$(pwd)
 
 pseudoRANDcapture=$(cut -c 5 userHash.txt)
 pseudoRAND=$(echo "ibase=16; $pseudoRANDcapture" | bc)
-echo "$pseudoRAND"
 
 loc1=$(cut -c 1 userHash.txt)
 loc2=$(cut -c 2 userHash.txt)

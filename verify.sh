@@ -7,7 +7,7 @@ levelDir=""
 echo "Enter your PSU User ID (xyz1234): "
 read USER_ID
 USER_HASH=$(echo -n "$USER_ID" | md5sum)
-
+USER_HASH=${USER_HASH:0:32}
 levelDir=$(pwd)
 selectedLevel=""
 toZip=""
