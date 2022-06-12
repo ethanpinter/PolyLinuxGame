@@ -16,7 +16,7 @@ read selectedLevel
 echo "$selectedLevel"
 
 case $selectedLevel in
-    1) echo "Selected level 1 - mkdir level" && toZip="$levelDir/mkdirLevel";;
+    1) echo "Selected level 1 - mkdir level" && toZip="PolyLinuxGame/mkdirLevel";;
     *) echo "Invalid level. Please select again.";;
 esac
 
