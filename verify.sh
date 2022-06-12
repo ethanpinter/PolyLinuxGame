@@ -21,8 +21,8 @@ case $selectedLevel in
     *) echo "Invalid level. Please select again.";;
 esac
 
-zip -r level.zip $toZip
-userLevelHash=$(tar -zcvf level.zip $toZip)
+tar -zcvf level.zip $toZip
+userLevelHash=$(md5sum level.zip)
 echo $userLevelHash
 
 finalHash=$(($userLevelHash + $USER_HASH))
