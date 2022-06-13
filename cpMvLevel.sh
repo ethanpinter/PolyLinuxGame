@@ -181,7 +181,7 @@ echo "*"
 echo "*"
 echo "Please change to the 'cpMvLevel' directory and copy the file named $createdFile.txt in the $targetDirectory directory into the $secondTargetDirectory directory." >> cpMvLevel/README
 echo "Next...copy all the txt files from $secondTargetDirectory into $thirdTargetDirectory" >> cpMvLevel/README
-echo "Finally, change the name of the $thirdTargetDirectory to '$fourthTargetDirectory'." >> cpMvLevel/README
+echo "Finally, change the name of the $thirdTargetDirectory directory to '$fourthTargetDirectory'." >> cpMvLevel/README
 echo "Once finished, run the verify.sh script." >> cpMvLevel/README
 cat cpMvLevel/README
 rm userHash.txt directoryList.txt
