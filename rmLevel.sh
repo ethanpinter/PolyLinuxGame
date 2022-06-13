@@ -48,8 +48,10 @@ echo -n "$USER_HASH" > userHash.txt
 
 pseudoRANDcapture=$(cut -c 9 userHash.txt)
 secondCapture=$(cut -c 12 userHash.txt)
+thirdCapture=$(cut -c 3 userHash.txt)
 pseudoRAND=$(echo "ibase=16; $pseudoRANDcapture" | bc)
 secondRAND=$(echo "ibase=16; $secondCapture" | bc)
+thirdRAND=$(echo "ibase=16; $thirdCapture" | bc)
 
 loc1=$(cut -c 1 userHash.txt)
 loc2=$(cut -c 2 userHash.txt)
@@ -126,9 +128,11 @@ declare -a directoryDict
 readarray -t directoryDict <directoryList.txt
 
 targetDirectorySeed=$pseudoRAND
-secondTargetDirectory=$secondRAND
+secondTargetDirectorySeed=$secondRAND
+thirdTargetDirectorySeed=$thirdRAND
 targetDirectory=$(echo -n "${directoryDict[$targetDirectorySeed]}")
 secondTargetDirectory=$(echo -n "${directoryDict[$secondTargetDirectorySeed]}")
+thirdTargetDirectory=$(echo -n "${directoryDict[$thirdTargetDirectorySeed]}")
 ## create static directories
 mkdir "rmLevel"
 mkdir rmLevel/$dir1
@@ -156,7 +160,7 @@ echo "*"
 echo "*"
 echo "*"
 echo "Please change to the 'rmLevel' directory and remove the file named $createdFile.txt in the $targetDirectory directory into the $secondTargetDirectory directory." >> rmLevel/README
-echo "Next..." >> rmLevel/README
+echo "Next...remove the $thirdTargetDirectory" >> rmLevel/README
 echo "Once finished, run the verify.sh script." >> rmLevel/README
 cat rmLevel/README
 rm userHash.txt directoryList.txt
