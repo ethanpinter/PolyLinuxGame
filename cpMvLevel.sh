@@ -46,12 +46,13 @@ echo "Enter your PSU User ID (xyz1234): "
 read USER_ID
 USER_HASH=$(echo -n "$USER_ID" | md5sum)
 echo -n "$USER_HASH" > userHash.txt
-levelDir=$(pwd)
 
 pseudoRANDcapture=$(cut -c 2 userHash.txt)
 secondCapture=$(cut -c 6 userHash.txt)
+thirdCapture=$(cut -c 8 userHash.txt)
 pseudoRAND=$(echo "ibase=16; $pseudoRANDcapture" | bc)
 secondRAND=$(echo "ibase=16; $secondCapture" | bc)
+thirdRAND=$(echo "ibase=16; $thirdCapture" | bc )
 
 loc1=$(cut -c 1 userHash.txt)
 loc2=$(cut -c 2 userHash.txt)
@@ -128,9 +129,11 @@ declare -a directoryDict
 readarray -t directoryDict <directoryList.txt
 
 targetDirectorySeed=$pseudoRAND
-secondTargetDirectory=$secondRAND
+secondTargetDirectorySeed=$secondRAND
+thirdTargetDirectorySeed=$thirdRAND
 targetDirectory=$(echo -n "${directoryDict[$targetDirectorySeed]}")
 secondTargetDirectory=$(echo -n "${directoryDict[$secondTargetDirectorySeed]}")
+thirdTargetDirectory=$(echo -n "${directoryDict[$thirdTargetDirectorySeed]}")
 ## create static directories
 mkdir "cpMvLevel"
 mkdir cpMvLevel/$dir1
@@ -142,6 +145,7 @@ mkdir cpMvLevel/$dir6
 mkdir cpMvLevel/$dir7
 mkdir cpMvLevel/$dir8
 mkdir cpMvLevel/$dir9
+## data filled
 mkdir cpMvLevel/$dir10
 mkdir cpMvLevel/$dir11
 mkdir cpMvLevel/$dir12
@@ -149,6 +153,14 @@ mkdir cpMvLevel/$dir13
 mkdir cpMvLevel/$dir14
 mkdir cpMvLevel/$dir15
 mkdir cpMvLevel/$dir16
+
+## generate noise files
+touch cpMvLevel/$secondTargetDirectory/${directoryDict[5}.jpg
+touch cpMvLevel/$secondTargetDirectory/${directoryDict[1}.csv
+touch cpMvLevel/$secondTargetDirectory/${directoryDict[9}.jpg
+touch cpMvLevel/$secondTargetDirectory/${directoryDict[3}.cvs
+touch cpMvLevel/$secondTargetDirectory/${directoryDict[13}.txt
+touch cpMvLevel/$secondTargetDirectory/${directoryDict[15}.txt
 
 createdFile=$(echo -n "${dict17[$createdFileSeed]}")
 touch cpMvLevel/$targetDirectory/$createdFile.txt
@@ -158,7 +170,7 @@ echo "*"
 echo "*"
 echo "*"
 echo "Please change to the 'cpMvLevel' directory and copy the file named $createdFile.txt in the $targetDirectory directory into the $secondTargetDirectory directory." >> cpMvLevel/README
-echo "Next..." >> cpMvLevel/README
+echo "Next...copy all the txt files from $secondTargetDirectory into $thirdTargetDirectory" >> cpMvLevel/README
 echo "Once finished, run the verify.sh script." >> cpMvLevel/README
 cat cpMvLevel/README
 rm userHash.txt directoryList.txt
