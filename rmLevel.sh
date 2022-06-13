@@ -152,6 +152,19 @@ mkdir rmLevel/$dir14
 mkdir rmLevel/$dir15
 mkdir rmLevel/$dir16
 
+firstDataFile=$(echo -n "${directoryDict[2]}.jpg")
+secondDataFile=$(echo -n "${directoryDict[5]}.txt")
+thirdDataFile=$(echo -n "${directoryDict[8]}.csv")
+fourthDataFile=$(echo -n "${directoryDict[13]}.txt")
+fifthDataFile=$(echo -n "${directoryDict[12]}.pcap")
+sixthDataFile=$(echo -n "${directoryDict[1]}.log")
+touch rmLevel/$secondTargetDirectory/$firstDataFile
+touch rmLevel/$secondTargetDirectory/$secondDataFile
+touch rmLevel/$secondTargetDirectory/$thirdDataFile
+touch rmLevel/$secondTargetDirectory/$fourthDataFile
+touch rmLevel/$secondTargetDirectory/$fifthDataFile
+touch rmLevel/$secondTargetDirectory/$sixthDataFile
+
 createdFile=$(echo -n "${dict17[$createdFileSeed]}")
 touch rmLevel/$targetDirectory/$createdFile.txt
 echo "remove me" > rmLevel/$targetDirectory/$createdFile.txt
@@ -159,8 +172,9 @@ echo "Done!"
 echo "*"
 echo "*"
 echo "*"
-echo "Please change to the 'rmLevel' directory and remove the file named $createdFile.txt in the $targetDirectory directory into the $secondTargetDirectory directory." >> rmLevel/README
-echo "Next...remove the $thirdTargetDirectory directory." >> rmLevel/README
+echo "Please change to the 'rmLevel' directory and remove the file named $createdFile.txt in the $targetDirectory directory." >> rmLevel/README
+echo "Next...remove the .csv file inside the $secondTargetDirectory directory." >> rmLevel/README
+echo "Finally, remove the $thirdTargetDirectory directory." >> rmLevel/README
 echo "Once finished, run the verify.sh script." >> rmLevel/README
 cat rmLevel/README
 rm userHash.txt directoryList.txt
