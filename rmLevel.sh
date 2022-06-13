@@ -47,7 +47,7 @@ USER_HASH=$(echo -n "$USER_ID" | md5sum)
 echo -n "$USER_HASH" > userHash.txt
 
 pseudoRANDcapture=$(cut -c 9 userHash.txt)
-secondCapture=$(cut -c 12 userHash.txt)
+secondCapture=$(cut -c 1 userHash.txt)
 thirdCapture=$(cut -c 3 userHash.txt)
 pseudoRAND=$(echo "ibase=16; $pseudoRANDcapture" | bc)
 secondRAND=$(echo "ibase=16; $secondCapture" | bc)
