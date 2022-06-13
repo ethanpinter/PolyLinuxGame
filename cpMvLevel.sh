@@ -50,9 +50,11 @@ echo -n "$USER_HASH" > userHash.txt
 pseudoRANDcapture=$(cut -c 2 userHash.txt)
 secondCapture=$(cut -c 6 userHash.txt)
 thirdCapture=$(cut -c 8 userHash.txt)
+fourthCapture=$(cut -c 12 userHash.txt)
 pseudoRAND=$(echo "ibase=16; $pseudoRANDcapture" | bc)
 secondRAND=$(echo "ibase=16; $secondCapture" | bc)
-thirdRAND=$(echo "ibase=16; $thirdCapture" | bc )
+thirdRAND=$(echo "ibase=16; $thirdCapture" | bc)
+fourthRAND=$(echo "ibase=16; $fourthCapture" | bc)
 
 loc1=$(cut -c 1 userHash.txt)
 loc2=$(cut -c 2 userHash.txt)
@@ -131,9 +133,11 @@ readarray -t directoryDict <directoryList.txt
 targetDirectorySeed=$pseudoRAND
 secondTargetDirectorySeed=$secondRAND
 thirdTargetDirectorySeed=$thirdRAND
+fourthTargetDirectorySeed=$fourthRAND
 targetDirectory=$(echo -n "${directoryDict[$targetDirectorySeed]}")
 secondTargetDirectory=$(echo -n "${directoryDict[$secondTargetDirectorySeed]}")
 thirdTargetDirectory=$(echo -n "${directoryDict[$thirdTargetDirectorySeed]}")
+fourthTargetDirectory=$(echo -n "${directoryDict[$fourthTargetDirectorySeed]}")
 ## create static directories
 mkdir "cpMvLevel"
 mkdir cpMvLevel/$dir1
@@ -177,6 +181,7 @@ echo "*"
 echo "*"
 echo "Please change to the 'cpMvLevel' directory and copy the file named $createdFile.txt in the $targetDirectory directory into the $secondTargetDirectory directory." >> cpMvLevel/README
 echo "Next...copy all the txt files from $secondTargetDirectory into $thirdTargetDirectory" >> cpMvLevel/README
+echo "Finally, change the name of the $thirdTargetDirectory to '$fourthTargetDirectory'." >> cpMvLevel/README
 echo "Once finished, run the verify.sh script." >> cpMvLevel/README
 cat cpMvLevel/README
 rm userHash.txt directoryList.txt
