@@ -155,16 +155,22 @@ mkdir cpMvLevel/$dir15
 mkdir cpMvLevel/$dir16
 
 ## generate noise files
-touch cpMvLevel/$secondTargetDirectory/${directoryDict[5}.jpg
-touch cpMvLevel/$secondTargetDirectory/${directoryDict[1}.csv
-touch cpMvLevel/$secondTargetDirectory/${directoryDict[9}.jpg
-touch cpMvLevel/$secondTargetDirectory/${directoryDict[3}.cvs
-touch cpMvLevel/$secondTargetDirectory/${directoryDict[13}.txt
-touch cpMvLevel/$secondTargetDirectory/${directoryDict[15}.txt
-
+firstDataFile=$(echo -n "${directoryDict[2]}.jpg")
+secondDataFile=$(echo -n "${directoryDict[5]}.txt")
+thirdDataFile=$(echo -n "${directoryDict[8]}.csv")
+fourthDataFile=$(echo -n "${directoryDict[13]}.txt")
+fifthDataFile=$(echo -n "${directoryDict[12]}.pcap")
+sixthDataFile=$(echo -n "${directoryDict[1]}.log")
+touch cpMvLevel/$secondTargetDirectory/$firstDataFile
+touch cpMvLevel/$secondTargetDirectory/$secondDataFile
+touch cpMvLevel/$secondTargetDirectory/$thirdDataFile
+touch cpMvLevel/$secondTargetDirectory/$fourthDataFile
+touch cpMvLevel/$secondTargetDirectory/$fifthDataFile
+touch cpMvLevel/$secondTargetDirectory/$sixthDataFile
 createdFile=$(echo -n "${dict17[$createdFileSeed]}")
 touch cpMvLevel/$targetDirectory/$createdFile.txt
 echo "move me" > cpMvLevel/$targetDirectory/$createdFile.txt
+
 echo "Done!"
 echo "*"
 echo "*"
