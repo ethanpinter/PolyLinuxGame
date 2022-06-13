@@ -48,7 +48,7 @@ echo -n "$USER_HASH" > userHash.txt
 
 pseudoRANDcapture=$(cut -c 9 userHash.txt)
 secondCapture=$(cut -c 1 userHash.txt)
-thirdCapture=$(cut -c 3 userHash.txt)
+thirdCapture=$(cut -c 15 userHash.txt)
 pseudoRAND=$(echo "ibase=16; $pseudoRANDcapture" | bc)
 secondRAND=$(echo "ibase=16; $secondCapture" | bc)
 thirdRAND=$(echo "ibase=16; $thirdCapture" | bc)
