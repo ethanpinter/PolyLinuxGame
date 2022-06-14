@@ -11,8 +11,7 @@ newPass="Password1"
 useradd -p $newPass -m $userName
 cp -r /root/PolyLinuxGame/* /home/$userName/
 #cp -r /root/PolyLinuxGame/dictionaries /home/$userName/
-
-chmod -R 777 /home/polylinuxgame
+chown -R $userName /home/polylinuxgame
 
 su -c "bash touchLevel.sh"  $userName
 su -c "bash mkdirLevel.sh" $userName
