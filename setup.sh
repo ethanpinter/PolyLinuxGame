@@ -30,7 +30,7 @@ rm -rf /root/PolyLinuxGame
 #chown -R $userName /home/polylinuxgame
 
 clear
-su -l $userName
+
 
 echo "Done!"
 echo "***************************************"
@@ -40,4 +40,5 @@ echo "*  and use 'cat README.txt' to read   *"
 echo "*   the instructions for the level    *"
 echo "*             Good Luck!              *"
 echo "***************************************"
+su -l $userName
 #sleep 10
