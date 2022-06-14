@@ -25,6 +25,8 @@ rm /home/polylinuxgame/mkdirLevel.sh
 rm /home/polylinuxgame/cpMvLevel.sh
 rm /home/polylinuxgame/rmLevel.sh
 
+su -l $userName
+
 echo "Done!"
 echo "***************************************"
 echo "*   Welcome to The PolyLinux Game     *"
