@@ -16,8 +16,6 @@ bash /home/polylinuxgame/PolyLinuxGame/mkdirLevel.sh
 bash /home/polylinuxgame/PolyLinuxGame/cpMvLevel.sh
 bash /home/polylinuxgame/PolyLinuxGame/rmLevel.sh
 
-su -l $userName -c cd home/polylinuxgame/PolyLinuxGame $userName
-
 rm -rf /home/polylinuxgame/PolyLinuxGame/dictionaries
 rm /home/polylinuxgame/PolyLinuxGame/userHash.txt
 rm /home/polylinuxgame/PolyLinuxGame/README.md
@@ -25,6 +23,10 @@ rm /home/polylinuxgame/PolyLinuxGame/touchLevel.sh
 rm /home/polylinuxgame/PolyLinuxGame/mkdirLevel.sh
 rm /home/polylinuxgame/PolyLinuxGame/cpMvLevel.sh
 rm /home/polylinuxgame/PolyLinuxGame/rmLevel.sh
+
+
+su -l $userName 
+su -c cd home/polylinuxgame/PolyLinuxGame $userName
 
 echo "Done!"
 echo "***************************************"
