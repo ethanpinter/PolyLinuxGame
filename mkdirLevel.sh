@@ -96,7 +96,7 @@ dir14=$(echo -n "${dict14[$dir14Seed]}")
 dir15=$(echo -n "${dict15[$dir15Seed]}")
 dir16=$(echo -n "${dict16[$dir16Seed]}")
 
-echo "$dir1" >> directoryList.txt
+echo "$dir1" >> directoryList.txtls 
 echo "$dir2" >> directoryList.txt
 echo "$dir3" >> directoryList.txt
 echo "$dir4" >> directoryList.txt
