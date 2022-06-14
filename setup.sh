@@ -9,7 +9,7 @@ echo -n "$USER_HASH" > userHash.txt
 userName="polylinuxgame"
 newPass="Password1"
 useradd -p $newPass -m $userName
-cp -r . home/$userName
+cp -r /root/PolyLinuxGame /home/$userName
 su -l $userName
 cd ..
 cd home/$userName || exit
