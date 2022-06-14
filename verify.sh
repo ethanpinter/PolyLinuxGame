@@ -1,5 +1,10 @@
 #!/bin/bash
 
+## single username. multipole levels in that users home folder 4 to 5 easy level,
+## 10 levels of fun/harder
+## userpassOurPasswordLevelPassword
+## take todays date and inject it in the hash value yyyy/mm/dd
+
 USER_ID=""
 echo "Enter your PSU User ID (xyz1234): "
 read USER_ID
