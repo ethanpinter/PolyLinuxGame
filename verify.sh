@@ -23,7 +23,7 @@ case $selectedLevel in
     1) echo "Selected level 1 - mkdir level" && levelToCheck="$HOME";;
     2) echo "Selected level 2- touch level" && levelToCheck="$HOME";;
     3) echo "Selected level 3 - touch level" && levelToCheck="$HOME";;
-    4) echo "Selected level 4 - remove/remove directory level" && levelToCheck="$HOME/PolyLinuxGame/rmLevel";;
+    4) echo "Selected level 4 - remove/remove directory level" && levelToCheck="$HOME";;
     *) echo "Invalid level. Please select again." && exit;;
 esac
 
