@@ -163,7 +163,6 @@ touch rmLevel/$secondTargetDirectory/$sixthDataFile
 createdFile=$(echo -n "${dict17[$createdFileSeed]}")
 touch rmLevel/$targetDirectory/$createdFile.txt
 echo "remove me" > rmLevel/$targetDirectory/$createdFile.txt
-echo "Done!"
 echo "*"
 echo "*"
 echo "*"
@@ -173,4 +172,4 @@ echo "Finally, remove the $thirdTargetDirectory directory." >> rmLevel/README
 echo "Once finished, run the verify.sh script." >> rmLevel/README
 #cat rmLevel/README
 rm userHash.txt directoryList.txt
-$SHELL
+

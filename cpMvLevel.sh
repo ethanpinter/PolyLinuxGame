@@ -166,8 +166,6 @@ touch cpMvLevel/$secondTargetDirectory/$sixthDataFile
 createdFile=$(echo -n "${dict17[$createdFileSeed]}")
 touch cpMvLevel/$targetDirectory/$createdFile.txt
 echo "move me" > cpMvLevel/$targetDirectory/$createdFile.txt
-
-echo "Done!"
 echo "*"
 echo "*"
 echo "*"
@@ -177,4 +175,4 @@ echo "Finally, change the name of the $thirdTargetDirectory directory to '$fourt
 echo "Once finished, run the verify.sh script." >> cpMvLevel/README
 #cat cpMvLevel/README
 rm userHash.txt directoryList.txt
-$SHELL
+

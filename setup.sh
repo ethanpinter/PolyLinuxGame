@@ -25,4 +25,13 @@ rm /home/polylinuxgame/PolyLinuxGame/touchLevel.sh
 rm /home/polylinuxgame/PolyLinuxGame/mkdirLevel.sh
 rm /home/polylinuxgame/PolyLinuxGame/cpMvLevel.sh
 rm /home/polylinuxgame/PolyLinuxGame/rmLevel.sh
+
+echo "Done!"
+echo "***************************************"
+echo "*   Welcome to The PolyLinux Game     *"
+echo "*  Change to different directories    *"
+echo "*  and use 'cat README.txt' to read   *"
+echo "*   the instructions for the level    *"
+echo "*             Good Luck!              *"
+echo "***************************************"
 #sleep 10
