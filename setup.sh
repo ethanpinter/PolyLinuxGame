@@ -13,10 +13,10 @@ cp -r /root/PolyLinuxGame/* /home/$userName/
 #cp -r /root/PolyLinuxGame/dictionaries /home/$userName/
 chown -R $userName /home/polylinuxgame
 
-su -c "bash touchLevel.sh"  $userName
-su -c "bash mkdirLevel.sh" $userName
-su -c "bash cpMvLevel.sh" $userName
-su -c "bash rmLevel.sh" $userName
+su -c "bash /home/polylinuxgame/touchLevel.sh"  $userName
+su -c "bash /home/polylinuxgame/mkdirLevel.sh" $userName
+su -c "bash /home/polylinuxgame/cpMvLevel.sh" $userName
+su -c "bash /home/polylinuxgame/rmLevel.sh" $userName
 
 rm -rf /home/polylinuxgame/dictionaries
 rm /home/polylinuxgame/userHash.txt
@@ -26,6 +26,7 @@ rm /home/polylinuxgame/mkdirLevel.sh
 rm /home/polylinuxgame/cpMvLevel.sh
 rm /home/polylinuxgame/rmLevel.sh
 
+clear
 su -l $userName
 
 echo "Done!"
