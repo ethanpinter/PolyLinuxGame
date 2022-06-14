@@ -21,7 +21,7 @@ rm cpMvLevel.sh
 rm rmLevel.sh
 rm -rf dictionaries
 rm README.md
-rm userHash.txt directoryList.txt
+rm userHash.txt
 cp -r /root/PolyLinuxGame/* /home/$userName/
 
 rm -rf /root/PolyLinuxGame

@@ -171,5 +171,6 @@ echo "Next...remove the .csv file inside the $secondTargetDirectory directory." 
 echo "Finally, remove the $thirdTargetDirectory directory." >> rmLevel/README
 echo "Once finished, run the verify.sh script." >> rmLevel/README
 #cat rmLevel/README
+rm directoryList.txt
 
 

@@ -148,5 +148,6 @@ echo "*"
 echo "Please change to the 'touchLevel' directory and create a new file named $createdFile.txt in the $targetDirectory directory" >> touchLevel/README
 echo "Once finished, run the verify.sh script." >> touchLevel/README
 #cat touchLevel/README
+rm directoryList.txt
 
 
