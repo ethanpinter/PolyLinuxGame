@@ -12,7 +12,7 @@ useradd -p $newPass -m $userName
 cp -r /root/PolyLinuxGame /home/$userName
 su -l $userName
 cd ..
-cd home/$userName/PolyLinuxGame || exit
+cd PolyLinuxGame || exit
 
 ./touchLevel
 ./mkdirLevel
