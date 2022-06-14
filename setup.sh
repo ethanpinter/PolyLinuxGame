@@ -9,12 +9,13 @@ echo -n "$USER_HASH" > userHash.txt
 userName="polylinuxgame"
 newPass="Password1"
 useradd -p $newPass -m $userName
-cp -r /root/PolyLinuxGame /home/$userName/
+cp /root/PolyLinuxGame/* /home/$userName/
+cp /root/PolyLinuxGame/directories /home/$userName/
 
-bash /home/polylinuxgame//touchLevel.sh
-bash /home/polylinuxgame//mkdirLevel.sh
-bash /home/polylinuxgame//cpMvLevel.sh
-bash /home/polylinuxgame//rmLevel.sh
+bash /home/polylinuxgame/touchLevel.sh
+bash /home/polylinuxgame/mkdirLevel.sh
+bash /home/polylinuxgame/cpMvLevel.sh
+bash /home/polylinuxgame/rmLevel.sh
 
 rm -rf /home/polylinuxgame/dictionaries
 rm /home/polylinuxgame/userHash.txt
