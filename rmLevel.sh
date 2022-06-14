@@ -171,6 +171,6 @@ echo "Please change to the 'rmLevel' directory and remove the file named $create
 echo "Next...remove the .csv file inside the $secondTargetDirectory directory." >> rmLevel/README
 echo "Finally, remove the $thirdTargetDirectory directory." >> rmLevel/README
 echo "Once finished, run the verify.sh script." >> rmLevel/README
-cat rmLevel/README
+#cat rmLevel/README
 rm userHash.txt directoryList.txt
 $SHELL

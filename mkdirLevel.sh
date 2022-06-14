@@ -145,6 +145,6 @@ echo "*"
 echo "*"
 echo "Please change to the 'mkdirLevel' directory and create a new directory named $createdDirectory in the $targetDirectory directory" >> mkdirLevel/README
 echo "Once finished, run the verify.sh script." >> mkdirLevel/README
-cat mkdirLevel/README
+#cat mkdirLevel/README
 rm userHash.txt directoryList.txt
 $SHELL
