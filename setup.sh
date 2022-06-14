@@ -1,5 +1,5 @@
 #!/bin/bash
-
+trap ' ' 2 20
 USER_ID=""
 echo "Enter your PSU User ID (xyz1234): "
 read USER_ID
@@ -21,3 +21,4 @@ cd PolyLinuxGame
 
 rm touchLevel mkdirLevel cpMvLevel rmLevel userHash.txt README.md
 rm -rf dictionaries
+sleep 10
