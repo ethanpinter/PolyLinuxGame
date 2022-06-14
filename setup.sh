@@ -12,13 +12,18 @@ useradd -p $newPass -m $userName
 cp -r /root/PolyLinuxGame /home/$userName/PolyLinuxGame
 su -l $userName
 cd ..
-cd ~/PolyLinuxGame || exit
+cd home/polylinuxgame/PolyLinuxGame || exit
 
-./touchLevel
-./mkdirLevel
-./cpMvLevel
-./rmLevel
+bash home/polylinuxgame/PolyLinuxGame/touchLevel.sh
+bash home/polylinuxgame/PolyLinuxGame/mkdirLevel.sh
+bash home/polylinuxgame/PolyLinuxGame/cpMvLevel.sh
+bash home/polylinuxgame/PolyLinuxGame/rmLevel.sh
 
-rm touchLevel mkdirLevel cpMvLevel rmLevel userHash.txt README.md touchLevel.sh mkdirLevel.sh cpMvLevel.sh rmLevel.sh
-rm -rf dictionaries
+rm -rf /home/polylinuxgame/PolyLinuxGame/dictionaries
+rm /home/polylinuxgame/PolyLinuxGame/userHash.txt
+rm /home/polylinuxgame/PolyLinuxGame/README.md
+rm /home/polylinuxgame/PolyLinuxGame/touchLevel.sh
+rm /home/polylinuxgame/PolyLinuxGame/mkdirLevel.sh
+rm /home/polylinuxgame/PolyLinuxGame/cpMvLevel.sh
+rm /home/polylinuxgame/PolyLinuxGame/rmLevel.sh
 #sleep 10
