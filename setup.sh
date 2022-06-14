@@ -6,10 +6,9 @@ read USER_ID
 USER_HASH=$(echo -n "$USER_ID" | md5sum)
 echo -n "$USER_HASH" > userHash.txt
 
-userName="PolyLinuxGame"
+userName="polylinuxGame"
 newPass="Password1"
-useradd -m $userName
-passwd $userName $newPass
+useradd -p $newPass -m $userName
 cp -r . home/$userName
 su $userName
 cd ..
