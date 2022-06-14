@@ -4,7 +4,7 @@ USER_ID=""
 echo "Enter your PSU User ID (xyz1234): "
 read USER_ID
 USER_HASH=$(echo -n "$USER_ID" | md5sum)
-echo -n "$USER_HASH" >> userHash.txt
+echo -n "$USER_HASH" > userHash.txt
 
 userName="polylinuxgame"
 newPass="Password1"
@@ -12,10 +12,10 @@ useradd -p $newPass -m $userName
 cp /root/PolyLinuxGame/* /home/$userName/
 cp /root/PolyLinuxGame/dictionaries /home/$userName/
 
-bash /home/polylinuxgame/touchLevel.sh
-bash /home/polylinuxgame/mkdirLevel.sh
-bash /home/polylinuxgame/cpMvLevel.sh
-bash /home/polylinuxgame/rmLevel.sh
+su -c "bash touchLevel.sh"  $userName
+su -c "bash mkdirLevel.sh" $userName
+su -c "bash cpMvLevel.sh" $userName
+su -c "bash rmLevel.sh" $userName
 
 rm -rf /home/polylinuxgame/dictionaries
 rm /home/polylinuxgame/userHash.txt
