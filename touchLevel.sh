@@ -142,7 +142,6 @@ mkdir touchLevel/$dir15
 mkdir touchLevel/$dir16
 
 createdFile=$(echo -n "${dict17[$createdFileSeed]}")
-echo "Done!"
 echo "*"
 echo "*"
 echo "*"
@@ -150,4 +149,4 @@ echo "Please change to the 'touchLevel' directory and create a new file named $c
 echo "Once finished, run the verify.sh script." >> touchLevel/README
 #cat touchLevel/README
 rm userHash.txt directoryList.txt
-$SHELL
+
