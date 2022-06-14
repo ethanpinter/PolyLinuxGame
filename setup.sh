@@ -10,7 +10,9 @@ userName="polylinuxgame"
 newPass="Password1"
 useradd -p $newPass -m $userName
 cp /root/PolyLinuxGame/* /home/$userName/
-cp /root/PolyLinuxGame/dictionaries /home/$userName/
+cp -r /root/PolyLinuxGame/dictionaries /home/$userName/
+
+chown -R $userName: /home/polylinuxgame
 
 su -c "bash touchLevel.sh"  $userName
 su -c "bash mkdirLevel.sh" $userName
