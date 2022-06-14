@@ -8,14 +8,14 @@ echo -n "$USER_HASH" > userHash.txt
 
 userName="PolyLinuxGame"
 newPass="Password1"
-adduser -m $userName
+useradd -m $userName
 passwd $userName $newPass
 cp -r . home/$userName
 su $userName
 cd ..
 cd home/$userName || exit
 
-./touchLevel
-./mkdirLevel
-./cpMvLevel
-./rmLevel
+#./touchLevel
+#./mkdirLevel
+#./cpMvLevel
+#./rmLevel

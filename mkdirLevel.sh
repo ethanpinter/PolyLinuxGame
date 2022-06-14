@@ -40,14 +40,7 @@ readarray -t dict17 <dictionaries/createdDirectoryDictionary.txt
 # Thereafter, you can refer to the lines by number. The first line is "${lines[0]}" and the second is "${lines[1]}", etc.
 
 ## read in user ID and generate hash with combined password
-USER_ID=""
-echo "Enter your PSU User ID (xyz1234): "
-read USER_ID
-USER_HASH=$(echo -n "$USER_ID" | md5sum)
-echo -n "$USER_HASH" > userHash.txt
 
-pseudoRANDcapture=$(cut -c 5 userHash.txt)
-pseudoRAND=$(echo "ibase=16; $pseudoRANDcapture" | bc)
 
 loc1=$(cut -c 1 userHash.txt)
 loc2=$(cut -c 2 userHash.txt)
