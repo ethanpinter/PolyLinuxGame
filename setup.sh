@@ -21,7 +21,6 @@ rm cpMvLevel.sh
 rm rmLevel.sh
 rm -rf dictionaries
 rm README.md
-rm setup.sh
 rm userHash.txt directoryList.txt
 cp -r /root/PolyLinuxGame/* /home/$userName/
 
@@ -31,7 +30,7 @@ rm -rf /root/PolyLinuxGame
 
 clear
 
-
+rm setup.sh
 echo "Done!"
 echo "***************************************"
 echo "*   Welcome to The PolyLinux Game     *"
