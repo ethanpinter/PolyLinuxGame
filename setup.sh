@@ -1,5 +1,5 @@
 #!/bin/bash
-trap ' ' 2 20
+#trap ' ' 2 20
 USER_ID=""
 echo "Enter your PSU User ID (xyz1234): "
 read USER_ID
@@ -9,16 +9,16 @@ echo -n "$USER_HASH" > userHash.txt
 userName="polylinuxgame"
 newPass="Password1"
 useradd -p $newPass -m $userName
-cp -r /root/PolyLinuxGame /home/$userName
+cp -r /root/PolyLinuxGame /home/$userName/PolyLinuxGame
 su -l $userName
 cd ..
 cd ~/PolyLinuxGame || exit
 
-bash PolyLinuxGame/touchLevel
-bash PolyLinuxGame/mkdirLevel
-bash PolyLinuxGame/cpMvLevel
-bash PolyLinuxGame/rmLevel
+./touchLevel
+./mkdirLevel
+./cpMvLevel
+./rmLevel
 
-rm touchLevel mkdirLevel cpMvLevel rmLevel userHash.txt README.md
+rm touchLevel mkdirLevel cpMvLevel rmLevel userHash.txt README.md touchLevel.sh mkdirLevel.sh cpMvLevel.sh rmLevel.sh
 rm -rf dictionaries
-sleep 10
+#sleep 10
