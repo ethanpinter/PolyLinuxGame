@@ -20,10 +20,10 @@ preFinalHash=$((find $levelToCheck -type f -print0  | sort -z | xargs -0 md5sum;
 echo $USER_HASH$preFinalHash > hashCheck.txt
 preFinal=$(cut -c 1-64 hashCheck.txt)
 echo $preFinal > final.txt
-finalHash=$(md5sum final.txt | cut -c 1-32)
+finalHash=$(md5sum final.txt | cut -c 1-32 | base64)
 echo "*"
 echo "*"
 echo "*"
 echo "Take this hash and input it in the grading system. Be sure to copy it exactly!"
-echo "${finalHash:0:32}"
+echo "${finalHash:0:10}"
 rm final.txt hashCheck.txt

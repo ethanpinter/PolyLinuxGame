@@ -45,7 +45,8 @@ echo "*  and use 'cat README.txt' to read   *"
 echo "*   the instructions for the level    *"
 echo "*             Good Luck!              *"
 echo "*    You created this session on:     *"
-echo "*             $currentDate            *"
+echo "*             $currentDate              *"
 echo "***************************************"
+rm currentDate.txt
 su -l $userName
 #sleep 10
