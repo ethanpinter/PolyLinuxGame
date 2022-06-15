@@ -171,9 +171,18 @@ echo "move me" > level3/$targetDirectory/$createdFile.txt
 echo "*"
 echo "*"
 echo "*"
-echo "Please change to the 'level3' directory and copy the file named $createdFile.txt in the $targetDirectory directory into the $secondTargetDirectory directory." >> level3/README
-echo "Next...copy all the txt files from $secondTargetDirectory into $thirdTargetDirectory" >> level3/README
-echo "Finally, change the name of the $thirdTargetDirectory directory to '$fourthTargetDirectory'." >> level3/README
-echo "Once finished, run the verify.sh script." >> level3/README
+echo "*********************************************************************************************"
+echo "* Level 1                                                                                   *"
+echo "* Please change to the 'level3' directory and copy the file named $createdFile.txt in the $targetDirectory directory into the $secondTargetDirectory directory.  *" >> level3/README
+echo "* Once finished, run the verify.sh script.                                                   *" >> level3/README
+echo "*********************************************************************************************"
+echo "* Level 2                                                                                    *"
+echo "* Now...copy all the txt files from $secondTargetDirectory into $thirdTargetDirectory        *" >> level3/README
+echo "* Once finished, run the verify.sh script.                                                   *" >> level3/README
+echo "**********************************************************************************************"
+echo "* Level 3                                                                                    *"
+echo "* Finally, change the name of the $thirdTargetDirectory directory to '$fourthTargetDirectory'." >> level3/README
+echo "* Once finished, run the verify.sh script.                                                   *" >> level3/README
+echo "*********************************************************************************************"
 #cat level3/README
 rm directoryList.txt

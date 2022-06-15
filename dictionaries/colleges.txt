@@ -1,0 +1,16 @@
+pennState
+ohioState
+michiganState
+indianaUniversity
+johnsHopkinsUniversity
+ucla
+cornell
+yale
+princeton
+harvard
+alabamaState
+vanderbiltUniversity
+coloradoState
+notreDame
+georgetownUniversity
+universityOfUtah
