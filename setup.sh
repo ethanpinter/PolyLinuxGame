@@ -8,7 +8,7 @@ USER_ID=""
 echo "Enter your PSU email (xyz1234@psu.edu): "
 read USER_ID
 echo -n "$USER_ID" > userID.txt
-USER_HASH=$(echo -n "$USER_ID" | md5sum)
+USER_HASH=$(echo -n "$USER_ID$currentDate" | md5sum)
 echo -n "$USER_HASH" > userHash.txt
 
 userName="polylinuxgame"

@@ -1,6 +1,4 @@
 #!/bin/bash
-USER_ID=$(head -n 1 $HOME/userID.txt)
-currentDate=$(head -n 1 $HOME/currentDate.txt)
 USER_HASH=${USER_HASH:0:32}
 levelToCheck=$HOME/level1
 checkDir=$(ls -R $levelToCheck)
@@ -11,7 +9,8 @@ for i in ${list[$i]}
 do
     checkDir+=$(cat "$i")
 done
-finalHash=$(echo -n "$USER_ID$checkDir$currentDate" | md5sum)
+echo $checkDir
+finalHash=$(echo -n "$USER_HASH$checkDir" | md5sum)
 echo $finalHash > finalHash.txt
 finalHash=$(cut -c 1-32 finalHash.txt)
 echo "*"
