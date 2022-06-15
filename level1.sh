@@ -141,6 +141,7 @@ mkdir level1/$dir16
 
 cp level1Verify.sh level1/
 
+
 createdFile=$(echo -n "${dict17[$createdFileSeed]}")
 echo "*"
 echo "*"
