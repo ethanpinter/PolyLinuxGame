@@ -18,35 +18,32 @@ declare -a dict15
 declare -a dict16
 declare -a dict17
 
-readarray -t dict1 <dictionaries/airlines.txt
-readarray -t dict11 <dictionaries/appliances.txt
-readarray -t dict7 <dictionaries/beerBrands.txt
-readarray -t dict16 <dictionaries/candy.txt
-readarray -t dict15 <dictionaries/carBrands.txt
-readarray -t dict10 <dictionaries/cheese.txt
-readarray -t dict9 <dictionaries/cities.txt
-readarray -t dict14 <dictionaries/clothingBrands.txt
-readarray -t dict4 <dictionaries/instruments.txt
-readarray -t dict13 <dictionaries/countries.txt
-readarray -t dict2 <dictionaries/dogBreeds.txt
-readarray -t dict6 <dictionaries/fruits.txt
-readarray -t dict8 <dictionaries/operatingSystems.txt
-readarray -t dict12 <dictionaries/seasonings.txt
-readarray -t dict3 <dictionaries/sports.txt
-readarray -t dict5 <dictionaries/fastFood.txt
+readarray -t dict5 <dictionaries/airlines.txt
+readarray -t dict16 <dictionaries/appliances.txt
+readarray -t dict4 <dictionaries/beerBrands.txt
+readarray -t dict3 <dictionaries/candy.txt
+readarray -t dict11 <dictionaries/carBrands.txt
+readarray -t dict8 <dictionaries/cheese.txt
+readarray -t dict15 <dictionaries/cities.txt
+readarray -t dict7 <dictionaries/clothingBrands.txt
+readarray -t dict10 <dictionaries/instruments.txt
+readarray -t dict9 <dictionaries/countries.txt
+readarray -t dict6 <dictionaries/dogBreeds.txt
+readarray -t dict12 <dictionaries/fruits.txt
+readarray -t dict2 <dictionaries/operatingSystems.txt
+readarray -t dict1 <dictionaries/seasonings.txt
+readarray -t dict14 <dictionaries/sports.txt
+readarray -t dict13 <dictionaries/fastFood.txt
+
 readarray -t dict17 <dictionaries/createdDirectoryDictionary.txt
 
 # https://stackoverflow.com/questions/22466704/assign-each-line-of-file-to-be-a-variable
 # Thereafter, you can refer to the lines by number. The first line is "${lines[0]}" and the second is "${lines[1]}", etc.
 
-pseudoRANDcapture=$(cut -c 2 userHash.txt)
-secondCapture=$(cut -c 6 userHash.txt)
-thirdCapture=$(cut -c 8 userHash.txt)
-fourthCapture=$(cut -c 12 userHash.txt)
+
+
+pseudoRANDcapture=$(cut -c 5 userHash.txt)
 pseudoRAND=$(echo "ibase=16; $pseudoRANDcapture" | bc)
-secondRAND=$(echo "ibase=16; $secondCapture" | bc)
-thirdRAND=$(echo "ibase=16; $thirdCapture" | bc)
-fourthRAND=$(echo "ibase=16; $fourthCapture" | bc)
 
 loc1=$(cut -c 1 userHash.txt)
 loc2=$(cut -c 2 userHash.txt)
@@ -64,7 +61,7 @@ loc13=$(cut -c 13 userHash.txt)
 loc14=$(cut -c 14 userHash.txt)
 loc15=$(cut -c 15 userHash.txt)
 loc16=$(cut -c 16 userHash.txt)
-loc17=$(cut -c 17 userHash.txt)
+loc17=$(cut -c 5 userHash.txt)
 
 dir1Seed=$(echo "ibase=16; $loc1" | bc) 
 dir2Seed=$(echo "ibase=16; $loc2" | bc)
@@ -123,55 +120,34 @@ declare -a directoryDict
 readarray -t directoryDict <directoryList.txt
 
 targetDirectorySeed=$pseudoRAND
-secondTargetDirectorySeed=$secondRAND
-thirdTargetDirectorySeed=$thirdRAND
-fourthTargetDirectorySeed=$fourthRAND
 targetDirectory=$(echo -n "${directoryDict[$targetDirectorySeed]}")
-secondTargetDirectory=$(echo -n "${directoryDict[$secondTargetDirectorySeed]}")
-thirdTargetDirectory=$(echo -n "${directoryDict[$thirdTargetDirectorySeed]}")
-fourthTargetDirectory=$(echo -n "${directoryDict[$fourthTargetDirectorySeed]}")
-## create static directories
-mkdir "cpMvLevel"
-mkdir cpMvLevel/$dir1
-mkdir cpMvLevel/$dir2
-mkdir cpMvLevel/$dir3
-mkdir cpMvLevel/$dir4
-mkdir cpMvLevel/$dir5
-mkdir cpMvLevel/$dir6
-mkdir cpMvLevel/$dir7
-mkdir cpMvLevel/$dir8
-mkdir cpMvLevel/$dir9
-## data filled
-mkdir cpMvLevel/$dir10
-mkdir cpMvLevel/$dir11
-mkdir cpMvLevel/$dir12
-mkdir cpMvLevel/$dir13
-mkdir cpMvLevel/$dir14
-mkdir cpMvLevel/$dir15
-mkdir cpMvLevel/$dir16
 
-## generate noise files
-firstDataFile=$(echo -n "${directoryDict[2]}.jpg")
-secondDataFile=$(echo -n "${directoryDict[5]}.txt")
-thirdDataFile=$(echo -n "${directoryDict[8]}.csv")
-fourthDataFile=$(echo -n "${directoryDict[13]}.txt")
-fifthDataFile=$(echo -n "${directoryDict[12]}.pcap")
-sixthDataFile=$(echo -n "${directoryDict[1]}.log")
-touch cpMvLevel/$secondTargetDirectory/$firstDataFile
-touch cpMvLevel/$secondTargetDirectory/$secondDataFile
-touch cpMvLevel/$secondTargetDirectory/$thirdDataFile
-touch cpMvLevel/$secondTargetDirectory/$fourthDataFile
-touch cpMvLevel/$secondTargetDirectory/$fifthDataFile
-touch cpMvLevel/$secondTargetDirectory/$sixthDataFile
+## create static directories
+mkdir "level1"
+mkdir level1/$dir1
+mkdir level1/$dir2
+mkdir level1/$dir3
+mkdir level1/$dir4
+mkdir level1/$dir5
+mkdir level1/$dir6
+mkdir level1/$dir7
+mkdir level1/$dir8
+mkdir level1/$dir9
+mkdir level1/$dir10
+mkdir level1/$dir11
+mkdir level1/$dir12
+mkdir level1/$dir13
+mkdir level1/$dir14
+mkdir level1/$dir15
+mkdir level1/$dir16
+
 createdFile=$(echo -n "${dict17[$createdFileSeed]}")
-touch cpMvLevel/$targetDirectory/$createdFile.txt
-echo "move me" > cpMvLevel/$targetDirectory/$createdFile.txt
 echo "*"
 echo "*"
 echo "*"
-echo "Please change to the 'cpMvLevel' directory and copy the file named $createdFile.txt in the $targetDirectory directory into the $secondTargetDirectory directory." >> cpMvLevel/README
-echo "Next...copy all the txt files from $secondTargetDirectory into $thirdTargetDirectory" >> cpMvLevel/README
-echo "Finally, change the name of the $thirdTargetDirectory directory to '$fourthTargetDirectory'." >> cpMvLevel/README
-echo "Once finished, run the verify.sh script." >> cpMvLevel/README
-#cat cpMvLevel/README
+echo "Please change to the 'level1' directory and create a new file named $createdFile.txt in the $targetDirectory directory" >> level1/README
+echo "Once finished, run the verify.sh script." >> level1/README
+#cat level1/README
 rm directoryList.txt
+
+

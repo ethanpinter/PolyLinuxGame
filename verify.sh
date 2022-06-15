@@ -6,9 +6,12 @@
 ## take todays date and inject it in the hash value yyyy/mm/dd
 
 USER_ID=""
-echo "Enter your PSU User ID (xyz1234): "
+currentDate=""
+echo "Enter your PSU email (xyz1234@psu.edu): "
 read USER_ID
-USER_HASH=$(echo -n "$USER_ID" | md5sum)
+echo "Enter the date you created the game (YYYY-MM-DD):"
+read currentDate
+USER_HASH=$(echo -n $USER_ID$currentDate | md5sum)
 USER_HASH=${USER_HASH:0:32}
 selectedLevel=""
 

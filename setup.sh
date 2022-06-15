@@ -12,15 +12,15 @@ userName="polylinuxgame"
 newPass="Password1"
 useradd -p $newPass -m $userName
 
-bash touchLevel.sh
-bash mkdirLevel.sh
-bash cpMvLevel.sh
-bash rmLevel.sh
+bash level1.sh
+bash level2.sh
+bash level3.sh
+bash level4.sh
 
-rm touchLevel.sh
-rm mkdirLevel.sh
-rm cpMvLevel.sh
-rm rmLevel.sh
+rm level1.sh
+rm level2.sh
+rm level3.sh
+rm level4.sh
 rm -rf dictionaries
 rm README.md
 rm userHash.txt
@@ -32,7 +32,7 @@ chown -R $userName /home/polylinuxgame
 
 clear
 
-rm setup.sh
+#rm setup.sh
 echo "Done!" 
 echo "***************************************"
 echo "*   Welcome to The PolyLinux Game     *"
