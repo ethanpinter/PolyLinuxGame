@@ -1,7 +1,7 @@
 #!/bin/bash
 
-USER_ID=$(head -n 1 $HOME/userID.txt)
-currentDate=$(head -n 1 $HOME/currentDate.txt)
+USER_ID=$(head -n 1 $HOME/.userID.txt)
+currentDate=$(head -n 1 $HOME/.currentDate.txt)
 USER_HASH=${USER_HASH:0:32}
 levelToCheck=$HOME/level3
 checkDir=$(ls -la $levelToCheck)
