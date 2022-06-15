@@ -143,7 +143,7 @@ mkdir level1/$dir16
 
 mv level1Verify.sh /level1
 
-currentDate=$(cut -c 1-10 currentDate.txt)
+currentDate=$(head -n 1 currentDate.txt)
 echo $currentDate
 createdFile=$(echo -n "${dict17[$createdFileSeed]}")
 echo "*"
