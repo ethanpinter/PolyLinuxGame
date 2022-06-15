@@ -47,6 +47,6 @@ echo "*             Good Luck!              *"
 echo "*    You created this session on:     *"
 echo "*             $currentDate              *"
 echo "***************************************"
-rm currentDate.txt
+rm /home/polylinuxgame/currentDate.txt
 su -l $userName
 #sleep 10
