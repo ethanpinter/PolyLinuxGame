@@ -1,7 +1,7 @@
 #!/bin/bash
 #trap ' ' 2 20
 
-currentDate=$(date +"%Y-%m-%d") > currentDate.txt
+date +"%Y-%m-%d" > currentDate.txt
 USER_ID=""
 echo "Enter your PSU email (xyz1234@psu.edu): "
 read USER_ID
