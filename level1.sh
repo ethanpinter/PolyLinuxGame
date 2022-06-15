@@ -141,10 +141,15 @@ mkdir level1/$dir14
 mkdir level1/$dir15
 mkdir level1/$dir16
 
+mv level1Verify.sh /level1
+
+currentDate=$(cut -c 1-10 currentDate.txt)
+echo $currentDate
 createdFile=$(echo -n "${dict17[$createdFileSeed]}")
 echo "*"
 echo "*"
 echo "*"
+echo "The date is $currentDate"
 echo "Please change to the 'level1' directory and create a new file named $createdFile.txt in the $targetDirectory directory" >> level1/README
 echo "Once finished, run the verify.sh script." >> level1/README
 #cat level1/README
