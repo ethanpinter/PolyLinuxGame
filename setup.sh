@@ -2,6 +2,7 @@
 #trap ' ' 2 20
 
 date +"%Y-%m-%d" > currentDate.txt
+currentDate=$(cut -c 1 currentDate.txt)
 USER_ID=""
 echo "Enter your PSU email (xyz1234@psu.edu): "
 read USER_ID
@@ -25,7 +26,7 @@ rm -rf dictionaries
 rm README.md
 rm userHash.txt
 cp -r /root/PolyLinuxGame/* /home/$userName/
-
+rm level1Verify.sh level2Verify.sh level3Verify.sh level4Verify.sh
 rm -rf /root/PolyLinuxGame
 #cp -r /root/PolyLinuxGame/dictionaries /home/$userName/
 chown -R $userName /home/polylinuxgame
@@ -41,7 +42,7 @@ echo "*  and use 'cat README.txt' to read   *"
 echo "*   the instructions for the level    *"
 echo "*             Good Luck!              *"
 echo "*    You created this session on:     *"
-echo "*            $currentDate             *"
+echo "*         $currentDate      *"
 echo "***************************************"
 su -l $userName
 #sleep 10
