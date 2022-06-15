@@ -138,8 +138,8 @@ mkdir level2/$dir14
 mkdir level2/$dir15
 mkdir level2/$dir16
 
-mv level2Verify.sh /level2
-currentDate=$(head -n 1 currentDate.txt)
+cp level2Verify.sh level2/
+
 createdDirectory=$(echo -n "${dict17[$createdDirectorySeed]}")
 echo "*"
 echo "*"

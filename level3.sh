@@ -150,7 +150,7 @@ mkdir level3/$dir14
 mkdir level3/$dir15
 mkdir level3/$dir16
 
-mv level3Verify.sh /level3
+cp level3Verify.sh level3/
 
 ## generate noise files
 firstDataFile=$(echo -n "${directoryDict[2]}.jpg")

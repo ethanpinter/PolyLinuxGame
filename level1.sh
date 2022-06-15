@@ -139,7 +139,7 @@ mkdir level1/$dir14
 mkdir level1/$dir15
 mkdir level1/$dir16
 
-mv level1Verify.sh /level1
+cp level1Verify.sh level1/
 
 createdFile=$(echo -n "${dict17[$createdFileSeed]}")
 echo "*"
