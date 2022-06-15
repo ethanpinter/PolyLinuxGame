@@ -171,21 +171,20 @@ echo "move me" > level3/$targetDirectory/$createdFile.txt
 echo "*"
 echo "*"
 echo "*"
-echo "*********************************************************************************" >> level3/README
-echo "* Level 1                                                                       *" >> level3/README
-echo "* Copy the file named $createdFile.txt in the $targetDirectory directory        *" >> level3/README
-echo "* into the $secondTargetDirectory directory.                                    *" >> level3/README
-echo "* Once finished, run the verify.sh script.                                      *" >> level3/README
-echo "*********************************************************************************" >> level3/README
-echo "* Level 2                                                                       *" >> level3/README
-echo "* Copy all the txt files from $secondTargetDirectory into $thirdTargetDirectory *" >> level3/README
-echo "* into $thirdTargetDirectory                                                    *" >> level3/README
-echo "* Once finished, run the verify.sh script.                                      *" >> level3/README
-echo "*********************************************************************************" >> level3/README
-echo "* Level 3                                                                       *" >> level3/README
-echo "* Change the name of the $thirdTargetDirectory directory to:                    *" >> level3/README
-echo "* '$fourthTargetDirectory'                                                      *" >> level3/README
-echo "* Once finished, run the verify.sh script.                                      *" >> level3/README
-echo "*********************************************************************************" >> level3/README
+echo "* Level 1" >> level3/README
+echo "* Copy the file named $createdFile.txt in the $targetDirectory directory" >> level3/README
+echo "* into the $secondTargetDirectory directory." >> level3/README
+echo "* Once finished, run the verify.sh script." >> level3/README
+echo "********************************************************" >> level3/README
+echo "* Level 2" >> level3/README
+echo "* Copy all the txt files from $secondTargetDirectory into $thirdTargetDirectory" >> level3/README
+echo "* into $thirdTargetDirectory." >> level3/README
+echo "* Once finished, run the verify.sh script." >> level3/README
+echo "********************************************************" >> level3/README
+echo "* Level 3" >> level3/README
+echo "* Change the name of the $thirdTargetDirectory directory to:" >> level3/README
+echo "* '$fourthTargetDirectory'" >> level3/README
+echo "* Once finished, run the verify.sh script." >> level3/README
+echo "********************************************************" >> level3/README
 #cat level3/README
 rm directoryList.txt
