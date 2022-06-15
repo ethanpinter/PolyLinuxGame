@@ -40,8 +40,6 @@ readarray -t dict17 <dictionaries/createdDirectoryDictionary.txt
 # https://stackoverflow.com/questions/22466704/assign-each-line-of-file-to-be-a-variable
 # Thereafter, you can refer to the lines by number. The first line is "${lines[0]}" and the second is "${lines[1]}", etc.
 
-
-
 pseudoRANDcapture=$(cut -c 5 userHash.txt)
 pseudoRAND=$(echo "ibase=16; $pseudoRANDcapture" | bc)
 
@@ -143,13 +141,10 @@ mkdir level1/$dir16
 
 mv level1Verify.sh /level1
 
-currentDate=$(head -n 1 currentDate.txt)
-echo $currentDate
 createdFile=$(echo -n "${dict17[$createdFileSeed]}")
 echo "*"
 echo "*"
 echo "*"
-echo "The date is $currentDate"
 echo "Please change to the 'level1' directory and create a new file named $createdFile.txt in the $targetDirectory directory" >> level1/README
 echo "Once finished, run the verify.sh script." >> level1/README
 #cat level1/README
