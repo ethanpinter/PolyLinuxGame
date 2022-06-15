@@ -5,7 +5,7 @@ currentDate=$(head -n 1 $HOME/currentDate.txt)
 USER_HASH=${USER_HASH:0:32}
 levelToCheck=$HOME/level4
 checkDir=$(ls -la $levelToCheck)
-finalHash=$($USER_ID$checkDir$currentDate | md5sum)
+finalHash=$(echo -n "$USER_ID$checkDir$currentDate" | md5sum)
 echo $finalHash > finalHash.txt
 finalHash=$(cut -c 1-32 finalHash.txt)
 echo "*"
