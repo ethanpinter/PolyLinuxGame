@@ -168,16 +168,16 @@ echo "remove me" > level4/$targetDirectory/$createdFile.txt
 echo "*"
 echo "*"
 echo "*"
-echo "* Level 1" >> level3/README
-echo "* Remove the file named $createdFile.txt in the $targetDirectory directory." >> level3/README
-echo "********************************************************" >> level3/README
-echo "* Level 2" >> level3/README
-echo "* Remove everything but the .csv file inside the $secondTargetDirectory directory" >> level3/README
-echo "********************************************************" >> level3/README
-echo "* Level 3" >> level3/README
-echo "* Remove the $thirdTargetDirectory directory" >> level3/README
-echo "* Once finished, run the verify.sh script." >> level3/README
-echo "********************************************************" >> level3/README
+echo "* Level 1" >> level4/README
+echo "* Remove the file named $createdFile.txt in the $targetDirectory directory." >> level4/README
+echo "********************************************************" >> level4/README
+echo "* Level 2" >> level4/README
+echo "* Remove everything but the .csv file inside the $secondTargetDirectory directory" >> level4/README
+echo "********************************************************" >> level4/README
+echo "* Level 3" >> level4/README
+echo "* Remove the $thirdTargetDirectory directory" >> level4/README
+echo "* Once finished, run the verify.sh script." >> level4/README
+echo "********************************************************" >> level4/README
 #cat level4/README
 rm directoryList.txt
 
