@@ -20,7 +20,7 @@ declare -a dict17
 
 readarray -t dict1 <dictionaries/airlines.txt
 readarray -t dict11 <dictionaries/appliances.txt
-readarray -t dict7 <dictionaries/beerBrands.txt
+readarray -t dict7 <dictionaries/colleges.txt
 readarray -t dict16 <dictionaries/candy.txt
 readarray -t dict15 <dictionaries/carBrands.txt
 readarray -t dict10 <dictionaries/cheese.txt
@@ -171,18 +171,19 @@ echo "move me" > level3/$targetDirectory/$createdFile.txt
 echo "*"
 echo "*"
 echo "*"
-echo "*********************************************************************************************"
-echo "* Level 1                                                                                   *"
-echo "* Please change to the 'level3' directory and copy the file named $createdFile.txt in the $targetDirectory directory into the $secondTargetDirectory directory.  *" >> level3/README
+echo "**********************************************************************************************" >> level3/README
+echo "* Level 1                                                                                    *" >> level3/README
+echo "* Please change to the 'level3' directory and copy the file named $createdFile.txt in the    *" >> level3/README
+echo "* $targetDirectory directory into the $secondTargetDirectory directory.                      *" >> level3/README
 echo "* Once finished, run the verify.sh script.                                                   *" >> level3/README
-echo "*********************************************************************************************"
-echo "* Level 2                                                                                    *"
+echo "**********************************************************************************************" >> level3/README
+echo "* Level 2                                                                                    *" >> level3/README
 echo "* Now...copy all the txt files from $secondTargetDirectory into $thirdTargetDirectory        *" >> level3/README
 echo "* Once finished, run the verify.sh script.                                                   *" >> level3/README
-echo "**********************************************************************************************"
-echo "* Level 3                                                                                    *"
+echo "**********************************************************************************************" >> level3/README
+echo "* Level 3                                                                                    *" >> level3/README
 echo "* Finally, change the name of the $thirdTargetDirectory directory to '$fourthTargetDirectory'." >> level3/README
 echo "* Once finished, run the verify.sh script.                                                   *" >> level3/README
-echo "*********************************************************************************************"
+echo "*********************************************************************************************" >> level3/README
 #cat level3/README
 rm directoryList.txt

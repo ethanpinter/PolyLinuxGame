@@ -20,7 +20,7 @@ declare -a dict17
 
 readarray -t dict5 <dictionaries/airlines.txt
 readarray -t dict16 <dictionaries/appliances.txt
-readarray -t dict4 <dictionaries/beerBrands.txt
+readarray -t dict4 <dictionaries/colleges.txt
 readarray -t dict3 <dictionaries/candy.txt
 readarray -t dict11 <dictionaries/carBrands.txt
 readarray -t dict8 <dictionaries/cheese.txt
