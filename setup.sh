@@ -3,7 +3,7 @@
 
 currentDate=$(date +"%Y-%m-%d")
 USER_ID=""
-echo "Enter your PSU User ID (xyz1234): "
+echo "Enter your PSU email (xyz1234@psu.edu): "
 read USER_ID
 USER_HASH=$(echo -n "$USER_ID$currentDate" | md5sum)
 echo -n "$USER_HASH" > userHash.txt
