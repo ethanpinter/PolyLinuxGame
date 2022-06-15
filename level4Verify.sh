@@ -1,6 +1,6 @@
 #!/bin/bash
 
-USER_ID=""
+USER_ID=$(head -n 1 userID.txt)
 currentDate=$(head -n 1 currentDate.txt)
 USER_HASH=${USER_HASH:0:32}
 levelToCheck=$HOME/level4
