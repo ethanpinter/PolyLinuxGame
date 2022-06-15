@@ -2,7 +2,7 @@
 #trap ' ' 2 20
 
 date +"%Y-%m-%d" > currentDate.txt
-currentDate=$(cut -c 1 currentDate.txt)
+currentDate=$(head -n 1 currentDate.txt)
 USER_ID=""
 echo "Enter your PSU email (xyz1234@psu.edu): "
 read USER_ID
