@@ -9,7 +9,7 @@ declare -a list
 readarray -t list <fileList.txt
 for i in ${list[$i]}
 do
-    checkDir+=$i
+    checkDir+=$(cat "$i")
 done
 finalHash=$(echo -n "$USER_ID$checkDir$currentDate" | md5sum)
 echo $finalHash > finalHash.txt
