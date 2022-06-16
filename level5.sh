@@ -43,6 +43,7 @@ readarray -t dict17 <dictionaries/createdDirectoryDictionary.txt
 pseudoRANDcapture=$(cut -c 10 userHash.txt)
 pseudoRAND=$(echo "ibase=16; $pseudoRANDcapture" | bc)
 
+
 loc1=$(cut -c 1 userHash.txt)
 loc2=$(cut -c 2 userHash.txt)
 loc3=$(cut -c 3 userHash.txt)
@@ -145,42 +146,45 @@ mkdir level5/$dir14
 mkdir level5/$dir15
 mkdir level5/$dir16
 
-
+## pseudorandom
+secondRAND=$(echo $pseudoRAND + 1 | bc)
+randomDict=$(echo -n "dict$pseudoRAND")
+randomDict2=$(echo -n "dict$secondRAND")
 ## noise files
-mkdir level5/$targetDirectory/${dict10[1]}
-mkdir level5/$targetDirectory/${dict10[2]}
-mkdir level5/$targetDirectory/${dict10[3]}
-mkdir level5/$targetDirectory/${dict10[4]}
-mkdir level5/$targetDirectory/${dict10[5]}
-mkdir level5/$targetDirectory/${dict7[2]}
+mkdir level5/$targetDirectory/${randomDict[1]}
+mkdir level5/$targetDirectory/${randomDict[2]}
+mkdir level5/$targetDirectory/${randomDict[3]}
+mkdir level5/$targetDirectory/${randomDict[4]}
+mkdir level5/$targetDirectory/${randomDict[5]}
+mkdir level5/$targetDirectory/${randomDict2[2]}
 
-mkdir level5/$noiseDirectory1/${dict10[1]}
-mkdir level5/$noiseDirectory1/${dict10[2]}
-mkdir level5/$noiseDirectory1/${dict10[3]}
-mkdir level5/$noiseDirectory1/${dict10[4]}
-mkdir level5/$noiseDirectory1/${dict10[5]}
-mkdir level5/$noiseDirectory1/${dict7[2]}
+mkdir level5/$noiseDirectory1/${randomDict[1]}
+mkdir level5/$noiseDirectory1/${randomDict[2]}
+mkdir level5/$noiseDirectory1/${randomDict[3]}
+mkdir level5/$noiseDirectory1/${randomDict[4]}
+mkdir level5/$noiseDirectory1/${randomDict[5]}
+mkdir level5/$noiseDirectory1/${randomDict2[2]}
 
-mkdir level5/$noiseDirectory2/${dict10[1]}
-mkdir level5/$noiseDirectory2/${dict10[2]}
-mkdir level5/$noiseDirectory2/${dict10[3]}
-mkdir level5/$noiseDirectory2/${dict10[4]}
-mkdir level5/$noiseDirectory2/${dict10[5]}
-mkdir level5/$noiseDirectory2/${dict7[2]}
+mkdir level5/$noiseDirectory2/${randomDict[1]}
+mkdir level5/$noiseDirectory2/${randomDict[2]}
+mkdir level5/$noiseDirectory2/${randomDict[3]}
+mkdir level5/$noiseDirectory2/${randomDict[4]}
+mkdir level5/$noiseDirectory2/${randomDict[5]}
+mkdir level5/$noiseDirectory2/${randomDict2[2]}
 
-mkdir level5/$noiseDirectory3/${dict10[1]}
-mkdir level5/$noiseDirectory3/${dict10[2]}
-mkdir level5/$noiseDirectory3/${dict10[3]}
-mkdir level5/$noiseDirectory3/${dict10[4]}
-mkdir level5/$noiseDirectory3/${dict10[5]}
-mkdir level5/$noiseDirectory3/${dict7[2]}
+mkdir level5/$noiseDirectory3/${randomDict[1]}
+mkdir level5/$noiseDirectory3/${randomDict[2]}
+mkdir level5/$noiseDirectory3/${randomDict[3]}
+mkdir level5/$noiseDirectory3/${randomDict[4]}
+mkdir level5/$noiseDirectory3/${randomDict[5]}
+mkdir level5/$noiseDirectory3/${randomDict2[2]}
 
-mkdir level5/$noiseDirectory4/${dict10[1]}
-mkdir level5/$noiseDirectory4/${dict10[2]}
-mkdir level5/$noiseDirectory4/${dict10[3]}
-mkdir level5/$noiseDirectory4/${dict10[4]}
-mkdir level5/$noiseDirectory4/${dict10[5]}
-mkdir level5/$noiseDirectory4/${dict7[2]}
+mkdir level5/$noiseDirectory4/${randomDict[1]}
+mkdir level5/$noiseDirectory4/${randomDict[2]}
+mkdir level5/$noiseDirectory4/${randomDict[3]}
+mkdir level5/$noiseDirectory4/${randomDict[4]}
+mkdir level5/$noiseDirectory4/${randomDict[5]}
+mkdir level5/$noiseDirectory4/${randomDict2[2]}
 
 cp level5Verify.sh level5/
 
