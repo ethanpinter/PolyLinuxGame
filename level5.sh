@@ -119,36 +119,69 @@ readarray -t directoryDict <directoryList.txt
 
 targetDirectorySeed=$pseudoRAND
 targetDirectory=$(echo -n "${directoryDict[$targetDirectorySeed]}")
+noiseDirectory1=$(echo -n "${directoryDict[1]}")
+noiseDirectory2=$(echo -n "${directoryDict[4]}")
+noiseDirectory3=$(echo -n "${directoryDict[5]}")
+noiseDirectory4=$(echo -n "${directoryDict[8]}")
+
+
 
 ## create static directories
-mkdir "level1"
-mkdir level1/$dir1
-mkdir level1/$dir2
-mkdir level1/$dir3
-mkdir level1/$dir4
-mkdir level1/$dir5
-mkdir level1/$dir6
-mkdir level1/$dir7
-mkdir level1/$dir8
-mkdir level1/$dir9
-mkdir level1/$dir10
-mkdir level1/$dir11
-mkdir level1/$dir12
-mkdir level1/$dir13
-mkdir level1/$dir14
-mkdir level1/$dir15
-mkdir level1/$dir16
+mkdir "level5"
+mkdir level5/$dir1
+mkdir level5/$dir2
+mkdir level5/$dir3
+mkdir level5/$dir4
+mkdir level5/$dir5
+mkdir level5/$dir6
+mkdir level5/$dir7
+mkdir level5/$dir8
+mkdir level5/$dir9
+mkdir level5/$dir10
+mkdir level5/$dir11
+mkdir level5/$dir12
+mkdir level5/$dir13
+mkdir level5/$dir14
+mkdir level5/$dir15
+mkdir level5/$dir16
 
-cp level1Verify.sh level1/
 
+## noise files
+mkdir level5/$targetDirectory/${dict10[1]}
+mkdir level5/$targetDirectory/${dict10[2]}
+mkdir level5/$targetDirectory/${dict10[3]}
+mkdir level5/$targetDirectory/${dict10[4]}
+mkdir level5/$targetDirectory/${dict10[5]}
+mkdir level5/$noiseDirectory1/${dict7[2]}
+mkdir level5/$noiseDirectory1/${dict7[3]}
+mkdir level5/$noiseDirectory1/${dict7[4]}
+mkdir level5/$noiseDirectory1/${dict7[5]}
+
+mkdir level5/$noiseDirectory2/${dict7[2]}
+mkdir level5/$noiseDirectory2/${dict7[3]}
+mkdir level5/$noiseDirectory2/${dict7[4]}
+mkdir level5/$noiseDirectory2/${dict7[5]}
+
+mkdir level5/$noiseDirectory3/${dict7[2]}
+mkdir level5/$noiseDirectory3/${dict7[3]}
+mkdir level5/$noiseDirectory3/${dict7[4]}
+mkdir level5/$noiseDirectory3/${dict7[5]}
+
+mkdir level5/$noiseDirectory4/${dict7[2]}
+mkdir level5/$noiseDirectory4/${dict7[3]}
+mkdir level5/$noiseDirectory4/${dict7[4]}
+mkdir level5/$noiseDirectory4/${dict7[5]}
+
+cp level5Verify.sh level5/
 
 createdFile=$(echo -n "${dict17[$createdFileSeed]}")
 echo "*"
 echo "*"
 echo "*"
-echo "Create a new file named $createdFile.txt in the $targetDirectory directory" >> level1/README
-echo "Once finished, run the verify.sh script." >> level1/README
-#cat level1/README
+echo "Create a new file named $createdFile.txt in the $targetDirectory directory" >> level5/README ## in the directory unlike the others inside the $targetDirectory
+echo "Edit the contents of $createdFile to contain the hash of level4." >> level5/README
+echo "Once finished, run the verify.sh script." >> level5/README
+#cat level5/README
 rm directoryList.txt
 
 
