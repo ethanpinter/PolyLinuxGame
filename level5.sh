@@ -147,9 +147,10 @@ mkdir level5/$dir15
 mkdir level5/$dir16
 
 ## pseudorandom
-secondRAND=$(echo $pseudoRAND + 1 | bc)
+secondRAND=$((pseudoRAND + 1))
 randomDict=$(echo -n "dict$pseudoRAND") ## returns dict2 for example
 randomDict2=$(echo -n "dict$secondRAND")
+
 ## noise files
 mkdir level5/"$targetDirectory"/"${randomDict[1]}"
 mkdir level5/"$targetDirectory"/"${randomDict[2]}"
