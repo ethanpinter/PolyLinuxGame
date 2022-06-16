@@ -10,7 +10,7 @@ do
     checkDir+=$(cat "$i")
 done
 
-finalHash=$(echo -n "$USER_HASH$checkDir" | md5sum)
+finalHash=$(echo -n "$USER_HASH$checkDir" | md5sum | base64)
 echo $finalHash > finalHash.txt
 finalHash=$(cut -c 1-32 finalHash.txt)
 echo "*"
