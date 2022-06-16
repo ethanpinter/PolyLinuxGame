@@ -150,11 +150,11 @@ mkdir level4/$dir16
 cp level4Verify.sh level4/
 
 firstDataFile=$(echo -n "${directoryDict[2]}.jpg")
-secondDataFile=$(echo -n "${directoryDict[5]}.txt")
+secondDataFile=$(echo -n "${directoryDict[5]}.csv")
 thirdDataFile=$(echo -n "${directoryDict[8]}.csv")
 fourthDataFile=$(echo -n "${directoryDict[13]}.txt")
 fifthDataFile=$(echo -n "${directoryDict[12]}.pcap")
-sixthDataFile=$(echo -n "${directoryDict[1]}.log")
+sixthDataFile=$(echo -n "${directoryDict[1]}.csv")
 touch level4/$secondTargetDirectory/$firstDataFile
 touch level4/$secondTargetDirectory/$secondDataFile
 touch level4/$secondTargetDirectory/$thirdDataFile
@@ -172,7 +172,7 @@ echo "* Level 1" >> level4/README
 echo "* Remove the file named $createdFile.txt in the $targetDirectory directory." >> level4/README
 echo "********************************************************" >> level4/README
 echo "* Level 2" >> level4/README
-echo "* Remove everything but the .csv file inside the $secondTargetDirectory directory" >> level4/README
+echo "* Remove all the .csv files inside the $secondTargetDirectory directory" >> level4/README
 echo "********************************************************" >> level4/README
 echo "* Level 3" >> level4/README
 echo "* Remove the $thirdTargetDirectory directory" >> level4/README

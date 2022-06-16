@@ -9,7 +9,7 @@ for i in ${list[$i]}
 do
     checkDir+=$(cat "$i")
 done
-echo $checkDir
+
 finalHash=$(echo -n "$USER_HASH$checkDir" | md5sum)
 echo $finalHash > finalHash.txt
 finalHash=$(cut -c 1-32 finalHash.txt)

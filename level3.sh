@@ -167,6 +167,7 @@ touch level3/$secondTargetDirectory/$fifthDataFile
 touch level3/$secondTargetDirectory/$sixthDataFile
 createdFile=$(echo -n "${dict17[$createdFileSeed]}")
 touch level3/$targetDirectory/$createdFile.txt
+rm -rf $fourthTargetDirectory
 echo "move me" > level3/$targetDirectory/$createdFile.txt
 echo "*"
 echo "*"
@@ -178,7 +179,6 @@ echo "* Once finished, run the verify.sh script." >> level3/README
 echo "********************************************************" >> level3/README
 echo "* Level 2" >> level3/README
 echo "* Copy all the txt files from $secondTargetDirectory into $thirdTargetDirectory" >> level3/README
-echo "* into $thirdTargetDirectory." >> level3/README
 echo "* Once finished, run the verify.sh script." >> level3/README
 echo "********************************************************" >> level3/README
 echo "* Level 3" >> level3/README
