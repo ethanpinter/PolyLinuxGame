@@ -19,11 +19,14 @@ bash level1.sh
 bash level2.sh
 bash level3.sh
 bash level4.sh
+bash level5.sh
 
 rm level1.sh
 rm level2.sh
 rm level3.sh
 rm level4.sh
+rm level5.sh
+
 rm -rf dictionaries
 rm README.md
 rm userHash.txt
@@ -32,6 +35,7 @@ rm /home/polylinuxgame/level1Verify.sh
 rm /home/polylinuxgame/level2Verify.sh
 rm /home/polylinuxgame/level3Verify.sh
 rm /home/polylinuxgame/level4Verify.sh
+rm /home/polylinuxgame/level5Verify.sh
 rm -rf /root/PolyLinuxGame
 #cp -r /root/PolyLinuxGame/dictionaries /home/$userName/
 chown -R $userName /home/polylinuxgame
