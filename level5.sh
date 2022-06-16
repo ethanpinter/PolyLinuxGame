@@ -125,8 +125,6 @@ noiseDirectory2=$(echo -n "${directoryDict[4]}")
 noiseDirectory3=$(echo -n "${directoryDict[5]}")
 noiseDirectory4=$(echo -n "${directoryDict[8]}")
 
-
-
 ## create static directories
 mkdir "level5"
 mkdir level5/$dir1
@@ -148,16 +146,18 @@ mkdir level5/$dir16
 
 ## pseudorandom
 secondRAND=$((pseudoRAND + 1))
-randomDict=$(echo -n "dict$pseudoRAND") ## returns dict2 for example
-randomDict2=$(echo -n "dict$secondRAND")
-
+randDictSeed=$(echo -n "dict$pseudoRAND") ## returns dict2 for example
+randDictSeed2=$(echo -n "dict$secondRAND") ## returns dict2 for example
+$randDictSeed
+$randDictSeed2
+## pick 2 dictionaries, pick 5 strings from first dictionary, pick 1 from second dictionary
 ## noise files
-mkdir level5/"$targetDirectory"/"${randomDict[1]}"
-mkdir level5/"$targetDirectory"/"${randomDict[2]}"
-mkdir level5/"$targetDirectory"/"${randomDict[3]}"
-mkdir level5/"$targetDirectory"/"${randomDict[4]}"
-mkdir level5/"$targetDirectory"/"${randomDict[5]}"
-mkdir level5/"$targetDirectory"/"${randomDict2[2]}"
+mkdir level5/"$targetDirectory"/"${randDictSeed[1]}"
+mkdir level5/"$targetDirectory"/"${randDictSeed[2]}"
+mkdir level5/"$targetDirectory"/"${randDictSeed[3]}"
+mkdir level5/"$targetDirectory"/"${randDictSeed[4]}"
+mkdir level5/"$targetDirectory"/"${randDictSeed[5]}"
+mkdir level5/"$targetDirectory"/"${randDictSeed2[2]}"
 
 mkdir level5/"$noiseDirectory1"/"${randomDict[1]}"
 mkdir level5/"$noiseDirectory1"/"${randomDict[2]}"
@@ -165,7 +165,7 @@ mkdir level5/"$noiseDirectory1"/"${randomDict[3]}"
 mkdir level5/"$noiseDirectory1"/"${randomDict[4]}"
 mkdir level5/"$noiseDirectory1"/"${randomDict[5]}"
 mkdir level5/"$noiseDirectory1"/"${randomDict2[2]}"
-
+#############
 mkdir level5/"$noiseDirectory2"/"${randomDict[1]}"
 mkdir level5/"$noiseDirectory2"/"${randomDict[2]}"
 mkdir level5/"$noiseDirectory2"/"${randomDict[3]}"
