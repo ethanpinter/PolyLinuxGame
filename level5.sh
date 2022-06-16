@@ -152,25 +152,35 @@ mkdir level5/$targetDirectory/${dict10[2]}
 mkdir level5/$targetDirectory/${dict10[3]}
 mkdir level5/$targetDirectory/${dict10[4]}
 mkdir level5/$targetDirectory/${dict10[5]}
+mkdir level5/$targetDirectory/${dict7[2]}
+
+mkdir level5/$noiseDirectory1/${dict10[1]}
+mkdir level5/$noiseDirectory1/${dict10[2]}
+mkdir level5/$noiseDirectory1/${dict10[3]}
+mkdir level5/$noiseDirectory1/${dict10[4]}
+mkdir level5/$noiseDirectory1/${dict10[5]}
 mkdir level5/$noiseDirectory1/${dict7[2]}
-mkdir level5/$noiseDirectory1/${dict7[3]}
-mkdir level5/$noiseDirectory1/${dict7[4]}
-mkdir level5/$noiseDirectory1/${dict7[5]}
 
+mkdir level5/$noiseDirectory2/${dict10[1]}
+mkdir level5/$noiseDirectory2/${dict10[2]}
+mkdir level5/$noiseDirectory2/${dict10[3]}
+mkdir level5/$noiseDirectory2/${dict10[4]}
+mkdir level5/$noiseDirectory2/${dict10[5]}
 mkdir level5/$noiseDirectory2/${dict7[2]}
-mkdir level5/$noiseDirectory2/${dict7[3]}
-mkdir level5/$noiseDirectory2/${dict7[4]}
-mkdir level5/$noiseDirectory2/${dict7[5]}
 
+mkdir level5/$noiseDirectory3/${dict10[1]}
+mkdir level5/$noiseDirectory3/${dict10[2]}
+mkdir level5/$noiseDirectory3/${dict10[3]}
+mkdir level5/$noiseDirectory3/${dict10[4]}
+mkdir level5/$noiseDirectory3/${dict10[5]}
 mkdir level5/$noiseDirectory3/${dict7[2]}
-mkdir level5/$noiseDirectory3/${dict7[3]}
-mkdir level5/$noiseDirectory3/${dict7[4]}
-mkdir level5/$noiseDirectory3/${dict7[5]}
 
+mkdir level5/$noiseDirectory4/${dict10[1]}
+mkdir level5/$noiseDirectory4/${dict10[2]}
+mkdir level5/$noiseDirectory4/${dict10[3]}
+mkdir level5/$noiseDirectory4/${dict10[4]}
+mkdir level5/$noiseDirectory4/${dict10[5]}
 mkdir level5/$noiseDirectory4/${dict7[2]}
-mkdir level5/$noiseDirectory4/${dict7[3]}
-mkdir level5/$noiseDirectory4/${dict7[4]}
-mkdir level5/$noiseDirectory4/${dict7[5]}
 
 cp level5Verify.sh level5/
 
