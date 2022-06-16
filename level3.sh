@@ -40,7 +40,7 @@ readarray -t dict17 <dictionaries/createdDirectoryDictionary.txt
 # Thereafter, you can refer to the lines by number. The first line is "${lines[0]}" and the second is "${lines[1]}", etc.
 
 pseudoRANDcapture=$(cut -c 2 userHash.txt)
-secondCapture=$(cut -c 3 userHash.txt)
+secondCapture=$(cut -c 11 userHash.txt)
 thirdCapture=$(cut -c 8 userHash.txt)
 fourthCapture=$(cut -c 15 userHash.txt)
 pseudoRAND=$(echo "ibase=16; $pseudoRANDcapture" | bc)
