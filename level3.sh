@@ -39,8 +39,8 @@ readarray -t dict17 <dictionaries/createdDirectoryDictionary.txt
 # https://stackoverflow.com/questions/22466704/assign-each-line-of-file-to-be-a-variable
 # Thereafter, you can refer to the lines by number. The first line is "${lines[0]}" and the second is "${lines[1]}", etc.
 
-pseudoRANDcapture=$(cut -c 2 userHash.txt)
-secondCapture=$(cut -c 11 userHash.txt)
+pseudoRANDcapture=$(cut -c 4 userHash.txt)
+secondCapture=$(cut -c 9 userHash.txt)
 thirdCapture=$(cut -c 8 userHash.txt)
 fourthCapture=$(cut -c 15 userHash.txt)
 pseudoRAND=$(echo "ibase=16; $pseudoRANDcapture" | bc)
