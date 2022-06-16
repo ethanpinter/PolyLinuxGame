@@ -40,9 +40,9 @@ readarray -t dict17 <dictionaries/createdDirectoryDictionary.txt
 # Thereafter, you can refer to the lines by number. The first line is "${lines[0]}" and the second is "${lines[1]}", etc.
 
 pseudoRANDcapture=$(cut -c 2 userHash.txt)
-secondCapture=$(cut -c 6 userHash.txt)
+secondCapture=$(cut -c 3 userHash.txt)
 thirdCapture=$(cut -c 8 userHash.txt)
-fourthCapture=$(cut -c 12 userHash.txt)
+fourthCapture=$(cut -c 15 userHash.txt)
 pseudoRAND=$(echo "ibase=16; $pseudoRANDcapture" | bc)
 secondRAND=$(echo "ibase=16; $secondCapture" | bc)
 thirdRAND=$(echo "ibase=16; $thirdCapture" | bc)
@@ -167,7 +167,7 @@ touch level3/$secondTargetDirectory/$fifthDataFile
 touch level3/$secondTargetDirectory/$sixthDataFile
 createdFile=$(echo -n "${dict17[$createdFileSeed]}")
 touch level3/$targetDirectory/$createdFile.txt
-rm -rf $fourthTargetDirectory
+rm -rf level3/$fourthTargetDirectory
 echo "move me" > level3/$targetDirectory/$createdFile.txt
 echo "*"
 echo "*"
