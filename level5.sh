@@ -151,15 +151,23 @@ randDictSeed2=$(echo -n "dict$secondRAND") ## returns dict3 for example
 echo $randDictSeed
 echo $randDictSeed2
 
+declare -a randDictSelection
+declare -a dictNumber1
+declare -a dictNumber2
+readarray -t randDictSelection < dictionaries/allDirectoryNames.txt
+number1=${randDictSelection[$randDictSeed]}
+number2=${randDictSelection[$randDictSeed2]}
+readarray -t dictNumber1 < dictionaries/"$number1"
+readarray -t dictNumber2 < dictionaries/"$number2"
 
 ## pick 2 dictionaries, pick 5 strings from first dictionary, pick 1 from second dictionary
 ## noise files
-mkdir level5/"$targetDirectory"/"${!randDictSeed[1]}"
-mkdir level5/"$targetDirectory"/"${!randDictSeed[2]}"
-mkdir level5/"$targetDirectory"/"${!randDictSeed[3]}"
-mkdir level5/"$targetDirectory"/"${!randDictSeed[4]}"
-mkdir level5/"$targetDirectory"/"${!randDictSeed[5]}"
-mkdir level5/"$targetDirectory"/"${!randDictSeed2[2]}"
+mkdir level5/"$targetDirectory"/"${dictNumber1[1]}"
+mkdir level5/"$targetDirectory"/"${dictNumber1[2]}"
+mkdir level5/"$targetDirectory"/"${dictNumber1[3]}"
+mkdir level5/"$targetDirectory"/"${dictNumber1[4]}"
+mkdir level5/"$targetDirectory"/"${dictNumber1[5]}"
+mkdir level5/"$targetDirectory"/"${dictNumber2[2]}"
 
 mkdir level5/"$noiseDirectory1"/"${randomDict[1]}"
 mkdir level5/"$noiseDirectory1"/"${randomDict[2]}"
