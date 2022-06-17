@@ -146,6 +146,66 @@ mkdir level6/"$dir14"
 mkdir level6/"$dir15"
 mkdir level6/"$dir16"
 
+## pseudorandom
+#secondRANDCapture=$(cut -c 4 userHash.txt)
+#secondRAND=$(echo "ibase=16; $secondRANDCapture" | bc)
+noiseDirectory1=$(echo -n "${directoryDict[2]}")
+noiseDirectory2=$(echo -n "${directoryDict[1]}")
+noiseDirectory3=$(echo -n "${directoryDict[15]}")
+noiseDirectory4=$(echo -n "${directoryDict[4]}")
+
+randDictSeed=$(echo -n "dict$pseudoRAND") ## returns dict2 for example
+#randDictSeed2=$(echo -n "dict$secondRAND") ## returns dict3 for example
+#echo "$randDictSeed"
+#echo "$randDictSeed2"
+
+declare -a randDictSelection
+declare -a dictNumber1
+#declare -a diffDict
+readarray -t randDictSelection < dictionaries/allDirectoryNames.txt
+number1=${randDictSelection[$randDictSeed]}
+#number2=${randDictSelection[$randDictSeed2]}
+readarray -t dictNumber1 < dictionaries/"$number1"
+#readarray -t diffDict < dictionaries/"$number2"
+
+## pick 2 dictionaries, pick 5 strings from first dictionary, pick 1 from second dictionary
+## noise files
+mkdir level6/"$targetDirectory"/"${dictNumber1[2]}"
+mkdir level6/"$targetDirectory"/"${dictNumber1[4]}"
+mkdir level6/"$targetDirectory"/"${dictNumber1[5]}"
+mkdir level6/"$targetDirectory"/"${dictNumber1[11]}"
+mkdir level6/"$targetDirectory"/"${dictNumber1[1]}"
+mkdir level6/"$targetDirectory"/"${dict8[3]}"
+
+mkdir level6/"$noiseDirectory1"/"${dictNumber1[2]}"
+mkdir level6/"$noiseDirectory1"/"${dictNumber1[4]}"
+mkdir level6/"$noiseDirectory1"/"${dictNumber1[5]}"
+mkdir level6/"$noiseDirectory1"/"${dictNumber1[11]}"
+mkdir level6/"$noiseDirectory1"/"${dictNumber1[1]}"
+mkdir level6/"$noiseDirectory1"/"${dict8[3]}"
+#############
+mkdir level6/"$noiseDirectory2"/"${dictNumber1[2]}"
+mkdir level6/"$noiseDirectory2"/"${dictNumber1[4]}"
+mkdir level6/"$noiseDirectory2"/"${dictNumber1[5]}"
+mkdir level6/"$noiseDirectory2"/"${dictNumber1[11]}"
+mkdir level6/"$noiseDirectory2"/"${dictNumber1[1]}"
+mkdir level6/"$noiseDirectory2"/"${dict8[3]}"
+
+mkdir level6/"$noiseDirectory3"/"${dictNumber1[2]}"
+mkdir level6/"$noiseDirectory3"/"${dictNumber1[4]}"
+mkdir level6/"$noiseDirectory3"/"${dictNumber1[5]}"
+mkdir level6/"$noiseDirectory3"/"${dictNumber1[11]}"
+mkdir level6/"$noiseDirectory3"/"${dictNumber1[1]}"
+mkdir level6/"$noiseDirectory3"/"${dict8[3]}"
+
+mkdir level6/"$noiseDirectory4"/"${dictNumber1[2]}"
+mkdir level6/"$noiseDirectory4"/"${dictNumber1[4]}"
+mkdir level6/"$noiseDirectory4"/"${dictNumber1[5]}"
+mkdir level6/"$noiseDirectory4"/"${dictNumber1[11]}"
+mkdir level6/"$noiseDirectory4"/"${dictNumber1[1]}"
+mkdir level6/"$noiseDirectory4"/"${dict8[3]}"
+
+
 cp level6Verify.sh level6/
 
 ## generate noise files

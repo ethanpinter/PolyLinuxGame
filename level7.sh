@@ -139,6 +139,68 @@ mkdir level7/"$dir14"
 mkdir level7/"$dir15"
 mkdir level7/"$dir16"
 
+
+## pseudorandom
+secondRANDCapture=$(cut -c 14 userHash.txt)
+pseudoRAND=$(echo "ibase=16; $secondRANDCapture" | bc)
+noiseDirectory1=$(echo -n "${directoryDict[3]}")
+noiseDirectory2=$(echo -n "${directoryDict[5]}")
+noiseDirectory3=$(echo -n "${directoryDict[2]}")
+noiseDirectory4=$(echo -n "${directoryDict[10]}")
+
+randDictSeed=$(echo -n "dict$pseudoRAND") ## returns dict2 for example
+#randDictSeed2=$(echo -n "dict$secondRAND") ## returns dict3 for example
+#echo "$randDictSeed"
+#echo "$randDictSeed2"
+
+declare -a randDictSelection
+declare -a dictNumber1
+#declare -a diffDict
+readarray -t randDictSelection < dictionaries/allDirectoryNames.txt
+number1=${randDictSelection[$randDictSeed]}
+#number2=${randDictSelection[$randDictSeed2]}
+readarray -t dictNumber1 < dictionaries/"$number1"
+#readarray -t diffDict < dictionaries/"$number2"
+
+## pick 2 dictionaries, pick 5 strings from first dictionary, pick 1 from second dictionary
+## noise files
+mkdir level7/"$secondTargetDirectory"/"${dictNumber1[2]}"
+mkdir level7/"$secondTargetDirectory"/"${dictNumber1[6]}"
+mkdir level7/"$secondTargetDirectory"/"${dictNumber1[15]}"
+mkdir level7/"$secondTargetDirectory"/"${dictNumber1[14]}"
+mkdir level7/"$secondTargetDirectory"/"${dictNumber1[13]}"
+mkdir level7/"$secondTargetDirectory"/"${dict12[4]}"
+
+mkdir level7/"$noiseDirectory1"/"${dictNumber1[2]}"
+mkdir level7/"$noiseDirectory1"/"${dictNumber1[6]}"
+mkdir level7/"$noiseDirectory1"/"${dictNumber1[15]}"
+mkdir level7/"$noiseDirectory1"/"${dictNumber1[14]}"
+mkdir level7/"$noiseDirectory1"/"${dictNumber1[13}"
+mkdir level7/"$noiseDirectory1"/"${dict12[4]}"
+#############
+mkdir level7/"$noiseDirectory2"/"${dictNumber1[2]}"
+mkdir level7/"$noiseDirectory2"/"${dictNumber1[6]}"
+mkdir level7/"$noiseDirectory2"/"${dictNumber1[15]}"
+mkdir level7/"$noiseDirectory2"/"${dictNumber1[14]}"
+mkdir level7/"$noiseDirectory2"/"${dictNumber1[13}"
+mkdir level7/"$noiseDirectory2"/"${dict12[4]}"
+
+mkdir level7/"$noiseDirectory3"/"${dictNumber1[2]}"
+mkdir level7/"$noiseDirectory3"/"${dictNumber1[6]}"
+mkdir level7/"$noiseDirectory3"/"${dictNumber1[15]}"
+mkdir level7/"$noiseDirectory3"/"${dictNumber1[14]}"
+mkdir level7/"$noiseDirectory3"/"${dictNumber1[13}"
+mkdir level7/"$noiseDirectory3"/"${dict12[4]}"
+
+mkdir level7/"$noiseDirectory4"/"${dictNumber1[2]}"
+mkdir level7/"$noiseDirectory4"/"${dictNumber1[6]}"
+mkdir level7/"$noiseDirectory4"/"${dictNumber1[15]}"
+mkdir level7/"$noiseDirectory4"/"${dictNumber1[14]}"
+mkdir level7/"$noiseDirectory4"/"${dictNumber1[13}"
+mkdir level7/"$noiseDirectory4"/"${dict12[4]}"
+
+
+
 cp level7Verify.sh level7/
 
 firstDataFile=$(echo -n "${directoryDict[2]}.jpg")
@@ -159,4 +221,3 @@ echo "* Level 7" >> level7/README
 echo " Remove all the .csv files inside the $secondTargetDirectory directory" >> level7/README
 echo " Remove the $thirdTargetDirectory directory" >> level7/README
 echo " Once finished, run the verify.sh script." >> level7/README
-echo "********************************************************" >> level7/README

@@ -143,6 +143,65 @@ mkdir level4/"$dir14"
 mkdir level4/"$dir15"
 mkdir level4/"$dir16"
 
+## pseudorandom
+#secondRANDCapture=$(cut -c 4 userHash.txt)
+#secondRAND=$(echo "ibase=16; $secondRANDCapture" | bc)
+noiseDirectory1=$(echo -n "${directoryDict[7]}")
+noiseDirectory2=$(echo -n "${directoryDict[9]}")
+noiseDirectory3=$(echo -n "${directoryDict[4]}")
+noiseDirectory4=$(echo -n "${directoryDict[11]}")
+
+randDictSeed=$(echo -n "dict$pseudoRAND") ## returns dict2 for example
+#randDictSeed2=$(echo -n "dict$secondRAND") ## returns dict3 for example
+#echo "$randDictSeed"
+#echo "$randDictSeed2"
+
+declare -a randDictSelection
+declare -a dictNumber1
+#declare -a diffDict
+readarray -t randDictSelection < dictionaries/allDirectoryNames.txt
+number1=${randDictSelection[$randDictSeed]}
+#number2=${randDictSelection[$randDictSeed2]}
+readarray -t dictNumber1 < dictionaries/"$number1"
+#readarray -t diffDict < dictionaries/"$number2"
+
+## pick 2 dictionaries, pick 5 strings from first dictionary, pick 1 from second dictionary
+## noise files
+mkdir level4/"$targetDirectory"/"${dictNumber1[3]}"
+mkdir level4/"$targetDirectory"/"${dictNumber1[11]}"
+mkdir level4/"$targetDirectory"/"${dictNumber1[5]}"
+mkdir level4/"$targetDirectory"/"${dictNumber1[8]}"
+mkdir level4/"$targetDirectory"/"${dictNumber1[1]}"
+mkdir level4/"$targetDirectory"/"${dict5[9]}"
+
+mkdir level4/"$noiseDirectory1"/"${dictNumber1[3]}"
+mkdir level4/"$noiseDirectory1"/"${dictNumber1[11]}"
+mkdir level4/"$noiseDirectory1"/"${dictNumber1[5]}"
+mkdir level4/"$noiseDirectory1"/"${dictNumber1[8]}"
+mkdir level4/"$noiseDirectory1"/"${dictNumber1[1]}"
+mkdir level4/"$noiseDirectory1"/"${dict5[9]}"
+#############
+mkdir level4/"$noiseDirectory2"/"${dictNumber1[3]}"
+mkdir level4/"$noiseDirectory2"/"${dictNumber1[11]}"
+mkdir level4/"$noiseDirectory2"/"${dictNumber1[5]}"
+mkdir level4/"$noiseDirectory2"/"${dictNumber1[8]}"
+mkdir level4/"$noiseDirectory2"/"${dictNumber1[1]}"
+mkdir level4/"$noiseDirectory2"/"${dict5[9]}"
+
+mkdir level4/"$noiseDirectory3"/"${dictNumber1[3]}"
+mkdir level4/"$noiseDirectory3"/"${dictNumber1[11]}"
+mkdir level4/"$noiseDirectory3"/"${dictNumber1[5]}"
+mkdir level4/"$noiseDirectory3"/"${dictNumber1[8]}"
+mkdir level4/"$noiseDirectory3"/"${dictNumber1[1]}"
+mkdir level4/"$noiseDirectory3"/"${dict5[9]}"
+
+mkdir level4/"$noiseDirectory4"/"${dictNumber1[3]}"
+mkdir level4/"$noiseDirectory4"/"${dictNumber1[11]}"
+mkdir level4/"$noiseDirectory4"/"${dictNumber1[5]}"
+mkdir level4/"$noiseDirectory4"/"${dictNumber1[8]}"
+mkdir level4/"$noiseDirectory4"/"${dictNumber1[1]}"
+mkdir level4/"$noiseDirectory4"/"${dict5[9]}"
+
 cp level4Verify.sh level4/
 
 firstDataFile=$(echo -n "${directoryDict[2]}.jpg")

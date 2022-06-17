@@ -40,6 +40,9 @@ rm /home/polylinuxgame/level2Verify.sh
 rm /home/polylinuxgame/level3Verify.sh
 rm /home/polylinuxgame/level4Verify.sh
 rm /home/polylinuxgame/level5Verify.sh
+rm /home/polylinuxgame/level6Verify.sh
+rm /home/polylinuxgame/level7Verify.sh
+rm /home/polylinuxgame/directoryList.txt
 rm -rf /root/PolyLinuxGame
 #cp -r /root/PolyLinuxGame/dictionaries /home/$userName/
 chown -R $userName /home/polylinuxgame

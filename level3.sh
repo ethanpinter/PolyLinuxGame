@@ -146,10 +146,10 @@ mkdir level3/"$dir16"
 
 
 ## pseudorandom
-noiseDirectory1=$(echo -n "${directoryDict[10]}")
+noiseDirectory1=$(echo -n "${directoryDict[1]}")
 noiseDirectory2=$(echo -n "${directoryDict[7]}")
-noiseDirectory3=$(echo -n "${directoryDict[3]}")
-noiseDirectory4=$(echo -n "${directoryDict[13]}")
+noiseDirectory3=$(echo -n "${directoryDict[8]}")
+noiseDirectory4=$(echo -n "${directoryDict[12]}")
 
 randDictSeed=$(echo -n "dict$pseudoRAND") ## returns dict2 for example
 randDictSeed2=$(echo -n "dict$secondRAND") ## returns dict3 for example

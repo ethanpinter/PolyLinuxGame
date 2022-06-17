@@ -140,17 +140,17 @@ mkdir level1/"$dir15"
 mkdir level1/"$dir16"
 
 ## pseudorandom
-secondRANDCapture=$(cut -c 4 userHash.txt)
-secondRAND=$(echo "ibase=16; $secondRANDCapture" | bc)
+#secondRANDCapture=$(cut -c 4 userHash.txt)
+#secondRAND=$(echo "ibase=16; $secondRANDCapture" | bc)
 noiseDirectory1=$(echo -n "${directoryDict[10]}")
 noiseDirectory2=$(echo -n "${directoryDict[7]}")
 noiseDirectory3=$(echo -n "${directoryDict[3]}")
 noiseDirectory4=$(echo -n "${directoryDict[13]}")
 
 randDictSeed=$(echo -n "dict$pseudoRAND") ## returns dict2 for example
-randDictSeed2=$(echo -n "dict$secondRAND") ## returns dict3 for example
-echo "$randDictSeed"
-echo "$randDictSeed2"
+#randDictSeed2=$(echo -n "dict$secondRAND") ## returns dict3 for example
+#echo "$randDictSeed"
+#echo "$randDictSeed2"
 
 declare -a randDictSelection
 declare -a dictNumber1

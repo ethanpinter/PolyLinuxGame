@@ -39,8 +39,8 @@ readarray -t dict17 <dictionaries/createdDirectoryDictionary.txt
 
 pseudoRANDcapture=$(cut -c 10 userHash.txt)
 pseudoRAND=$(echo "ibase=16; $pseudoRANDcapture" | bc)
-secondRANDCapture=$(cut -c 5 userHash.txt)
-secondRAND=$(echo "ibase=16; $secondRANDCapture" | bc)
+#secondRANDCapture=$(cut -c 5 userHash.txt)
+#secondRAND=$(echo "ibase=16; $secondRANDCapture" | bc)
 
 loc1=$(cut -c 1 userHash.txt)
 loc2=$(cut -c 2 userHash.txt)
@@ -140,15 +140,15 @@ mkdir level5/"$dir15"
 mkdir level5/"$dir16"
 
 ## pseudorandom
-noiseDirectory1=$(echo -n "${directoryDict[1]}")
+noiseDirectory1=$(echo -n "${directoryDict[11]}")
 noiseDirectory2=$(echo -n "${directoryDict[4]}")
-noiseDirectory3=$(echo -n "${directoryDict[5]}")
-noiseDirectory4=$(echo -n "${directoryDict[8]}")
+noiseDirectory3=$(echo -n "${directoryDict[7]}")
+noiseDirectory4=$(echo -n "${directoryDict[13]}")
 
 randDictSeed=$(echo -n "dict$pseudoRAND") ## returns dict2 for example
-randDictSeed2=$(echo -n "dict$secondRAND") ## returns dict3 for example
-echo "$randDictSeed"
-echo "$randDictSeed2"
+#randDictSeed2=$(echo -n "dict$secondRAND") ## returns dict3 for example
+#echo "$randDictSeed"
+#echo "$randDictSeed2"
 
 declare -a randDictSelection
 declare -a dictNumber1
