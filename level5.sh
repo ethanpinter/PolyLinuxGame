@@ -42,7 +42,6 @@ readarray -t dict17 <dictionaries/createdDirectoryDictionary.txt
 
 pseudoRANDcapture=$(cut -c 10 userHash.txt)
 pseudoRAND=$(echo "ibase=16; $pseudoRANDcapture" | bc)
-pseudoRAND=$((pseudoRAND + 1))
 secondRANDCapture=$(cut -c 3 userHash.txt)
 secondRAND=$(echo "ibase=16; $secondRANDCapture" | bc)
 
