@@ -42,11 +42,9 @@ readarray -t dict17 <dictionaries/createdDirectoryDictionary.txt
 pseudoRANDcapture=$(cut -c 7 userHash.txt)
 secondCapture=$(cut -c 10 userHash.txt)
 thirdCapture=$(cut -c 4 userHash.txt)
-fourthCapture=$(cut -c 9 userHash.txt)
 pseudoRAND=$(echo "ibase=16; $pseudoRANDcapture" | bc)
 secondRAND=$(echo "ibase=16; $secondCapture" | bc)
 thirdRAND=$(echo "ibase=16; $thirdCapture" | bc)
-fourthRAND=$(echo "ibase=16; $fourthCapture" | bc)
 
 loc1=$(cut -c 1 userHash.txt)
 loc2=$(cut -c 2 userHash.txt)
@@ -169,13 +167,11 @@ echo "move me" > level6/$targetDirectory/$createdFile.txt
 echo "*"
 echo "*"
 echo "*"
-echo "********************************************************" >> level6/README
-echo "* Level 6" >> level6/README
-echo "* Copy all the txt files from $secondTargetDirectory into $thirdTargetDirectory" >> level6/README
-echo "* Change the name of the $thirdTargetDirectory directory to:" >> level6/README
-echo "* 'changed$targetDirectory'" >> level6/README
-echo "* Once finished, run the verify.sh script." >> level6/README
-echo "********************************************************" >> level6/README
+echo "* Level 6 *" >> level6/README
+echo " Copy all the txt files from $secondTargetDirectory into $thirdTargetDirectory" >> level6/README
+echo " Change the name of the $thirdTargetDirectory directory to:" >> level6/README
+echo " 'changed$targetDirectory'" >> level6/README
+echo " Once finished, run the verify.sh script." >> level6/README
 #cat level6/README
 rm directoryList.txt
 

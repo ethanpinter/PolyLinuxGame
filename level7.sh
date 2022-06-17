@@ -16,32 +16,33 @@ declare -a dict13
 declare -a dict14
 declare -a dict15
 declare -a dict16
-declare -a dict17
 
-readarray -t dict5 <dictionaries/airlines.txt
-readarray -t dict16 <dictionaries/appliances.txt
-readarray -t dict4 <dictionaries/colleges.txt
-readarray -t dict3 <dictionaries/candy.txt
-readarray -t dict11 <dictionaries/carBrands.txt
-readarray -t dict8 <dictionaries/cheese.txt
-readarray -t dict15 <dictionaries/cities.txt
-readarray -t dict7 <dictionaries/clothingBrands.txt
-readarray -t dict10 <dictionaries/instruments.txt
-readarray -t dict9 <dictionaries/countries.txt
-readarray -t dict6 <dictionaries/dogBreeds.txt
-readarray -t dict12 <dictionaries/fruits.txt
-readarray -t dict2 <dictionaries/operatingSystems.txt
-readarray -t dict1 <dictionaries/seasonings.txt
-readarray -t dict14 <dictionaries/sports.txt
-readarray -t dict13 <dictionaries/fastFood.txt
-
-readarray -t dict17 <dictionaries/createdDirectoryDictionary.txt
+readarray -t dict2 <dictionaries/airlines.txt
+readarray -t dict7 <dictionaries/appliances.txt
+readarray -t dict11 <dictionaries/colleges.txt
+readarray -t dict10 <dictionaries/candy.txt
+readarray -t dict5 <dictionaries/carBrands.txt
+readarray -t dict13 <dictionaries/cheese.txt
+readarray -t dict16 <dictionaries/cities.txt
+readarray -t dict3 <dictionaries/clothingBrands.txt
+readarray -t dict14 <dictionaries/instruments.txt
+readarray -t dict4 <dictionaries/countries.txt
+readarray -t dict9 <dictionaries/dogBreeds.txt
+readarray -t dict15 <dictionaries/fruits.txt
+readarray -t dict1 <dictionaries/operatingSystems.txt
+readarray -t dict8 <dictionaries/seasonings.txt
+readarray -t dict12 <dictionaries/sports.txt
+readarray -t dict6 <dictionaries/fastFood.txt
 
 # https://stackoverflow.com/questions/22466704/assign-each-line-of-file-to-be-a-variable
 # Thereafter, you can refer to the lines by number. The first line is "${lines[0]}" and the second is "${lines[1]}", etc.
 
-pseudoRANDcapture=$(cut -c 5 userHash.txt)
-pseudoRAND=$(echo "ibase=16; $pseudoRANDcapture" | bc)
+## read in user ID and generate hash with combined password
+
+secondCapture=$(cut -c 1 userHash.txt)
+thirdCapture=$(cut -c 15 userHash.txt)
+secondRAND=$(echo "ibase=16; $secondCapture" | bc)
+thirdRAND=$(echo "ibase=16; $thirdCapture" | bc)
 
 loc1=$(cut -c 1 userHash.txt)
 loc2=$(cut -c 2 userHash.txt)
@@ -59,7 +60,6 @@ loc13=$(cut -c 13 userHash.txt)
 loc14=$(cut -c 14 userHash.txt)
 loc15=$(cut -c 15 userHash.txt)
 loc16=$(cut -c 16 userHash.txt)
-loc17=$(cut -c 5 userHash.txt)
 
 dir1Seed=$(echo "ibase=16; $loc1" | bc) 
 dir2Seed=$(echo "ibase=16; $loc2" | bc)
@@ -78,7 +78,6 @@ dir14Seed=$(echo "ibase=16; $loc14" | bc)
 dir15Seed=$(echo "ibase=16; $loc15" | bc)
 dir16Seed=$(echo "ibase=16; $loc16" | bc)
 
-createdFileSeed=$(echo "ibase=16; $loc17" | bc)
 
 dir1=$(echo -n "${dict1[$dir1Seed]}")
 dir2=$(echo -n "${dict2[$dir2Seed]}")
@@ -117,39 +116,47 @@ echo "$dir16" >> directoryList.txt
 declare -a directoryDict
 readarray -t directoryDict <directoryList.txt
 
-targetDirectorySeed=$pseudoRAND
-targetDirectory=$(echo -n "${directoryDict[$targetDirectorySeed]}")
-
+secondTargetDirectorySeed=$secondRAND
+thirdTargetDirectorySeed=$thirdRAND
+secondTargetDirectory=$(echo -n "${directoryDict[$secondTargetDirectorySeed]}")
+thirdTargetDirectory=$(echo -n "${directoryDict[$thirdTargetDirectorySeed]}")
 ## create static directories
-mkdir "level1"
-mkdir level1/$dir1
-mkdir level1/$dir2
-mkdir level1/$dir3
-mkdir level1/$dir4
-mkdir level1/$dir5
-mkdir level1/$dir6
-mkdir level1/$dir7
-mkdir level1/$dir8
-mkdir level1/$dir9
-mkdir level1/$dir10
-mkdir level1/$dir11
-mkdir level1/$dir12
-mkdir level1/$dir13
-mkdir level1/$dir14
-mkdir level1/$dir15
-mkdir level1/$dir16
+mkdir "level7"
+mkdir level7/$dir1
+mkdir level7/$dir2
+mkdir level7/$dir3
+mkdir level7/$dir4
+mkdir level7/$dir5
+mkdir level7/$dir6
+mkdir level7/$dir7
+mkdir level7/$dir8
+mkdir level7/$dir9
+mkdir level7/$dir10
+mkdir level7/$dir11
+mkdir level7/$dir12
+mkdir level7/$dir13
+mkdir level7/$dir14
+mkdir level7/$dir15
+mkdir level7/$dir16
 
-cp level1Verify.sh level1/
+cp level7Verify.sh level7/
+
+firstDataFile=$(echo -n "${directoryDict[2]}.jpg")
+secondDataFile=$(echo -n "${directoryDict[5]}.csv")
+thirdDataFile=$(echo -n "${directoryDict[8]}.csv")
+fourthDataFile=$(echo -n "${directoryDict[13]}.txt")
+fifthDataFile=$(echo -n "${directoryDict[12]}.pcap")
+sixthDataFile=$(echo -n "${directoryDict[1]}.csv")
+touch level7/$secondTargetDirectory/$firstDataFile
+touch level7/$secondTargetDirectory/$secondDataFile
+touch level7/$secondTargetDirectory/$thirdDataFile
+touch level7/$secondTargetDirectory/$fourthDataFile
+touch level7/$secondTargetDirectory/$fifthDataFile
+touch level7/$secondTargetDirectory/$sixthDataFile
 
 
-createdFile=$(echo -n "${dict17[$createdFileSeed]}")
-echo "*"
-echo "*"
-echo "*"
-echo "* Level 1 *" >> level1/README
-echo "Create a new file named $createdFile.txt in the $targetDirectory directory" >> level1/README
-echo "Once finished, run the verify.sh script." >> level1/README
-#cat level1/README
-rm directoryList.txt
-
-
+echo "* Level 7" >> level7/README
+echo " Remove all the .csv files inside the $secondTargetDirectory directory" >> level7/README
+echo " Remove the $thirdTargetDirectory directory" >> level7/README
+echo " Once finished, run the verify.sh script." >> level7/README
+echo "********************************************************" >> level7/README

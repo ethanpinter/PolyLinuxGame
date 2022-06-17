@@ -154,7 +154,7 @@ echo "move me" > level3/$targetDirectory/$createdFile.txt
 echo "*"
 echo "*"
 echo "*"
-echo "* Level 1" >> level3/README
+echo "* Level 3 >> level3/README
 echo "* Copy the file named $createdFile.txt in the $targetDirectory directory" >> level3/README
 echo "* into the $secondTargetDirectory directory." >> level3/README
 echo "* Once finished, run the verify.sh script." >> level3/README

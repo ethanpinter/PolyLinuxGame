@@ -43,10 +43,8 @@ readarray -t dict17 <dictionaries/createdDirectoryDictionary.txt
 
 pseudoRANDcapture=$(cut -c 9 userHash.txt)
 secondCapture=$(cut -c 1 userHash.txt)
-thirdCapture=$(cut -c 15 userHash.txt)
 pseudoRAND=$(echo "ibase=16; $pseudoRANDcapture" | bc)
 secondRAND=$(echo "ibase=16; $secondCapture" | bc)
-thirdRAND=$(echo "ibase=16; $thirdCapture" | bc)
 
 loc1=$(cut -c 1 userHash.txt)
 loc2=$(cut -c 2 userHash.txt)
@@ -124,10 +122,8 @@ readarray -t directoryDict <directoryList.txt
 
 targetDirectorySeed=$pseudoRAND
 secondTargetDirectorySeed=$secondRAND
-thirdTargetDirectorySeed=$thirdRAND
 targetDirectory=$(echo -n "${directoryDict[$targetDirectorySeed]}")
 secondTargetDirectory=$(echo -n "${directoryDict[$secondTargetDirectorySeed]}")
-thirdTargetDirectory=$(echo -n "${directoryDict[$thirdTargetDirectorySeed]}")
 ## create static directories
 mkdir "level4"
 mkdir level4/$dir1
@@ -168,16 +164,9 @@ echo "remove me" > level4/$targetDirectory/$createdFile.txt
 echo "*"
 echo "*"
 echo "*"
-echo "* Level 1" >> level4/README
+echo "* Level 4" >> level4/README
 echo "* Remove the file named $createdFile.txt in the $targetDirectory directory." >> level4/README
-echo "********************************************************" >> level4/README
-echo "* Level 2" >> level4/README
-echo "* Remove all the .csv files inside the $secondTargetDirectory directory" >> level4/README
-echo "********************************************************" >> level4/README
-echo "* Level 3" >> level4/README
-echo "* Remove the $thirdTargetDirectory directory" >> level4/README
 echo "* Once finished, run the verify.sh script." >> level4/README
-echo "********************************************************" >> level4/README
 #cat level4/README
 rm directoryList.txt
 

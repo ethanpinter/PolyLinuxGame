@@ -204,6 +204,7 @@ createdFile=$(echo -n "${dict17[$createdFileSeed]}")
 echo "*"
 echo "*"
 echo "*"
+echo "* Level 5 *" >> level5/README
 echo "Create a new file named $createdFile.txt in the directory unlike the others inside the $targetDirectory directory." >> level5/README
 echo "Edit the contents of '$createdFile' to contain the hash of level4." >> level5/README
 echo "Once finished, run the verify.sh script." >> level5/README

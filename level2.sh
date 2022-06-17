@@ -144,6 +144,7 @@ createdDirectory=$(echo -n "${dict17[$createdDirectorySeed]}")
 echo "*"
 echo "*"
 echo "*"
+echo "* Level 2 *" >> level2/README
 echo "Create a new directory named $createdDirectory in the $targetDirectory directory" >> level2/README
 echo "Once finished, run the verify.sh script." >> level2/README
 #cat level2/README
