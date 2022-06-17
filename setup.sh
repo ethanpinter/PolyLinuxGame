@@ -21,6 +21,7 @@ bash level3.sh
 bash level4.sh
 bash level5.sh
 bash level6.sh
+bash level7.sh
 
 rm level1.sh
 rm level2.sh
@@ -28,6 +29,7 @@ rm level3.sh
 rm level4.sh
 rm level5.sh
 rm level6.sh
+rm level7.sh
 
 rm -rf dictionaries
 rm README.md
