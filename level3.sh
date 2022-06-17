@@ -41,12 +41,9 @@ readarray -t dict17 <dictionaries/createdDirectoryDictionary.txt
 
 pseudoRANDcapture=$(cut -c 4 userHash.txt)
 secondCapture=$(cut -c 9 userHash.txt)
-thirdCapture=$(cut -c 8 userHash.txt)
-fourthCapture=$(cut -c 15 userHash.txt)
+
 pseudoRAND=$(echo "ibase=16; $pseudoRANDcapture" | bc)
 secondRAND=$(echo "ibase=16; $secondCapture" | bc)
-thirdRAND=$(echo "ibase=16; $thirdCapture" | bc)
-fourthRAND=$(echo "ibase=16; $fourthCapture" | bc)
 
 loc1=$(cut -c 1 userHash.txt)
 loc2=$(cut -c 2 userHash.txt)
@@ -124,12 +121,10 @@ readarray -t directoryDict <directoryList.txt
 
 targetDirectorySeed=$pseudoRAND
 secondTargetDirectorySeed=$secondRAND
-thirdTargetDirectorySeed=$thirdRAND
-fourthTargetDirectorySeed=$fourthRAND
+
 targetDirectory=$(echo -n "${directoryDict[$targetDirectorySeed]}")
 secondTargetDirectory=$(echo -n "${directoryDict[$secondTargetDirectorySeed]}")
-thirdTargetDirectory=$(echo -n "${directoryDict[$thirdTargetDirectorySeed]}")
-fourthTargetDirectory=$(echo -n "${directoryDict[$fourthTargetDirectorySeed]}")
+
 ## create static directories
 mkdir "level3"
 mkdir level3/$dir1
@@ -152,19 +147,6 @@ mkdir level3/$dir16
 
 cp level3Verify.sh level3/
 
-## generate noise files
-firstDataFile=$(echo -n "${directoryDict[2]}.jpg")
-secondDataFile=$(echo -n "${directoryDict[5]}.txt")
-thirdDataFile=$(echo -n "${directoryDict[8]}.csv")
-fourthDataFile=$(echo -n "${directoryDict[13]}.txt")
-fifthDataFile=$(echo -n "${directoryDict[12]}.pcap")
-sixthDataFile=$(echo -n "${directoryDict[1]}.log")
-touch level3/$secondTargetDirectory/$firstDataFile
-touch level3/$secondTargetDirectory/$secondDataFile
-touch level3/$secondTargetDirectory/$thirdDataFile
-touch level3/$secondTargetDirectory/$fourthDataFile
-touch level3/$secondTargetDirectory/$fifthDataFile
-touch level3/$secondTargetDirectory/$sixthDataFile
 createdFile=$(echo -n "${dict17[$createdFileSeed]}")
 touch level3/$targetDirectory/$createdFile.txt
 #rm -rf level3/$fourthTargetDirectory
@@ -176,15 +158,6 @@ echo "* Level 1" >> level3/README
 echo "* Copy the file named $createdFile.txt in the $targetDirectory directory" >> level3/README
 echo "* into the $secondTargetDirectory directory." >> level3/README
 echo "* Once finished, run the verify.sh script." >> level3/README
-echo "********************************************************" >> level3/README
-echo "* Level 2" >> level3/README
-echo "* Copy all the txt files from $secondTargetDirectory into $thirdTargetDirectory" >> level3/README
-echo "* Once finished, run the verify.sh script." >> level3/README
-echo "********************************************************" >> level3/README
-echo "* Level 3" >> level3/README
-echo "* Change the name of the $thirdTargetDirectory directory to:" >> level3/README
-echo "* 'weAre'" >> level3/README
-echo "* Once finished, run the verify.sh script." >> level3/README
-echo "********************************************************" >> level3/README
+
 #cat level3/README
 rm directoryList.txt
