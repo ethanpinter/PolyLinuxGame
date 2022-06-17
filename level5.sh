@@ -121,10 +121,7 @@ readarray -t directoryDict <directoryList.txt
 
 targetDirectorySeed=$pseudoRAND
 targetDirectory=$(echo -n "${directoryDict[$targetDirectorySeed]}")
-noiseDirectory1=$(echo -n "${directoryDict[1]}")
-noiseDirectory2=$(echo -n "${directoryDict[4]}")
-noiseDirectory3=$(echo -n "${directoryDict[5]}")
-noiseDirectory4=$(echo -n "${directoryDict[8]}")
+
 
 ## create static directories
 mkdir "level5"
@@ -146,6 +143,10 @@ mkdir level5/$dir15
 mkdir level5/$dir16
 
 ## pseudorandom
+noiseDirectory1=$(echo -n "${directoryDict[1]}")
+noiseDirectory2=$(echo -n "${directoryDict[4]}")
+noiseDirectory3=$(echo -n "${directoryDict[5]}")
+noiseDirectory4=$(echo -n "${directoryDict[8]}")
 
 randDictSeed=$(echo -n "dict$pseudoRAND") ## returns dict2 for example
 randDictSeed2=$(echo -n "dict$secondRAND") ## returns dict3 for example
@@ -154,12 +155,12 @@ echo "$randDictSeed2"
 
 declare -a randDictSelection
 declare -a dictNumber1
-declare -a diffDict
+#declare -a diffDict
 readarray -t randDictSelection < dictionaries/allDirectoryNames.txt
 number1=${randDictSelection[$randDictSeed]}
-number2=${randDictSelection[$randDictSeed2]}
+#number2=${randDictSelection[$randDictSeed2]}
 readarray -t dictNumber1 < dictionaries/"$number1"
-readarray -t diffDict < dictionaries/"$number2"
+#readarray -t diffDict < dictionaries/"$number2"
 
 ## pick 2 dictionaries, pick 5 strings from first dictionary, pick 1 from second dictionary
 ## noise files

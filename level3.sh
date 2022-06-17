@@ -145,6 +145,64 @@ mkdir level3/$dir14
 mkdir level3/$dir15
 mkdir level3/$dir16
 
+
+## pseudorandom
+noiseDirectory1=$(echo -n "${directoryDict[10]}")
+noiseDirectory2=$(echo -n "${directoryDict[7]}")
+noiseDirectory3=$(echo -n "${directoryDict[3]}")
+noiseDirectory4=$(echo -n "${directoryDict[13]}")
+
+randDictSeed=$(echo -n "dict$pseudoRAND") ## returns dict2 for example
+randDictSeed2=$(echo -n "dict$secondRAND") ## returns dict3 for example
+echo "$randDictSeed"
+echo "$randDictSeed2"
+
+declare -a randDictSelection
+declare -a dictNumber1
+#declare -a diffDict
+readarray -t randDictSelection < dictionaries/allDirectoryNames.txt
+number1=${randDictSelection[$randDictSeed]}
+#number2=${randDictSelection[$randDictSeed2]}
+readarray -t dictNumber1 < dictionaries/"$number1"
+#readarray -t diffDict < dictionaries/"$number2"
+
+## pick 2 dictionaries, pick 5 strings from first dictionary, pick 1 from second dictionary
+## noise files
+mkdir level3/"$targetDirectory"/"${dictNumber1[2]}"
+mkdir level3/"$targetDirectory"/"${dictNumber1[5]}"
+mkdir level3/"$targetDirectory"/"${dictNumber1[12]}"
+mkdir level3/"$targetDirectory"/"${dictNumber1[6]}"
+mkdir level3/"$targetDirectory"/"${dictNumber1[7]}"
+mkdir level3/"$targetDirectory"/"${dict3[9]}"
+
+mkdir level3/"$noiseDirectory1"/"${dictNumber1[2]}"
+mkdir level3/"$noiseDirectory1"/"${dictNumber1[5]}"
+mkdir level3/"$noiseDirectory1"/"${dictNumber1[12]}"
+mkdir level3/"$noiseDirectory1"/"${dictNumber1[6]}"
+mkdir level3/"$noiseDirectory1"/"${dictNumber1[7]}"
+mkdir level3/"$noiseDirectory1"/"${dict3[9]}"
+#############
+mkdir level3/"$noiseDirectory2"/"${dictNumber1[2]}"
+mkdir level3/"$noiseDirectory2"/"${dictNumber1[5]}"
+mkdir level3/"$noiseDirectory2"/"${dictNumber1[12]}"
+mkdir level3/"$noiseDirectory2"/"${dictNumber1[6]}"
+mkdir level3/"$noiseDirectory2"/"${dictNumber1[7]}"
+mkdir level3/"$noiseDirectory2"/"${dict3[9]}"
+
+mkdir level3/"$noiseDirectory3"/"${dictNumber1[2]}"
+mkdir level3/"$noiseDirectory3"/"${dictNumber1[5]}"
+mkdir level3/"$noiseDirectory3"/"${dictNumber1[12]}"
+mkdir level3/"$noiseDirectory3"/"${dictNumber1[6]}"
+mkdir level3/"$noiseDirectory3"/"${dictNumber1[7]}"
+mkdir level3/"$noiseDirectory3"/"${dict3[9]}"
+
+mkdir level3/"$noiseDirectory4"/"${dictNumber1[2]}"
+mkdir level3/"$noiseDirectory4"/"${dictNumber1[5]}"
+mkdir level3/"$noiseDirectory4"/"${dictNumber1[12]}"
+mkdir level3/"$noiseDirectory4"/"${dictNumber1[6]}"
+mkdir level3/"$noiseDirectory4"/"${dictNumber1[7]}"
+mkdir level3/"$noiseDirectory4"/"${dict3[9]}"
+
 cp level3Verify.sh level3/
 
 createdFile=$(echo -n "${dict17[$createdFileSeed]}")
@@ -154,7 +212,7 @@ echo "move me" > level3/$targetDirectory/$createdFile.txt
 echo "*"
 echo "*"
 echo "*"
-echo "* Level 3 >> level3/README
+echo "* Level 3 ">> level3/README
 echo "* Copy the file named $createdFile.txt in the $targetDirectory directory" >> level3/README
 echo "* into the $secondTargetDirectory directory." >> level3/README
 echo "* Once finished, run the verify.sh script." >> level3/README
