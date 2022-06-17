@@ -42,7 +42,7 @@ readarray -t dict17 <dictionaries/createdDirectoryDictionary.txt
 
 pseudoRANDcapture=$(cut -c 10 userHash.txt)
 pseudoRAND=$(echo "ibase=16; $pseudoRANDcapture" | bc)
-
+pseudoRAND=$((pseudoRAND + 1))
 
 loc1=$(cut -c 1 userHash.txt)
 loc2=$(cut -c 2 userHash.txt)
@@ -145,19 +145,21 @@ mkdir level5/$dir15
 mkdir level5/$dir16
 
 ## pseudorandom
-secondRAND=$((pseudoRAND + 1))
+secondRAND=$((pseudoRAND + 2))
 randDictSeed=$(echo -n "dict$pseudoRAND") ## returns dict2 for example
-randDictSeed2=$(echo -n "dict$secondRAND") ## returns dict2 for example
-$randDictSeed
-$randDictSeed2
+randDictSeed2=$(echo -n "dict$secondRAND") ## returns dict3 for example
+echo $randDictSeed
+echo $randDictSeed2
+
+
 ## pick 2 dictionaries, pick 5 strings from first dictionary, pick 1 from second dictionary
 ## noise files
-mkdir level5/"$targetDirectory"/"${randDictSeed[1]}"
-mkdir level5/"$targetDirectory"/"${randDictSeed[2]}"
-mkdir level5/"$targetDirectory"/"${randDictSeed[3]}"
-mkdir level5/"$targetDirectory"/"${randDictSeed[4]}"
-mkdir level5/"$targetDirectory"/"${randDictSeed[5]}"
-mkdir level5/"$targetDirectory"/"${randDictSeed2[2]}"
+mkdir level5/"$targetDirectory"/"${!randDictSeed[1]}"
+mkdir level5/"$targetDirectory"/"${!randDictSeed[2]}"
+mkdir level5/"$targetDirectory"/"${!randDictSeed[3]}"
+mkdir level5/"$targetDirectory"/"${!randDictSeed[4]}"
+mkdir level5/"$targetDirectory"/"${!randDictSeed[5]}"
+mkdir level5/"$targetDirectory"/"${!randDictSeed2[2]}"
 
 mkdir level5/"$noiseDirectory1"/"${randomDict[1]}"
 mkdir level5/"$noiseDirectory1"/"${randomDict[2]}"
