@@ -128,23 +128,23 @@ secondTargetDirectory=$(echo -n "${directoryDict[$secondTargetDirectorySeed]}")
 thirdTargetDirectory=$(echo -n "${directoryDict[$thirdTargetDirectorySeed]}")
 ## create static directories
 mkdir "level6"
-mkdir level6/$dir1
-mkdir level6/$dir2
-mkdir level6/$dir3
-mkdir level6/$dir4
-mkdir level6/$dir5
-mkdir level6/$dir6
-mkdir level6/$dir7
-mkdir level6/$dir8
-mkdir level6/$dir9
+mkdir level6/"$dir1"
+mkdir level6/"$dir2"
+mkdir level6/"$dir3"
+mkdir level6/"$dir4"
+mkdir level6/"$dir5"
+mkdir level6/"$dir6"
+mkdir level6/"$dir7"
+mkdir level6/"$dir8"
+mkdir level6/"$dir9"
 ## data filled
-mkdir level6/$dir10
-mkdir level6/$dir11
-mkdir level6/$dir12
-mkdir level6/$dir13
-mkdir level6/$dir14
-mkdir level6/$dir15
-mkdir level6/$dir16
+mkdir level6/"$dir10"
+mkdir level6/"$dir11"
+mkdir level6/"$dir12"
+mkdir level6/"$dir13"
+mkdir level6/"$dir14"
+mkdir level6/"$dir15"
+mkdir level6/"$dir16"
 
 cp level6Verify.sh level6/
 
@@ -155,15 +155,15 @@ thirdDataFile=$(echo -n "${directoryDict[8]}.csv")
 fourthDataFile=$(echo -n "${directoryDict[13]}.txt")
 fifthDataFile=$(echo -n "${directoryDict[12]}.pcap")
 sixthDataFile=$(echo -n "${directoryDict[1]}.log")
-touch level6/$secondTargetDirectory/$firstDataFile
-touch level6/$secondTargetDirectory/$secondDataFile
-touch level6/$secondTargetDirectory/$thirdDataFile
-touch level6/$secondTargetDirectory/$fourthDataFile
-touch level6/$secondTargetDirectory/$fifthDataFile
-touch level6/$secondTargetDirectory/$sixthDataFile
+touch level6/"$secondTargetDirectory"/"$firstDataFile"
+touch level6/"$secondTargetDirectory"/"$secondDataFile"
+touch level6/"$secondTargetDirectory"/"$thirdDataFile"
+touch level6/"$secondTargetDirectory"/"$fourthDataFile"
+touch level6/"$secondTargetDirectory"/"$fifthDataFile"
+touch level6/"$secondTargetDirectory"/"$sixthDataFile"
 createdFile=$(echo -n "${dict17[$createdFileSeed]}")
-touch level6/$targetDirectory/$createdFile.txt
-echo "move me" > level6/$targetDirectory/$createdFile.txt
+touch level6/"$targetDirectory"/"$createdFile.txt"
+echo "move me" > level6/"$targetDirectory"/"$createdFile.txt"
 echo "*"
 echo "*"
 echo "*"

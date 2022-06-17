@@ -1,8 +1,8 @@
 #!/bin/bash
 USER_HASH=${USER_HASH:0:32}
-levelToCheck=$HOME/level5
-checkDir=$(ls -R $levelToCheck)
-find $levelToCheck -type f > fileList.txt
+levelToCheck="$HOME"/level5
+checkDir=$(ls -R "$levelToCheck")
+find "$levelToCheck" -type f > fileList.txt
 declare -a list
 readarray -t list <fileList.txt
 for i in ${list[$i]}
@@ -11,7 +11,7 @@ do
 done
 
 finalHash=$(echo -n "$USER_HASH$checkDir" | md5sum | base64)
-echo $finalHash > finalHash.txt
+echo "$finalHash" > finalHash.txt
 finalHash=$(cut -c 1-32 finalHash.txt)
 echo "*"
 echo "*"

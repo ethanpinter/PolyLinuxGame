@@ -126,22 +126,22 @@ targetDirectory=$(echo -n "${directoryDict[$targetDirectorySeed]}")
 secondTargetDirectory=$(echo -n "${directoryDict[$secondTargetDirectorySeed]}")
 ## create static directories
 mkdir "level4"
-mkdir level4/$dir1
-mkdir level4/$dir2
-mkdir level4/$dir3
-mkdir level4/$dir4
-mkdir level4/$dir5
-mkdir level4/$dir6
-mkdir level4/$dir7
-mkdir level4/$dir8
-mkdir level4/$dir9
-mkdir level4/$dir10
-mkdir level4/$dir11
-mkdir level4/$dir12
-mkdir level4/$dir13
-mkdir level4/$dir14
-mkdir level4/$dir15
-mkdir level4/$dir16
+mkdir level4/"$dir1"
+mkdir level4/"$dir2"
+mkdir level4/"$dir3"
+mkdir level4/"$dir4"
+mkdir level4/"$dir5"
+mkdir level4/"$dir6"
+mkdir level4/"$dir7"
+mkdir level4/"$dir8"
+mkdir level4/"$dir9"
+mkdir level4/"$dir10"
+mkdir level4/"$dir11"
+mkdir level4/"$dir12"
+mkdir level4/"$dir13"
+mkdir level4/"$dir14"
+mkdir level4/"$dir15"
+mkdir level4/"$dir16"
 
 cp level4Verify.sh level4/
 
@@ -151,16 +151,16 @@ thirdDataFile=$(echo -n "${directoryDict[8]}.csv")
 fourthDataFile=$(echo -n "${directoryDict[13]}.txt")
 fifthDataFile=$(echo -n "${directoryDict[12]}.pcap")
 sixthDataFile=$(echo -n "${directoryDict[1]}.csv")
-touch level4/$secondTargetDirectory/$firstDataFile
-touch level4/$secondTargetDirectory/$secondDataFile
-touch level4/$secondTargetDirectory/$thirdDataFile
-touch level4/$secondTargetDirectory/$fourthDataFile
-touch level4/$secondTargetDirectory/$fifthDataFile
-touch level4/$secondTargetDirectory/$sixthDataFile
+touch level4/"$secondTargetDirectory/$firstDataFile"
+touch level4/"$secondTargetDirectory/$secondDataFile"
+touch level4/"$secondTargetDirectory/$thirdDataFile"
+touch level4/"$secondTargetDirectory/$fourthDataFile"
+touch level4/"$secondTargetDirectory/$fifthDataFile"
+touch level4/"$secondTargetDirectory/$sixthDataFile"
 
 createdFile=$(echo -n "${dict17[$createdFileSeed]}")
-touch level4/$targetDirectory/$createdFile.txt
-echo "remove me" > level4/$targetDirectory/$createdFile.txt
+touch level4/"$targetDirectory"/"$createdFile.txt"
+echo "remove me" > level4/"$targetDirectory"/"$createdFile.txt"
 echo "*"
 echo "*"
 echo "*"

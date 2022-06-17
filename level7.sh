@@ -122,22 +122,22 @@ secondTargetDirectory=$(echo -n "${directoryDict[$secondTargetDirectorySeed]}")
 thirdTargetDirectory=$(echo -n "${directoryDict[$thirdTargetDirectorySeed]}")
 ## create static directories
 mkdir "level7"
-mkdir level7/$dir1
-mkdir level7/$dir2
-mkdir level7/$dir3
-mkdir level7/$dir4
-mkdir level7/$dir5
-mkdir level7/$dir6
-mkdir level7/$dir7
-mkdir level7/$dir8
-mkdir level7/$dir9
-mkdir level7/$dir10
-mkdir level7/$dir11
-mkdir level7/$dir12
-mkdir level7/$dir13
-mkdir level7/$dir14
-mkdir level7/$dir15
-mkdir level7/$dir16
+mkdir level7/"$dir1"
+mkdir level7/"$dir2"
+mkdir level7/"$dir3"
+mkdir level7/"$dir4"
+mkdir level7/"$dir5"
+mkdir level7/"$dir6"
+mkdir level7/"$dir7"
+mkdir level7/"$dir8"
+mkdir level7/"$dir9"
+mkdir level7/"$dir10"
+mkdir level7/"$dir11"
+mkdir level7/"$dir12"
+mkdir level7/"$dir13"
+mkdir level7/"$dir14"
+mkdir level7/"$dir15"
+mkdir level7/"$dir16"
 
 cp level7Verify.sh level7/
 
@@ -147,12 +147,12 @@ thirdDataFile=$(echo -n "${directoryDict[8]}.csv")
 fourthDataFile=$(echo -n "${directoryDict[13]}.txt")
 fifthDataFile=$(echo -n "${directoryDict[12]}.pcap")
 sixthDataFile=$(echo -n "${directoryDict[1]}.csv")
-touch level7/$secondTargetDirectory/$firstDataFile
-touch level7/$secondTargetDirectory/$secondDataFile
-touch level7/$secondTargetDirectory/$thirdDataFile
-touch level7/$secondTargetDirectory/$fourthDataFile
-touch level7/$secondTargetDirectory/$fifthDataFile
-touch level7/$secondTargetDirectory/$sixthDataFile
+touch level7/"$secondTargetDirectory"/"$firstDataFile"
+touch level7/"$secondTargetDirectory"/"$secondDataFile"
+touch level7/"$secondTargetDirectory"/"$thirdDataFile"
+touch level7/"$secondTargetDirectory"/"$fourthDataFile"
+touch level7/"$secondTargetDirectory"/"$fifthDataFile"
+touch level7/"$secondTargetDirectory"/"$sixthDataFile"
 
 
 echo "* Level 7" >> level7/README

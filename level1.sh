@@ -122,22 +122,22 @@ targetDirectory=$(echo -n "${directoryDict[$targetDirectorySeed]}")
 
 ## create static directories
 mkdir "level1"
-mkdir level1/$dir1
-mkdir level1/$dir2
-mkdir level1/$dir3
-mkdir level1/$dir4
-mkdir level1/$dir5
-mkdir level1/$dir6
-mkdir level1/$dir7
-mkdir level1/$dir8
-mkdir level1/$dir9
-mkdir level1/$dir10
-mkdir level1/$dir11
-mkdir level1/$dir12
-mkdir level1/$dir13
-mkdir level1/$dir14
-mkdir level1/$dir15
-mkdir level1/$dir16
+mkdir level1/"$dir1"
+mkdir level1/"$dir2"
+mkdir level1/"$dir3"
+mkdir level1/"$dir4"
+mkdir level1/"$dir5"
+mkdir level1/"$dir6"
+mkdir level1/"$dir7"
+mkdir level1/"$dir8"
+mkdir level1/"$dir9"
+mkdir level1/"$dir10"
+mkdir level1/"$dir11"
+mkdir level1/"$dir12"
+mkdir level1/"$dir13"
+mkdir level1/"$dir14"
+mkdir level1/"$dir15"
+mkdir level1/"$dir16"
 
 ## pseudorandom
 secondRANDCapture=$(cut -c 4 userHash.txt)

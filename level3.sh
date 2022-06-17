@@ -1,5 +1,4 @@
 #!/bin/bash
-
 declare -a dict1
 declare -a dict2
 declare -a dict3
@@ -127,23 +126,23 @@ secondTargetDirectory=$(echo -n "${directoryDict[$secondTargetDirectorySeed]}")
 
 ## create static directories
 mkdir "level3"
-mkdir level3/$dir1
-mkdir level3/$dir2
-mkdir level3/$dir3
-mkdir level3/$dir4
-mkdir level3/$dir5
-mkdir level3/$dir6
-mkdir level3/$dir7
-mkdir level3/$dir8
-mkdir level3/$dir9
+mkdir level3/"$dir1"
+mkdir level3/"$dir2"
+mkdir level3/"$dir3"
+mkdir level3/"$dir4"
+mkdir level3/"$dir5"
+mkdir level3/"$dir6"
+mkdir level3/"$dir7"
+mkdir level3/"$dir8"
+mkdir level3/"$dir9"
 ## data filled
-mkdir level3/$dir10
-mkdir level3/$dir11
-mkdir level3/$dir12
-mkdir level3/$dir13
-mkdir level3/$dir14
-mkdir level3/$dir15
-mkdir level3/$dir16
+mkdir level3/"$dir10"
+mkdir level3/"$dir11"
+mkdir level3/"$dir12"
+mkdir level3/"$dir13"
+mkdir level3/"$dir14"
+mkdir level3/"$dir15"
+mkdir level3/"$dir16"
 
 
 ## pseudorandom
@@ -206,9 +205,9 @@ mkdir level3/"$noiseDirectory4"/"${dict3[9]}"
 cp level3Verify.sh level3/
 
 createdFile=$(echo -n "${dict17[$createdFileSeed]}")
-touch level3/$targetDirectory/$createdFile.txt
+touch level3/"$targetDirectory"/"$createdFile.txt"
 #rm -rf level3/$fourthTargetDirectory
-echo "move me" > level3/$targetDirectory/$createdFile.txt
+echo "move me" > level3/"$targetDirectory"/"$createdFile.txt"
 echo "*"
 echo "*"
 echo "*"

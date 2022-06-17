@@ -1,5 +1,4 @@
 #!/bin/bash
-
 declare -a dict1
 declare -a dict2
 declare -a dict3
@@ -36,11 +35,8 @@ readarray -t dict15 <dictionaries/sports.txt
 readarray -t dict16 <dictionaries/fastFood.txt
 readarray -t dict17 <dictionaries/createdDirectoryDictionary.txt
 
-# https://stackoverflow.com/questions/22466704/assign-each-line-of-file-to-be-a-variable
-# Thereafter, you can refer to the lines by number. The first line is "${lines[0]}" and the second is "${lines[1]}", etc.
-
-## read in user ID and generate hash with combined password
-
+pseudoRANDcapture=$(cut -c 6 userHash.txt)
+pseudoRAND=$(echo "ibase=16; $pseudoRANDcapture" | bc)
 
 loc1=$(cut -c 1 userHash.txt)
 loc2=$(cut -c 2 userHash.txt)
@@ -121,22 +117,22 @@ targetDirectory=$(echo -n "${directoryDict[$targetDirectorySeed]}")
 
 ## create static directories
 mkdir "level2"
-mkdir level2/$dir1
-mkdir level2/$dir2
-mkdir level2/$dir3
-mkdir level2/$dir4
-mkdir level2/$dir5
-mkdir level2/$dir6
-mkdir level2/$dir7
-mkdir level2/$dir8
-mkdir level2/$dir9
-mkdir level2/$dir10
-mkdir level2/$dir11
-mkdir level2/$dir12
-mkdir level2/$dir13
-mkdir level2/$dir14
-mkdir level2/$dir15
-mkdir level2/$dir16
+mkdir level2/"$dir1"
+mkdir level2/"$dir2"
+mkdir level2/"$dir3"
+mkdir level2/"$dir4"
+mkdir level2/"$dir5"
+mkdir level2/"$dir6"
+mkdir level2/"$dir7"
+mkdir level2/"$dir8"
+mkdir level2/"$dir9"
+mkdir level2/"$dir10"
+mkdir level2/"$dir11"
+mkdir level2/"$dir12"
+mkdir level2/"$dir13"
+mkdir level2/"$dir14"
+mkdir level2/"$dir15"
+mkdir level2/"$dir16"
 
 ## pseudorandom
 secondRANDCapture=$(cut -c 4 userHash.txt)

@@ -6,7 +6,7 @@ date +"%Y-%m-%d" > currentDate.txt
 currentDate=$(head -n 1 currentDate.txt)
 USER_ID=""
 echo "Enter your PSU email (xyz1234@psu.edu): "
-read USER_ID
+read -r USER_ID
 echo -n "$USER_ID" > userID.txt
 USER_HASH=$(echo -n "$USER_ID$currentDate" | md5sum)
 echo -n "$USER_HASH" > userHash.txt
@@ -34,7 +34,7 @@ rm level7.sh
 rm -rf dictionaries
 rm README.md
 rm userHash.txt
-cp -r /root/PolyLinuxGame/* /home/$userName/
+cp -r /root/PolyLinuxGame/* /home/"$userName"/
 rm /home/polylinuxgame/level1Verify.sh
 rm /home/polylinuxgame/level2Verify.sh
 rm /home/polylinuxgame/level3Verify.sh
