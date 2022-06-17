@@ -40,7 +40,7 @@ rm -rf /root/PolyLinuxGame
 #cp -r /root/PolyLinuxGame/dictionaries /home/$userName/
 chown -R $userName /home/polylinuxgame
 
-clear
+#clear
 
 #rm setup.sh
 echo "Done!" 
