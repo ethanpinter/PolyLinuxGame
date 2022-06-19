@@ -196,7 +196,7 @@ mkdir level7/"$noiseDirectory4"/"${dictNumber1[2]}"
 mkdir level7/"$noiseDirectory4"/"${dictNumber1[6]}"
 mkdir level7/"$noiseDirectory4"/"${dictNumber1[15]}"
 mkdir level7/"$noiseDirectory4"/"${dictNumber1[14]}"
-mkdir level7/"$noiseDirectory4"/"${dictNumber1[13}"
+mkdir level7/"$noiseDirectory4"/"${dictNumber1[13]}"
 mkdir level7/"$noiseDirectory4"/"${dict12[4]}"
 
 
