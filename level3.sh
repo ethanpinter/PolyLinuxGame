@@ -202,6 +202,9 @@ mkdir level3/"$noiseDirectory4"/"${dictNumber1[6]}"
 mkdir level3/"$noiseDirectory4"/"${dictNumber1[7]}"
 mkdir level3/"$noiseDirectory4"/"${dict3[9]}"
 
+# add noise files to target directory and similar noise files to other noise directories
+
+
 cp level3Verify.sh level3/
 
 createdFile=$(echo -n "${dict17[$createdFileSeed]}")
