@@ -206,6 +206,7 @@ mkdir level6/"$noiseDirectory4"/"${dictNumber1[1]}"
 mkdir level6/"$noiseDirectory4"/"${dict8[3]}"
 
 
+
 cp level6Verify.sh level6/
 
 ## generate noise files
@@ -221,6 +222,35 @@ touch level6/"$secondTargetDirectory"/"$thirdDataFile"
 touch level6/"$secondTargetDirectory"/"$fourthDataFile"
 touch level6/"$secondTargetDirectory"/"$fifthDataFile"
 touch level6/"$secondTargetDirectory"/"$sixthDataFile"
+
+touch level6/"$noiseDirectory1"/"$firstDataFile"
+touch level6/"$noiseDirectory1"/"$secondDataFile"
+touch level6/"$noiseDirectory1"/"$thirdDataFile"
+touch level6/"$noiseDirectory1"/"$fourthDataFile"
+touch level6/"$noiseDirectory1"/"$fifthDataFile"
+touch level6/"$noiseDirectory1"/"$sixthDataFile"
+
+touch level6/"$noiseDirectory2"/"$firstDataFile"
+touch level6/"$noiseDirectory2"/"$secondDataFile"
+touch level6/"$noiseDirectory2"/"$thirdDataFile"
+touch level6/"$noiseDirectory2"/"$fourthDataFile"
+touch level6/"$noiseDirectory2"/"$fifthDataFile"
+touch level6/"$noiseDirectory2"/"$sixthDataFile"
+
+touch level6/"$noiseDirectory3"/"$firstDataFile"
+touch level6/"$noiseDirectory3"/"$secondDataFile"
+touch level6/"$noiseDirectory3"/"$thirdDataFile"
+touch level6/"$noiseDirectory3"/"$fourthDataFile"
+touch level6/"$noiseDirectory3"/"$fifthDataFile"
+touch level6/"$noiseDirectory3"/"$sixthDataFile"
+
+touch level6/"$noiseDirectory4"/"$firstDataFile"
+touch level6/"$noiseDirectory4"/"$secondDataFile"
+touch level6/"$noiseDirectory4"/"$thirdDataFile"
+touch level6/"$noiseDirectory4"/"$fourthDataFile"
+touch level6/"$noiseDirectory4"/"$fifthDataFile"
+touch level6/"$noiseDirectory4"/"$sixthDataFile"
+
 createdFile=$(echo -n "${dict17[$createdFileSeed]}")
 touch level6/"$targetDirectory"/"$createdFile.txt"
 echo "move me" > level6/"$targetDirectory"/"$createdFile.txt"
