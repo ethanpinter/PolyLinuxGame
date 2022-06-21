@@ -45,7 +45,7 @@ thirdCapture=$(cut -c 4 userHash.txt)
 pseudoRAND=$(echo "ibase=16; $pseudoRANDcapture" | bc)
 secondRAND=$(echo "ibase=16; $secondCapture" | bc)
 thirdRAND=$(echo "ibase=16; $thirdCapture" | bc)
-
+thirdRAND=$((thirdRAND + 1))
 loc1=$(cut -c 1 userHash.txt)
 loc2=$(cut -c 2 userHash.txt)
 loc3=$(cut -c 3 userHash.txt)

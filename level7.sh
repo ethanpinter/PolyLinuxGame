@@ -216,6 +216,34 @@ touch level7/"$secondTargetDirectory"/"$fourthDataFile"
 touch level7/"$secondTargetDirectory"/"$fifthDataFile"
 touch level7/"$secondTargetDirectory"/"$sixthDataFile"
 
+touch level7/"$noiseDirectory1"/"$firstDataFile"
+touch level7/"$noiseDirectory1"/"$secondDataFile"
+touch level7/"$noiseDirectory1"/"$thirdDataFile"
+touch level7/"$noiseDirectory1"/"$fourthDataFile"
+touch level7/"$noiseDirectory1"/"$fifthDataFile"
+touch level7/"$noiseDirectory1"/"$sixthDataFile"
+
+touch level7/"$noiseDirectory2"/"$firstDataFile"
+touch level7/"$noiseDirectory2"/"$secondDataFile"
+touch level7/"$noiseDirectory2"/"$thirdDataFile"
+touch level7/"$noiseDirectory2"/"$fourthDataFile"
+touch level7/"$noiseDirectory2"/"$fifthDataFile"
+touch level7/"$noiseDirectory2"/"$sixthDataFile"
+
+touch level7/"$noiseDirectory3"/"$firstDataFile"
+touch level7/"$noiseDirectory3"/"$secondDataFile"
+touch level7/"$noiseDirectory3"/"$thirdDataFile"
+touch level7/"$noiseDirectory3"/"$fourthDataFile"
+touch level7/"$noiseDirectory3"/"$fifthDataFile"
+touch level7/"$noiseDirectory3"/"$sixthDataFile"
+
+touch level7/"$noiseDirectory4"/"$firstDataFile"
+touch level7/"$noiseDirectory4"/"$secondDataFile"
+touch level7/"$noiseDirectory4"/"$thirdDataFile"
+touch level7/"$noiseDirectory4"/"$fourthDataFile"
+touch level7/"$noiseDirectory4"/"$fifthDataFile"
+touch level7/"$noiseDirectory4"/"$sixthDataFile"
+
 
 echo "* Level 7" >> level7/README
 echo " Remove all the .csv files inside the $secondTargetDirectory directory" >> level7/README
