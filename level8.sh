@@ -17,30 +17,30 @@ declare -a dict14
 declare -a dict15
 declare -a dict16
 
-readarray -t dict2 <dictionaries/airlines.txt
-readarray -t dict7 <dictionaries/appliances.txt
-readarray -t dict11 <dictionaries/colleges.txt
-readarray -t dict10 <dictionaries/candy.txt
-readarray -t dict5 <dictionaries/carBrands.txt
-readarray -t dict13 <dictionaries/cheese.txt
-readarray -t dict16 <dictionaries/cities.txt
-readarray -t dict3 <dictionaries/clothingBrands.txt
-readarray -t dict14 <dictionaries/instruments.txt
-readarray -t dict4 <dictionaries/countries.txt
-readarray -t dict9 <dictionaries/dogBreeds.txt
-readarray -t dict15 <dictionaries/fruits.txt
-readarray -t dict1 <dictionaries/operatingSystems.txt
-readarray -t dict8 <dictionaries/seasonings.txt
-readarray -t dict12 <dictionaries/sports.txt
-readarray -t dict6 <dictionaries/fastFood.txt
+readarray -t dict3 <dictionaries/airlines.txt
+readarray -t dict11 <dictionaries/appliances.txt
+readarray -t dict4 <dictionaries/colleges.txt
+readarray -t dict1 <dictionaries/candy.txt
+readarray -t dict9 <dictionaries/carBrands.txt
+readarray -t dict5 <dictionaries/cheese.txt
+readarray -t dict8 <dictionaries/cities.txt
+readarray -t dict7 <dictionaries/clothingBrands.txt
+readarray -t dict6 <dictionaries/instruments.txt
+readarray -t dict12 <dictionaries/countries.txt
+readarray -t dict13 <dictionaries/dogBreeds.txt
+readarray -t dict10 <dictionaries/fruits.txt
+readarray -t dict14 <dictionaries/operatingSystems.txt
+readarray -t dict2 <dictionaries/seasonings.txt
+readarray -t dict16 <dictionaries/sports.txt
+readarray -t dict15 <dictionaries/fastFood.txt
 
 # https://stackoverflow.com/questions/22466704/assign-each-line-of-file-to-be-a-variable
 # Thereafter, you can refer to the lines by number. The first line is "${lines[0]}" and the second is "${lines[1]}", etc.
 
 ## read in user ID and generate hash with combined password
 
-secondCapture=$(cut -c 1 userHash.txt)
-thirdCapture=$(cut -c 15 userHash.txt)
+secondCapture=$(cut -c 7 userHash.txt)
+thirdCapture=$(cut -c 1 userHash.txt)
 secondRAND=$(echo "ibase=16; $secondCapture" | bc)
 thirdRAND=$(echo "ibase=16; $thirdCapture" | bc)
 
@@ -141,7 +141,7 @@ mkdir level8/"$dir16"
 
 
 ## pseudorandom
-secondRANDCapture=$(cut -c 14 userHash.txt)
+secondRANDCapture=$(cut -c 2 userHash.txt)
 pseudoRAND=$(echo "ibase=16; $secondRANDCapture" | bc)
 noiseDirectory1=$(echo -n "${directoryDict[3]}")
 noiseDirectory2=$(echo -n "${directoryDict[5]}")
