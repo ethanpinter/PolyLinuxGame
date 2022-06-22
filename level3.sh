@@ -152,9 +152,8 @@ noiseDirectory3=$(echo -n "${directoryDict[8]}")
 noiseDirectory4=$(echo -n "${directoryDict[12]}")
 
 randDictSeed=$(echo -n "dict$pseudoRAND") ## returns dict2 for example
-randDictSeed2=$(echo -n "dict$secondRAND") ## returns dict3 for example
-echo "$randDictSeed"
-echo "$randDictSeed2"
+#randDictSeed2=$(echo -n "dict$secondRAND") ## returns dict3 for example
+
 
 declare -a randDictSelection
 declare -a dictNumber1
