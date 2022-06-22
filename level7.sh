@@ -249,3 +249,4 @@ echo "* Level 7" >> level7/README
 echo " Remove all the .csv files inside the $secondTargetDirectory directory" >> level7/README
 echo " Remove the $thirdTargetDirectory directory" >> level7/README
 echo " Once finished, run the verify.sh script." >> level7/README
+rm directoryList.txt
