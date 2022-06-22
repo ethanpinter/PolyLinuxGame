@@ -143,10 +143,10 @@ mkdir level9/"$dir16"
 ## pseudorandom
 secondRANDCapture=$(cut -c 3 userHash.txt)
 pseudoRAND=$(echo "ibase=16; $secondRANDCapture" | bc)
-noiseDirectory1=$(echo -n "${directoryDict[3]}")
-noiseDirectory2=$(echo -n "${directoryDict[5]}")
-noiseDirectory3=$(echo -n "${directoryDict[2]}")
-noiseDirectory4=$(echo -n "${directoryDict[10]}")
+noiseDirectory1=$(echo -n "${directoryDict[6]}")
+noiseDirectory2=$(echo -n "${directoryDict[1]}")
+noiseDirectory3=$(echo -n "${directoryDict[8]}")
+noiseDirectory4=$(echo -n "${directoryDict[12]}")
 
 randDictSeed=$(echo -n "dict$pseudoRAND") ## returns dict2 for example
 #randDictSeed2=$(echo -n "dict$secondRAND") ## returns dict3 for example
@@ -164,40 +164,40 @@ readarray -t dictNumber1 < dictionaries/"$number1"
 
 ## pick 2 dictionaries, pick 5 strings from first dictionary, pick 1 from second dictionary
 ## noise files
+mkdir level9/"$secondTargetDirectory"/"${dictNumber1[1]}"
 mkdir level9/"$secondTargetDirectory"/"${dictNumber1[2]}"
 mkdir level9/"$secondTargetDirectory"/"${dictNumber1[6]}"
-mkdir level9/"$secondTargetDirectory"/"${dictNumber1[15]}"
-mkdir level9/"$secondTargetDirectory"/"${dictNumber1[14]}"
+mkdir level9/"$secondTargetDirectory"/"${dictNumber1[9]}"
 mkdir level9/"$secondTargetDirectory"/"${dictNumber1[13]}"
-mkdir level9/"$secondTargetDirectory"/"${dict12[4]}"
+mkdir level9/"$secondTargetDirectory"/"${dict3[4]}"
 
-mkdir level9/"$noiseDirectory1"/"${dictNumber1[2]}"
+mkdir level9/"$noiseDirectory1"/"${dictNumber1[1]}"
+mkdir level9/"$noiseDirectory1"/"${dictNumber1[3]}"
 mkdir level9/"$noiseDirectory1"/"${dictNumber1[6]}"
-mkdir level9/"$noiseDirectory1"/"${dictNumber1[15]}"
-mkdir level9/"$noiseDirectory1"/"${dictNumber1[14]}"
+mkdir level9/"$noiseDirectory1"/"${dictNumber1[9]}"
 mkdir level9/"$noiseDirectory1"/"${dictNumber1[13]}"
-mkdir level9/"$noiseDirectory1"/"${dict12[4]}"
+mkdir level9/"$noiseDirectory1"/"${dict3[4]}"
 #############
-mkdir level9/"$noiseDirectory2"/"${dictNumber1[2]}"
+mkdir level9/"$noiseDirectory2"/"${dictNumber1[1]}"
+mkdir level9/"$noiseDirectory2"/"${dictNumber1[3]}"
 mkdir level9/"$noiseDirectory2"/"${dictNumber1[6]}"
-mkdir level9/"$noiseDirectory2"/"${dictNumber1[15]}"
-mkdir level9/"$noiseDirectory2"/"${dictNumber1[14]}"
+mkdir level9/"$noiseDirectory2"/"${dictNumber1[9]}"
 mkdir level9/"$noiseDirectory2"/"${dictNumber1[13]}"
-mkdir level9/"$noiseDirectory2"/"${dict12[4]}"
+mkdir level9/"$noiseDirectory2"/"${dict3[4]}"
 
-mkdir level9/"$noiseDirectory3"/"${dictNumber1[2]}"
+mkdir level9/"$noiseDirectory3"/"${dictNumber1[1]}"
+mkdir level9/"$noiseDirectory3"/"${dictNumber1[3]}"
 mkdir level9/"$noiseDirectory3"/"${dictNumber1[6]}"
-mkdir level9/"$noiseDirectory3"/"${dictNumber1[15]}"
-mkdir level9/"$noiseDirectory3"/"${dictNumber1[14]}"
+mkdir level9/"$noiseDirectory3"/"${dictNumber1[9]}"
 mkdir level9/"$noiseDirectory3"/"${dictNumber1[13]}"
-mkdir level9/"$noiseDirectory3"/"${dict12[4]}"
+mkdir level9/"$noiseDirectory3"/"${dict3[4]}"
 
-mkdir level9/"$noiseDirectory4"/"${dictNumber1[2]}"
+mkdir level9/"$noiseDirectory4"/"${dictNumber1[1]}"
+mkdir level9/"$noiseDirectory4"/"${dictNumber1[3]}"
 mkdir level9/"$noiseDirectory4"/"${dictNumber1[6]}"
-mkdir level9/"$noiseDirectory4"/"${dictNumber1[15]}"
-mkdir level9/"$noiseDirectory4"/"${dictNumber1[14]}"
+mkdir level9/"$noiseDirectory4"/"${dictNumber1[9]}"
 mkdir level9/"$noiseDirectory4"/"${dictNumber1[13]}"
-mkdir level9/"$noiseDirectory4"/"${dict12[4]}"
+mkdir level9/"$noiseDirectory4"/"${dict3[4]}"
 
 
 

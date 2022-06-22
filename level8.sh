@@ -143,10 +143,10 @@ mkdir level8/"$dir16"
 ## pseudorandom
 secondRANDCapture=$(cut -c 2 userHash.txt)
 pseudoRAND=$(echo "ibase=16; $secondRANDCapture" | bc)
-noiseDirectory1=$(echo -n "${directoryDict[3]}")
+noiseDirectory1=$(echo -n "${directoryDict[7]}")
 noiseDirectory2=$(echo -n "${directoryDict[5]}")
 noiseDirectory3=$(echo -n "${directoryDict[2]}")
-noiseDirectory4=$(echo -n "${directoryDict[10]}")
+noiseDirectory4=$(echo -n "${directoryDict[9]}")
 
 randDictSeed=$(echo -n "dict$pseudoRAND") ## returns dict2 for example
 #randDictSeed2=$(echo -n "dict$secondRAND") ## returns dict3 for example
@@ -164,50 +164,48 @@ readarray -t dictNumber1 < dictionaries/"$number1"
 
 ## pick 2 dictionaries, pick 5 strings from first dictionary, pick 1 from second dictionary
 ## noise files
-mkdir level8/"$secondTargetDirectory"/"${dictNumber1[2]}"
 mkdir level8/"$secondTargetDirectory"/"${dictNumber1[6]}"
-mkdir level8/"$secondTargetDirectory"/"${dictNumber1[15]}"
-mkdir level8/"$secondTargetDirectory"/"${dictNumber1[14]}"
-mkdir level8/"$secondTargetDirectory"/"${dictNumber1[13]}"
-mkdir level8/"$secondTargetDirectory"/"${dict12[4]}"
+mkdir level8/"$secondTargetDirectory"/"${dictNumber1[1]}"
+mkdir level8/"$secondTargetDirectory"/"${dictNumber1[9]}"
+mkdir level8/"$secondTargetDirectory"/"${dictNumber1[10]}"
+mkdir level8/"$secondTargetDirectory"/"${dictNumber1[12]}"
+mkdir level8/"$secondTargetDirectory"/"${dict7[2]}"
 
-mkdir level8/"$noiseDirectory1"/"${dictNumber1[2]}"
 mkdir level8/"$noiseDirectory1"/"${dictNumber1[6]}"
-mkdir level8/"$noiseDirectory1"/"${dictNumber1[15]}"
-mkdir level8/"$noiseDirectory1"/"${dictNumber1[14]}"
-mkdir level8/"$noiseDirectory1"/"${dictNumber1[13]}"
-mkdir level8/"$noiseDirectory1"/"${dict12[4]}"
+mkdir level8/"$noiseDirectory1"/"${dictNumber1[1]}"
+mkdir level8/"$noiseDirectory1"/"${dictNumber1[9]}"
+mkdir level8/"$noiseDirectory1"/"${dictNumber1[10]}"
+mkdir level8/"$noiseDirectory1"/"${dictNumber1[12]}"
+mkdir level8/"$noiseDirectory1"/"${dict7[2]}"
 #############
-mkdir level8/"$noiseDirectory2"/"${dictNumber1[2]}"
 mkdir level8/"$noiseDirectory2"/"${dictNumber1[6]}"
-mkdir level8/"$noiseDirectory2"/"${dictNumber1[15]}"
-mkdir level8/"$noiseDirectory2"/"${dictNumber1[14]}"
-mkdir level8/"$noiseDirectory2"/"${dictNumber1[13]}"
-mkdir level8/"$noiseDirectory2"/"${dict12[4]}"
+mkdir level8/"$noiseDirectory2"/"${dictNumber1[1]}"
+mkdir level8/"$noiseDirectory2"/"${dictNumber1[9]}"
+mkdir level8/"$noiseDirectory2"/"${dictNumber1[10]}"
+mkdir level8/"$noiseDirectory2"/"${dictNumber1[12]}"
+mkdir level8/"$noiseDirectory2"/"${dict7[2]}"
 
-mkdir level8/"$noiseDirectory3"/"${dictNumber1[2]}"
 mkdir level8/"$noiseDirectory3"/"${dictNumber1[6]}"
-mkdir level8/"$noiseDirectory3"/"${dictNumber1[15]}"
-mkdir level8/"$noiseDirectory3"/"${dictNumber1[14]}"
-mkdir level8/"$noiseDirectory3"/"${dictNumber1[13]}"
-mkdir level8/"$noiseDirectory3"/"${dict12[4]}"
+mkdir level8/"$noiseDirectory3"/"${dictNumber1[1]}"
+mkdir level8/"$noiseDirectory3"/"${dictNumber1[9]}"
+mkdir level8/"$noiseDirectory3"/"${dictNumber1[10]}"
+mkdir level8/"$noiseDirectory3"/"${dictNumber1[12]}"
+mkdir level8/"$noiseDirectory3"/"${dict7[2]}"
 
-mkdir level8/"$noiseDirectory4"/"${dictNumber1[2]}"
 mkdir level8/"$noiseDirectory4"/"${dictNumber1[6]}"
-mkdir level8/"$noiseDirectory4"/"${dictNumber1[15]}"
-mkdir level8/"$noiseDirectory4"/"${dictNumber1[14]}"
-mkdir level8/"$noiseDirectory4"/"${dictNumber1[13]}"
-mkdir level8/"$noiseDirectory4"/"${dict12[4]}"
-
-
+mkdir level8/"$noiseDirectory4"/"${dictNumber1[1]}"
+mkdir level8/"$noiseDirectory4"/"${dictNumber1[9]}"
+mkdir level8/"$noiseDirectory4"/"${dictNumber1[10]}"
+mkdir level8/"$noiseDirectory4"/"${dictNumber1[12]}"
+mkdir level8/"$noiseDirectory4"/"${dict7[2]}"
 
 cp level8Verify.sh level8/
 
-firstDataFile=$(echo -n "${directoryDict[2]}.jpg")
-secondDataFile=$(echo -n "${directoryDict[5]}.csv")
-thirdDataFile=$(echo -n "${directoryDict[8]}.csv")
+firstDataFile=$(echo -n "${directoryDict[4]}.jpg")
+secondDataFile=$(echo -n "${directoryDict[6]}.csv")
+thirdDataFile=$(echo -n "${directoryDict[2]}.csv")
 fourthDataFile=$(echo -n "${directoryDict[13]}.txt")
-fifthDataFile=$(echo -n "${directoryDict[12]}.pcap")
+fifthDataFile=$(echo -n "${directoryDict[11]}.pcap")
 sixthDataFile=$(echo -n "${directoryDict[1]}.csv")
 touch level8/"$secondTargetDirectory"/"$firstDataFile"
 touch level8/"$secondTargetDirectory"/"$secondDataFile"
