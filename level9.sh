@@ -245,7 +245,7 @@ touch level9/"$noiseDirectory4"/"$fifthDataFile"
 touch level9/"$noiseDirectory4"/"$sixthDataFile"
 
 
-echo "* Level 7" >> level9/README
+echo "* Level 9" >> level9/README
 echo " Remove all the .csv files inside the $secondTargetDirectory directory" >> level9/README
 echo " Remove the $thirdTargetDirectory directory" >> level9/README
 echo " Once finished, run the verify.sh script." >> level9/README
