@@ -246,6 +246,6 @@ touch level8/"$noiseDirectory4"/"$sixthDataFile"
 
 echo "* Level 8" >> level8/README
 echo " Move all the .csv files inside the $secondTargetDirectory directory to the $thirdTargetDirectory" >> level8/README
-echo " Next, " >> level8/README
+echo " Next, blah blah blah" >> level8/README
 echo " Once finished, run the verify.sh script." >> level8/README
 rm directoryList.txt
