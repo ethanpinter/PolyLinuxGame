@@ -207,6 +207,7 @@ thirdDataFile=$(echo -n "${directoryDict[2]}.csv")
 fourthDataFile=$(echo -n "${directoryDict[13]}.txt")
 fifthDataFile=$(echo -n "${directoryDict[11]}.pcap")
 sixthDataFile=$(echo -n "${directoryDict[1]}.csv")
+
 touch level8/"$secondTargetDirectory"/"$firstDataFile"
 touch level8/"$secondTargetDirectory"/"$secondDataFile"
 touch level8/"$secondTargetDirectory"/"$thirdDataFile"
@@ -244,7 +245,7 @@ touch level8/"$noiseDirectory4"/"$sixthDataFile"
 
 
 echo "* Level 8" >> level8/README
-echo " Remove all the .csv files inside the $secondTargetDirectory directory" >> level8/README
-echo " Remove the $thirdTargetDirectory directory" >> level8/README
+echo " Move all the .csv files inside the $secondTargetDirectory directory to the $thirdTargetDirectory" >> level8/README
+echo " Next, " >> level8/README
 echo " Once finished, run the verify.sh script." >> level8/README
 rm directoryList.txt
