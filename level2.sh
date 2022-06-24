@@ -44,29 +44,29 @@ readarray -t dict13 <dictionaries/fastFood.txt
 readarray -t dict17 <dictionaries/createdDirectoryDictionary.txt
 
 ## grab 5th hash character and convert to decimal
-pseudoRANDcapture=${USER_HASH:2:2}
-secondRANDcapture=${USER_HASH:13:13}
+pseudoRANDcapture=${USER_HASH:2:1}
+secondRANDcapture=${USER_HASH:13:1}
 pseudoRAND=$(echo "ibase=16; $pseudoRANDcapture" | bc)
 secondRAND=$(echo "ibase=16; $secondRANDcapture" | bc)
 
 ## grabs and converts hash characters into decimal seeds
 char1=${USER_HASH:1:1}
-char2=${USER_HASH:2:2}
-char3=${USER_HASH:3:3}
-char4=${USER_HASH:4:4}
-char5=${USER_HASH:5:5}
-char6=${USER_HASH:6:6}
-char7=${USER_HASH:7:7}
-char8=${USER_HASH:8:8}
-char9=${USER_HASH:9:9}
-char10=${USER_HASH:10:10}
-char11=${USER_HASH:11:11}
-char12=${USER_HASH:12:12}
-char13=${USER_HASH:13:13}
-char14=${USER_HASH:14:14}
-char15=${USER_HASH:15:15}
-char16=${USER_HASH:16:16}
-char17=${USER_HASH:5:5}
+char2=${USER_HASH:2:1}
+char3=${USER_HASH:3:1}
+char4=${USER_HASH:4:1}
+char5=${USER_HASH:5:1}
+char6=${USER_HASH:6:1}
+char7=${USER_HASH:7:1}
+char8=${USER_HASH:8:1}
+char9=${USER_HASH:9:1}
+char10=${USER_HASH:10:1}
+char11=${USER_HASH:11:1}
+char12=${USER_HASH:12:1}
+char13=${USER_HASH:13:1}
+char14=${USER_HASH:14:1}
+char15=${USER_HASH:15:1}
+char16=${USER_HASH:16:1}
+char17=${USER_HASH:5:1}
 dir1Seed=$(echo "ibase=16; $char1" | bc) 
 dir2Seed=$(echo "ibase=16; $char2" | bc)
 dir3Seed=$(echo "ibase=16; $char3" | bc)
