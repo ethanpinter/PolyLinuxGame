@@ -206,6 +206,50 @@ mkdir level3/"$noiseDirectory4"/"${dictNumber1[3]}"
 mkdir level3/"$noiseDirectory4"/"${dictNumber1[2]}"
 mkdir level3/"$noiseDirectory4"/"${dictNumber2[3]}"
 
+## generate noise files
+firstDataFile=$(echo -n "${directoryDict[2]}.jpg")
+secondDataFile=$(echo -n "${directoryDict[5]}.csv")
+thirdDataFile=$(echo -n "${directoryDict[8]}.csv")
+fourthDataFile=$(echo -n "${directoryDict[13]}.txt")
+fifthDataFile=$(echo -n "${directoryDict[12]}.pcap")
+sixthDataFile=$(echo -n "${directoryDict[1]}.csv")
+
+touch level3/"$targetDirectory/$firstDataFile"
+touch level3/"$targetDirectory/$secondDataFile"
+touch level3/"$targetDirectory/$thirdDataFile"
+touch level3/"$targetDirectory/$fourthDataFile"
+touch level3/"$targetDirectory/$fifthDataFile"
+touch level3/"$targetDirectory/$sixthDataFile"
+
+touch level3/"$noiseDirectory1/$firstDataFile"
+touch level3/"$noiseDirectory1/$secondDataFile"
+touch level3/"$noiseDirectory1/$thirdDataFile"
+touch level3/"$noiseDirectory1/$fourthDataFile"
+touch level3/"$noiseDirectory1/$fifthDataFile"
+touch level3/"$noiseDirectory1/$sixthDataFile"
+
+touch level3/"$noiseDirectory2/$firstDataFile"
+touch level3/"$noiseDirectory2/$secondDataFile"
+touch level3/"$noiseDirectory2/$thirdDataFile"
+touch level3/"$noiseDirectory2/$fourthDataFile"
+touch level3/"$noiseDirectory2/$fifthDataFile"
+touch level3/"$noiseDirectory2/$sixthDataFile"
+
+touch level3/"$noiseDirectory3/$firstDataFile"
+touch level3/"$noiseDirectory3/$secondDataFile"
+touch level3/"$noiseDirectory3/$thirdDataFile"
+touch level3/"$noiseDirectory3/$fourthDataFile"
+touch level3/"$noiseDirectory3/$fifthDataFile"
+touch level3/"$noiseDirectory3/$sixthDataFile"
+
+touch level3/"$noiseDirectory4/$firstDataFile"
+touch level3/"$noiseDirectory4/$secondDataFile"
+touch level3/"$noiseDirectory4/$thirdDataFile"
+touch level3/"$noiseDirectory4/$fourthDataFile"
+touch level3/"$noiseDirectory4/$fifthDataFile"
+touch level3/"$noiseDirectory4/$sixthDataFile"
+
+
 ## copy verify script into level directory
 cp level3Verify.sh level3/
 ## set name of file to be created by user based on seed
