@@ -20,8 +20,8 @@ completeDictArray = [
 ["cajun", "salt", "pepper", "bayRub", "pizzaSeasoning", "italianSeasoning", "paprika", "garlic", "allspice", "cinnamon", "cumin", "ginger", "mustardSeed", "peppercorn", "tumeric", "vanilla"],
 ["soccer", "americanFootball", "pingPong", "waterPolo", "flyFishing", "wrestling", "lacrosse", "iceHockey", "badminton", "tennis", "golf", "downhillSkiing", "highJump", "longJump", "tripleJump", "javelinThrow"]
 ]
-
-print(os.environ.get('USER_HASH', '/root/PolyLinuxGame'))
+env_var=os.environ('USER_HASH')
+print(env_var)
 #var1=completeDictArray[][]
 #del(completeDictArray[][])
 #var2=completeDictArray[][]
