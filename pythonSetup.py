@@ -21,8 +21,7 @@ completeDictArray = [
 ["cajun", "salt", "pepper", "bayRub", "pizzaSeasoning", "italianSeasoning", "paprika", "garlic", "allspice", "cinnamon", "cumin", "ginger", "mustardSeed", "peppercorn", "tumeric", "vanilla"],
 ["soccer", "americanFootball", "pingPong", "waterPolo", "flyFishing", "wrestling", "lacrosse", "iceHockey", "badminton", "tennis", "golf", "downhillSkiing", "highJump", "longJump", "tripleJump", "javelinThrow"]
 ]
-
-userHash = sys.argv[0]
+userHash = str(sys.argv[1])
 print(userHash)
 hashChar=userHash[0:1]
 firstCharConverted=int(hashChar, 16)
