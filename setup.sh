@@ -68,7 +68,7 @@ rm -rf /root/PolyLinuxGame
 ## change permissions of levels to new user
 chown -R $userName /home/polylinuxgame
 
-clear
+#clear
 
 
 echo "Done!" 
