@@ -2,8 +2,8 @@
 
 ## snip user hash for only characters, list all directories and subdirectories
 USER_HASH=${USER_HASH:0:32}
-checkDir=$(ls -R "$HOME/level2")
-
+checkDir=$(ls -R "$(pwd)")
+##($pwd)
 ## find all files in level, add to file
 find "$HOME/level2" -type f > fileList.txt
 
