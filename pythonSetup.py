@@ -21,7 +21,7 @@ completeDictArray = [
 ["soccer", "americanFootball", "pingPong", "waterPolo", "flyFishing", "wrestling", "lacrosse", "iceHockey", "badminton", "tennis", "golf", "downhillSkiing", "highJump", "longJump", "tripleJump", "javelinThrow"]
 ]
 
-print(os.environ['USER_HASH'])
+print(os.environ.get('USER_HASH', '/root/PolyLinuxGame'))
 #var1=completeDictArray[][]
 #del(completeDictArray[][])
 #var2=completeDictArray[][]
