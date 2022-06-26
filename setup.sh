@@ -16,22 +16,23 @@ export currentDate
 export USER_ID
 export USER_HASH
 
+python pythonSetup.py "$USER_HASH"
 ## create new user with home directory (-m) and password
 userName="polylinuxgame"
 newPass="Password1"
 useradd -p $newPass -m $userName
 
 ## create levels
-bash level1.sh
-bash level2.sh
-bash level3.sh
-bash level4.sh
-bash level5.sh
-bash level6.sh
-bash level7.sh
-bash level8.sh
-bash level9.sh
-bash level10.sh
+#bash level1.sh
+#bash level2.sh
+#bash level3.sh
+#bash level4.sh
+#bash level5.sh
+#bash level6.sh
+#bash level7.sh
+#bash level8.sh
+#bash level9.sh
+#bash level10.sh
 
 ## remove install scripts
 rm level1.sh

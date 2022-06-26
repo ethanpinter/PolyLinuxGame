@@ -1,4 +1,5 @@
 import os
+import sys
 global completeDictArray
 completeDictArray = [
 ["spiritAirlines", "southwesternAirlines", "unitedAirlines", "emiratesAirlines", "airDubai", "deltaAirlines", "americanAirlines", "frontierAirlines", "jetBlueAirlines", "breezeAirways", "allegiantAir", "alaskaAirlines", "sunCountryAirlines", "virginAtlanticAirlines", "castleAir", "gamaAviation"], ## airlines
@@ -20,8 +21,11 @@ completeDictArray = [
 ["cajun", "salt", "pepper", "bayRub", "pizzaSeasoning", "italianSeasoning", "paprika", "garlic", "allspice", "cinnamon", "cumin", "ginger", "mustardSeed", "peppercorn", "tumeric", "vanilla"],
 ["soccer", "americanFootball", "pingPong", "waterPolo", "flyFishing", "wrestling", "lacrosse", "iceHockey", "badminton", "tennis", "golf", "downhillSkiing", "highJump", "longJump", "tripleJump", "javelinThrow"]
 ]
-env_var=os.environ('USER_HASH')
-print(env_var)
+
+userHash = sys.argv[0]
+firstCharConverted=int(userHash[0:0], 16)
+print(userHash)
+print(completeDictArray[0][firstCharConverted])
 #var1=completeDictArray[][]
 #del(completeDictArray[][])
 #var2=completeDictArray[][]
