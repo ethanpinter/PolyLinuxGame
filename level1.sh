@@ -1,5 +1,7 @@
 #!/bin/bash
 
+## 2d array, 16 rows of 16 cols, cols are
+
 declare -a dict1
 declare -a dict2
 declare -a dict3
