@@ -23,8 +23,10 @@ completeDictArray = [
 ]
 
 userHash = sys.argv[0]
-firstCharConverted=int(userHash[0:1], 16)
 print(userHash)
+hashChar=userHash[0:1]
+firstCharConverted=int(hashChar, 16)
+print(firstCharConverted)
 print(completeDictArray[0][firstCharConverted])
 #var1=completeDictArray[][]
 #del(completeDictArray[][])
