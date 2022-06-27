@@ -2,10 +2,12 @@
 echo "$USER_HASH"
 pseudoRANDcapture=${USER_HASH:2:1}
 echo "$pseudoRANDcapture"
-pseudoRAND=$(echo -n "ibase=16; $pseudoRANDcapture" | bc)
+#pseudoRAND=$(echo -n "ibase=16; $pseudoRANDcapture" | bc)
+pseudoRAND=1
 echo "$pseudoRAND"
 secondRANDcapture=${USER_HASH:3:1}
-secondRAND=$(echo -n "ibase=16; $secondRANDcapture" | bc)
+#secondRAND=$(echo -n "ibase=16; $secondRANDcapture" | bc)
+secondRAND=3
 combined=$(echo -n "$pseudoRAND,$secondRAND")
 echo "$combined"
 reference=${masterArray[$combined]}
