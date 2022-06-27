@@ -1,11 +1,15 @@
 #!/bin/bash
-
+echo "$USER_HASH"
 pseudoRANDcapture=${USER_HASH:2:1}
+echo "$pseudoRANDcapture"
 pseudoRAND=$(echo -n "ibase=16; $pseudoRANDcapture" | bc)
+echo "$pseudoRAND"
 secondRANDcapture=${USER_HASH:3:1}
 secondRAND=$(echo -n "ibase=16; $secondRANDcapture" | bc)
 combined=$(echo -n "$pseudoRAND,$secondRAND")
+echo "$combined"
 reference=${masterArray[$combined]}
+echo "$reference"
 createdFile=$(echo -n "$reference")
 targetDirectory="test"
 echo "${masterArray["1,0"]}"
