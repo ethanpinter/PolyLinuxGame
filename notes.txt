@@ -1,3 +1,16 @@
 / Thoughts
     - instead of using bash to create levels, use python to allow for easy use of 2D arrays
     - arch linux uses python 3.9.9, supports import os to allow directory creation
+    - started change over to large bash master array to create folder names
+    - python implementation is MUCH better and MUCH faster than bash
+
+//
+    - not an easy way/impossible to export associative arrays in bash (as stated by the maintainer of bash) https://www.mail-archive.com/bug-bash@gnu.org/msg01774.html
+        - so.. python? assuming we can get arch to work the way we need; otherwise, let the master array live inside each level script? this seems unnecessary and overcomplex
+        - other solution that works in both environments, create master array as a temporary file that each install script can call from using file manipulation in bash (cut, head, grep)
+
+/// To-Do
+    - .
+    - .
+    - .
+    - .

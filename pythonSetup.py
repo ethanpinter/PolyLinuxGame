@@ -23,10 +23,12 @@ completeDictArray = [
 ]
 userHash = str(sys.argv[1])
 print(userHash)
+## parse env variables exported by bash, (os.environ['USER_HASH'])
 hashChar=userHash[0:1]
 firstCharConverted=int(hashChar, 16)
+
 print(firstCharConverted)
-print(completeDictArray[0][firstCharConverted])
+print(completeDictArray[firstCharConverted][firstCharConverted])
 #var1=completeDictArray[][]
 #del(completeDictArray[][])
 #var2=completeDictArray[][]

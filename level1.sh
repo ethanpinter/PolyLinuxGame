@@ -29,4 +29,4 @@ echo "Once finished, run the verify.sh script." >> level1/README
 ## remove generated directory list for this level
 rm directoryList.txt
 
-
+## fix for arch, also upload to buildroot (monkey around with array functionality with the broken 2d array in bash)
