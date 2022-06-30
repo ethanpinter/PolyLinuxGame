@@ -8,9 +8,15 @@
     - not an easy way/impossible to export associative arrays in bash (as stated by the maintainer of bash) https://www.mail-archive.com/bug-bash@gnu.org/msg01774.html
         - so.. python? assuming we can get arch to work the way we need; otherwise, let the master array live inside each level script? this seems unnecessary and overcomplex
         - other solution that works in both environments, create master array as a temporary file that each install script can call from using file manipulation in bash (cut, head, grep)
-
+        - another alternative, pass variables to the install scripts via positional parameters (./level1.sh arg1 arg2 arg3 ... argN )
 /// To-Do
+    - instead of using export for master array, write it to a file and use file manipulation in buildroot (cut, head)
+    - redo level structure for better polymorphism, no duplicates because of hash duplicates
     - .
-    - .
-    - .
-    - .
+    - buildroot for easy levels, arch for harder
+
+    // each level script pulls from the masterArray file indiviudually using cut <- had to use sed instead
+
+// issues 6/29
+/ FIXED THIS - sh doesn't support string indexing (pseudoRANDcapture2=${noDupsHash:3:1})
+/ FIXED THIS - doesn't support string append (+=), no easy way to append to strings in sh?, therefore no way to eliminate duplicates in a string?
