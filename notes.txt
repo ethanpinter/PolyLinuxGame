@@ -20,3 +20,5 @@
 // issues 6/29
 / FIXED THIS - sh doesn't support string indexing (pseudoRANDcapture2=${noDupsHash:3:1})
 / FIXED THIS - doesn't support string append (+=), no easy way to append to strings in sh?, therefore no way to eliminate duplicates in a string?
+/ make sure all pseudoRAND has +1 added to account for zeros, there must be 17 items in 17 lists
+/ get noDupsHash working to strip off duplicates in hash, make sure order or digits stays same as this matters for md5 hash of ls -R in verify script
