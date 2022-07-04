@@ -1,16 +1,17 @@
 #!/bin/sh
 echo "$USER_HASH"
 
+noDupsHash=""
+
 ## created by stripping any duplicate characters from the string
-noDupsHash=$(echo "$USER_HASH" | sed 's/\([A-Za-z]\)\1\+/\1/g')
+#noDupsHash=$(echo "$USER_HASH" | sed 's/\([A-Za-z]\)\1\+/\1/g')
 
 echo "$noDupsHash ********"
 # possible loop for each character in USER_HASH
 #foo=string
-#for (( i=0; i<${#foo}; i++ )); do
-#  echo "${foo:$i:1}"
-#
-#done
+for char in $USER_HASH; do
+  echo "${USER_HASH:$char:1}"
+done
 
 # helper method for contains
 # contains()
