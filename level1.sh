@@ -1,9 +1,34 @@
 #!/bin/sh
 echo "$USER_HASH"
 
+## created by stripping any duplicate characters from the string
 noDupsHash=$(echo "$USER_HASH" | sed 's/\([A-Za-z]\)\1\+/\1/g')
 
-echo "$noDupsHash"
+echo "$noDupsHash ********"
+# possible loop for each character in USER_HASH
+#foo=string
+#for (( i=0; i<${#foo}; i++ )); do
+#  echo "${foo:$i:1}"
+#
+#done
+
+# helper method for contains
+# contains()
+#  case "$1" in
+#    (*"$2"*) true;;
+#    (*) false;;
+#  esac
+
+#TMP=$(cd Folder && ls)
+#
+#for name in $TMP; do
+#
+#  if [[ "${name}" != *"a"* -a ${name} == *"b"* ]] ;then
+#   echo $name
+#  fi
+#
+#done
+
 
 pseudoRANDcapture1=${noDupsHash:2:1}
 pseudoRANDcapture2=${noDupsHash:3:1} ## LIAR IT WORKS
