@@ -23,3 +23,9 @@
 / FIXED THIS - make sure all pseudoRAND has +1 added to account for zeros, there must be 17 items in 17 lists
 
 / get noDupsHash working to strip off duplicates in hash, make sure order or digits stays same as this matters for md5 hash of ls -R in verify script
+
+// issues 7/5
+/ moved away from stripping hash, changed to adding sets of 16 to ensure diff names
+/ created new git branch for buildroot in polybandit3
+/ need to find a way around lack of append (not concatentation) in order to make verify work
+    / no way to for loop cat contents of files and append them to verify hash output?

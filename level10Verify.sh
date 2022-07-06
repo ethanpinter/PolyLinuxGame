@@ -1,25 +1,23 @@
-#!/bin/bash
+#!/bin/sh
 
-## snip user hash for only characters, list all directories and subdirectories
-USER_HASH=${USER_HASH:0:32}
-checkDir=$(ls -R "$HOME/level10")
+## list all directories and subdirectories
+checkDir=$(ls -R "/home/polylinuxgame/level10")
+## find all files in level, add to file; adds file path per line
+## this DOES NOT account for contents of file, need to cat each file in a for loop?
+## but no append....+= does not exist in shell
+find "/home/polylinuxgame/level10" -type f > fileList.txt
 
-## find all files in level, add to file
-find "$HOME/level10" -type f > fileList.txt
-
-## create a new array with all names of files
-declare -a list
-readarray -t list <fileList.txt
-
-## for each file, cat the outputs and append them to the value to be hashed
-for i in ${list[$i]}
+## for line in fileList:
+while read -r line
 do
-    checkDir+=$(cat "$i")
-done
+  temp=$(cat "$line")
+  checkDir=$checkDir$temp
+done < fileList.txt
 
-## combine snipped hash with all directories and file contents,
-## hash that, then convert to base64
-finalHash=$(echo -n "$USER_HASH$checkDir" | md5sum | base64)
+
+## concatenate USER_HASH with all files and directories, hash it, then convert to
+## base64 characters for human-readable output
+finalHash=$(echo "$USER_HASH$checkDir" | md5sum | base64)
 echo "*"
 echo "*"
 echo "*"

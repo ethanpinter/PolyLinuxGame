@@ -2,7 +2,7 @@
 
 ## grab chars from hash
 pseudoRANDcapture1=${USER_HASH:2:1}
-pseudoRANDcapture2=${USER_HASH:3:1} ## LIAR IT WORKS
+pseudoRANDcapture2=${USER_HASH:3:1}
 pseudoRANDcapture3=${USER_HASH:4:1}
 pseudoRANDcapture4=${USER_HASH:5:1}
 pseudoRANDcapture5=${USER_HASH:6:1}
@@ -38,6 +38,7 @@ pseudoRAND16=$(echo "ibase=16; $pseudoRANDcapture16" | bc)
 
 ## add steps of 16 to each value to ensure no duplicate directory names are created
 ## 16 categories containing 16 items
+## change the integer added to keep value in certain range while still being polymorphic
 #pseudoRAND1=$((pseudoRAND1+16)) ## doesnt need changed
 pseudoRAND2=$(( $pseudoRAND2 + 16 ))
 pseudoRAND3=$(( $pseudoRAND3 + 32 ))
@@ -96,8 +97,14 @@ mkdir level1/"$dir14"
 mkdir level1/"$dir15"
 mkdir level1/"$dir16"
 
+
+
+## gen noise data
+
+
+
 ## copy verify script to correct level directory
-cp "$workingDir"/level1Verify.sh /home/"$userName"/level1/
+
 
 ## create instruction set
 echo "*"

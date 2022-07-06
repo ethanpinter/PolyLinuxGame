@@ -1,96 +1,85 @@
-#!/bin/bash
+#!/bin/sh
 
-## grab 5th hash character and convert to decimal
-pseudoRANDcapture=${USER_HASH:2:1}
-secondRANDcapture=${USER_HASH:13:1}
-pseudoRAND=$(echo "ibase=16; $pseudoRANDcapture" | bc)
-secondRAND=$(echo "ibase=16; $secondRANDcapture" | bc)
+## grab chars from hash
+pseudoRANDcapture1=${USER_HASH:2:1}
+pseudoRANDcapture2=${USER_HASH:3:1}
+pseudoRANDcapture3=${USER_HASH:4:1}
+pseudoRANDcapture4=${USER_HASH:5:1}
+pseudoRANDcapture5=${USER_HASH:6:1}
+pseudoRANDcapture6=${USER_HASH:7:1}
+pseudoRANDcapture7=${USER_HASH:8:1}
+pseudoRANDcapture8=${USER_HASH:9:1}
+pseudoRANDcapture9=${USER_HASH:10:1}
+pseudoRANDcapture10=${USER_HASH:11:1}
+pseudoRANDcapture11=${USER_HASH:12:1}
+pseudoRANDcapture12=${USER_HASH:13:1}
+pseudoRANDcapture13=${USER_HASH:14:1}
+pseudoRANDcapture14=${USER_HASH:15:1}
+pseudoRANDcapture15=${USER_HASH:16:1}
+pseudoRANDcapture16=${USER_HASH:17:1}
 
-## grabs and converts hash characters into decimal seeds
-char1=${USER_HASH:1:1}
-char2=${USER_HASH:2:1}
-char3=${USER_HASH:3:1}
-char4=${USER_HASH:4:1}
-char5=${USER_HASH:5:1}
-char6=${USER_HASH:6:1}
-char7=${USER_HASH:7:1}
-char8=${USER_HASH:8:1}
-char9=${USER_HASH:9:1}
-char10=${USER_HASH:10:1}
-char11=${USER_HASH:11:1}
-char12=${USER_HASH:12:1}
-char13=${USER_HASH:13:1}
-char14=${USER_HASH:14:1}
-char15=${USER_HASH:15:1}
-char16=${USER_HASH:16:1}
-char17=${USER_HASH:5:1}
-dir1Seed=$(echo "ibase=16; $char1" | bc) 
-dir2Seed=$(echo "ibase=16; $char2" | bc)
-dir3Seed=$(echo "ibase=16; $char3" | bc)
-dir4Seed=$(echo "ibase=16; $char4" | bc)
-dir5Seed=$(echo "ibase=16; $char5" | bc)
-dir6Seed=$(echo "ibase=16; $char6" | bc) 
-dir7Seed=$(echo "ibase=16; $char7" | bc)
-dir8Seed=$(echo "ibase=16; $char8" | bc)
-dir9Seed=$(echo "ibase=16; $char9" | bc)
-dir10Seed=$(echo "ibase=16; $char10" | bc)
-dir11Seed=$(echo "ibase=16; $char11" | bc) 
-dir12Seed=$(echo "ibase=16; $char12" | bc)
-dir13Seed=$(echo "ibase=16; $char13" | bc)
-dir14Seed=$(echo "ibase=16; $char14" | bc)
-dir15Seed=$(echo "ibase=16; $char15" | bc)
-dir16Seed=$(echo "ibase=16; $char16" | bc)
+## convert hash character from hex to decimal
+pseudoRAND1=$(echo "ibase=16; $pseudoRANDcapture1" | bc)
+pseudoRAND2=$(echo "ibase=16; $pseudoRANDcapture2" | bc)
+pseudoRAND3=$(echo "ibase=16; $pseudoRANDcapture3" | bc)
+pseudoRAND4=$(echo "ibase=16; $pseudoRANDcapture4" | bc)
+pseudoRAND5=$(echo "ibase=16; $pseudoRANDcapture5" | bc)
+pseudoRAND6=$(echo "ibase=16; $pseudoRANDcapture6" | bc)
+pseudoRAND7=$(echo "ibase=16; $pseudoRANDcapture7" | bc)
+pseudoRAND8=$(echo "ibase=16; $pseudoRANDcapture8" | bc)
+pseudoRAND9=$(echo "ibase=16; $pseudoRANDcapture9" | bc)
+pseudoRAND10=$(echo "ibase=16; $pseudoRANDcapture10" | bc)
+pseudoRAND11=$(echo "ibase=16; $pseudoRANDcapture11" | bc)
+pseudoRAND12=$(echo "ibase=16; $pseudoRANDcapture12" | bc)
+pseudoRAND13=$(echo "ibase=16; $pseudoRANDcapture13" | bc)
+pseudoRAND14=$(echo "ibase=16; $pseudoRANDcapture14" | bc)
+pseudoRAND15=$(echo "ibase=16; $pseudoRANDcapture15" | bc)
+pseudoRAND16=$(echo "ibase=16; $pseudoRANDcapture16" | bc)
 
-## determines the seed for the name of the file that user is asked to create
-createdDirectorySeed=$(echo "ibase=16; $char17" | bc)
+## add steps of 16 to each value to ensure no duplicate directory names are created
+## 16 categories containing 16 items
+## change the integer added to keep value in certain range while still being polymorphic
+#pseudoRAND1=$((pseudoRAND1+16)) ## doesnt need changed
+pseudoRAND2=$(( $pseudoRAND2 + 15 ))
+pseudoRAND3=$(( $pseudoRAND3 + 31 ))
+pseudoRAND4=$(( $pseudoRAND4 + 47 ))
+pseudoRAND5=$(( $pseudoRAND5 + 63 ))
+pseudoRAND6=$(( $pseudoRAND6 + 81 ))
+pseudoRAND7=$(( $pseudoRAND7 + 95 ))
+pseudoRAND8=$(( $pseudoRAND8 + 111 ))
+pseudoRAND9=$(( $pseudoRAND9 + 127 ))
+pseudoRAND10=$(( $pseudoRAND10 + 143 ))
+pseudoRAND11=$(( $pseudoRAND11 + 159 ))
+pseudoRAND12=$(( $pseudoRAND12 + 175 ))
+pseudoRAND13=$(( $pseudoRAND13 + 191 ))
+pseudoRAND14=$(( $pseudoRAND14 + 207 ))
+pseudoRAND15=$(( $pseudoRAND15 + 223 ))
+pseudoRAND16=$(( $pseudoRAND16 + 239 ))
 
-## seeds are converted into directory names based on the data files and seeds
-dir1=$(echo -n "${dict1[$dir1Seed]}")
-dir2=$(echo -n "${dict2[$dir2Seed]}")
-dir3=$(echo -n "${dict3[$dir3Seed]}")
-dir4=$(echo -n "${dict4[$dir4Seed]}")
-dir5=$(echo -n "${dict5[$dir5Seed]}")
-dir6=$(echo -n "${dict6[$dir6Seed]}")
-dir7=$(echo -n "${dict7[$dir7Seed]}")
-dir8=$(echo -n "${dict8[$dir8Seed]}")
-dir9=$(echo -n "${dict9[$dir9Seed]}")
-dir10=$(echo -n "${dict10[$dir10Seed]}")
-dir11=$(echo -n "${dict11[$dir11Seed]}")
-dir12=$(echo -n "${dict12[$dir12Seed]}")
-dir13=$(echo -n "${dict13[$dir13Seed]}")
-dir14=$(echo -n "${dict14[$dir14Seed]}")
-dir15=$(echo -n "${dict15[$dir15Seed]}")
-dir16=$(echo -n "${dict16[$dir16Seed]}")
+## select target directory and name of file to be created by user
+targetDirectory=$(head -n $pseudoRAND3 masterArray.txt | tail -1)
+createdDict=$(head -n $pseudoRAND11 masterArray.txt | tail -1)
 
-## adds names of directories to a file
-## this file is needed in order to select what file the user should modify/create/delete
-echo "$dir1" >> directoryList.txt
-echo "$dir2" >> directoryList.txt
-echo "$dir3" >> directoryList.txt
-echo "$dir4" >> directoryList.txt
-echo "$dir5" >> directoryList.txt
-echo "$dir6" >> directoryList.txt
-echo "$dir7" >> directoryList.txt
-echo "$dir8" >> directoryList.txt
-echo "$dir9" >> directoryList.txt
-echo "$dir10" >> directoryList.txt
-echo "$dir11" >> directoryList.txt
-echo "$dir12" >> directoryList.txt
-echo "$dir13" >> directoryList.txt
-echo "$dir14" >> directoryList.txt
-echo "$dir15" >> directoryList.txt
-echo "$dir16" >> directoryList.txt
+## set directories based on pseudorands
+dir1=$(head -n $pseudoRAND1 masterArray.txt | tail -1)
+dir2=$(head -n $pseudoRAND2 masterArray.txt | tail -1)
+dir3=$(head -n $pseudoRAND3 masterArray.txt | tail -1)
+dir4=$(head -n $pseudoRAND4 masterArray.txt | tail -1)
+dir5=$(head -n $pseudoRAND5 masterArray.txt | tail -1)
+dir6=$(head -n $pseudoRAND6 masterArray.txt | tail -1)
+dir7=$(head -n $pseudoRAND7 masterArray.txt | tail -1)
+dir8=$(head -n $pseudoRAND8 masterArray.txt | tail -1)
+dir9=$(head -n $pseudoRAND9 masterArray.txt | tail -1)
+dir10=$(head -n $pseudoRAND10 masterArray.txt | tail -1)
+dir11=$(head -n $pseudoRAND11 masterArray.txt | tail -1)
+dir12=$(head -n $pseudoRAND12 masterArray.txt | tail -1)
+dir13=$(head -n $pseudoRAND13 masterArray.txt | tail -1)
+dir14=$(head -n $pseudoRAND14 masterArray.txt | tail -1)
+dir15=$(head -n $pseudoRAND15 masterArray.txt | tail -1)
+dir16=$(head -n $pseudoRAND16 masterArray.txt | tail -1)
 
-## reads in names of created directories into list
-readarray -t directoryDict <directoryList.txt
-
-## sets seed for target directory based on hash
-targetDirectorySeed=$pseudoRAND
-## selected target directory based on list of created directories and seed
-targetDirectory=$(echo -n "${directoryDict[$targetDirectorySeed]}")
-
-## create level directories
-mkdir "level2"
+## create level-related directories
+mkdir level2/
 mkdir level2/"$dir1"
 mkdir level2/"$dir2"
 mkdir level2/"$dir3"
@@ -108,71 +97,19 @@ mkdir level2/"$dir14"
 mkdir level2/"$dir15"
 mkdir level2/"$dir16"
 
-## select noise directories (2D array implementation here for polymorphism)
-noiseDirectory1=$(echo -n "${directoryDict[10]}")
-noiseDirectory2=$(echo -n "${directoryDict[7]}")
-noiseDirectory3=$(echo -n "${directoryDict[3]}")
-noiseDirectory4=$(echo -n "${directoryDict[13]}")
 
-## select dictionary, read in data from that dictionary, select a word from that dictionary, use those names to create noise data
-randDictSeed=$(echo -n "$pseudoRAND")
-diffDictSeed=$(echo -n "$secondRAND")
-readarray -t randDictSelection < dictionaries/allDirectoryNames.txt
-readarray -t diffDictSelection < dictionaries/allDirectoryNames.txt
-selection=${randDictSelection[$randDictSeed]}
-diffSelection=${diffDictSelection[$diffDictSeed]}
-readarray -t dictNumber1 < dictionaries/"$selection"
-readarray -t dictNumber2 < dictionaries/"$diffSelection"
 
-## generate 5 similar directories inside target directory, generate one that is clearly different
-mkdir level2/"$targetDirectory"/"${dictNumber1[7]}"
-mkdir level2/"$targetDirectory"/"${dictNumber1[8]}"
-mkdir level2/"$targetDirectory"/"${dictNumber1[1]}"
-mkdir level2/"$targetDirectory"/"${dictNumber1[3]}"
-mkdir level2/"$targetDirectory"/"${dictNumber1[9]}"
-mkdir level2/"$targetDirectory"/"${dictNumber2[4]}"
+## gen noise data
 
-## generate noise data the same as what goes in target directory
-mkdir level2/"$noiseDirectory1"/"${dictNumber1[7]}"
-mkdir level2/"$noiseDirectory1"/"${dictNumber1[8]}"
-mkdir level2/"$noiseDirectory1"/"${dictNumber1[1]}"
-mkdir level2/"$noiseDirectory1"/"${dictNumber1[3]}"
-mkdir level2/"$noiseDirectory1"/"${dictNumber1[9]}"
-mkdir level2/"$noiseDirectory1"/"${dictNumber2[4]}"
-## generate noise data the same as what goes in target directory
-mkdir level2/"$noiseDirectory2"/"${dictNumber1[7]}"
-mkdir level2/"$noiseDirectory2"/"${dictNumber1[8]}"
-mkdir level2/"$noiseDirectory2"/"${dictNumber1[1]}"
-mkdir level2/"$noiseDirectory2"/"${dictNumber1[3]}"
-mkdir level2/"$noiseDirectory2"/"${dictNumber1[9]}"
-mkdir level2/"$noiseDirectory2"/"${dictNumber2[4]}"
-## generate noise data the same as what goes in target directory
-mkdir level2/"$noiseDirectory3"/"${dictNumber1[7]}"
-mkdir level2/"$noiseDirectory3"/"${dictNumber1[8]}"
-mkdir level2/"$noiseDirectory3"/"${dictNumber1[1]}"
-mkdir level2/"$noiseDirectory3"/"${dictNumber1[3]}"
-mkdir level2/"$noiseDirectory3"/"${dictNumber1[9]}"
-mkdir level2/"$noiseDirectory3"/"${dictNumber2[4]}"
-## generate noise data the same as what goes in target directory
-mkdir level2/"$noiseDirectory4"/"${dictNumber1[7]}"
-mkdir level2/"$noiseDirectory4"/"${dictNumber1[8]}"
-mkdir level2/"$noiseDirectory4"/"${dictNumber1[1]}"
-mkdir level2/"$noiseDirectory4"/"${dictNumber1[3]}"
-mkdir level2/"$noiseDirectory4"/"${dictNumber1[9]}"
-mkdir level2/"$noiseDirectory4"/"${dictNumber2[4]}"
 
-## copy verify script into level directory
-cp level2Verify.sh level2/
-## set name of file to be created by user based on seed
-createdDirectory=$(echo -n "${dict17[$createdDirectorySeed]}")
+
+## copy verify script to correct level directory
+
+
+## create instruction set
 echo "*"
 echo "*"
 echo "*"
 echo "* Level 2 *" >> level2/README
-echo "Create a new directory named $createdDirectory.txt in the $targetDirectory directory" >> level2/README
+echo "Create a new directory named $createdDict in the $targetDirectory directory" >> level2/README
 echo "Once finished, run the verify.sh script." >> level2/README
-
-## remove generated directory list for this level
-rm directoryList.txt
-
-
