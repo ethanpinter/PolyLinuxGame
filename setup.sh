@@ -31,7 +31,7 @@ passwd $userName -d $userPass
 ## create levels
 /bin/sh $workingDir/level1.sh
 /bin/sh $workingDir/level2.sh
-#/bin/sh $workingDir/level3.sh
+/bin/sh $workingDir/level3.sh
 #/bin/sh $workingDir/level4.sh
 #/bin/sh $workingDir/level5.sh
 #/bin/sh $workingDir/level6.sh
@@ -43,7 +43,7 @@ passwd $userName -d $userPass
 ## remove install scripts
 rm $workingDir/level1.sh
 rm $workingDir/level2.sh
-#rm $workingDir/level3.sh
+rm $workingDir/level3.sh
 #rm $workingDir/level4.sh
 #rm $workingDir/level5.sh
 #rm $workingDir/level6.sh
@@ -57,10 +57,11 @@ rm $workingDir/level2.sh
 ## copy levels into new user folder
 cp -r $workingDir/level1 /home/"$userName"/
 cp -r $workingDir/level2 /home/"$userName"/
-
+cp -r $workingDir/level3 /home/"$userName"/
 ## copy verify scripts into respective level directories
 cp level1Verify.sh /home/"$userName"/level1/
 cp level2Verify.sh /home/"$userName"/level2/
+cp level3Verify.sh /home/"$userName"/level3/
 
 ## change permissions of levels to new user
 chown -R $userName /home/$userName

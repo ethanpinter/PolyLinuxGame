@@ -103,7 +103,6 @@ mkdir level1/"$dir16"
 
 
 
-## copy verify script to correct level directory
 
 
 ## create instruction set
