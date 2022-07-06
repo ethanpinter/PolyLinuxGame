@@ -99,7 +99,7 @@ mkdir level4/"$dir15"
 mkdir level4/"$dir16"
 
 ## generate file to be moved by user
-echo "remove me" > level4/"$targetDirectory"/"$createdFile.txt"
+echo "move me" > level4/"$targetDirectory"/"$createdFile.txt"
 
 ## gen noise data
 
@@ -116,7 +116,7 @@ echo "* Level 4" >> level4/README
 echo "* Move the file named $createdFile.txt in the $targetDirectory directory into " >> level4/README
 echo "* the $secondTargetDirectory directory." >> level4/README
 echo "* Once finished, run the verify.sh script." >> level4/README
-#cat level4/README
+
 rm directoryList.txt
 
 
