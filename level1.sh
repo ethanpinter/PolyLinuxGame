@@ -1,53 +1,24 @@
 #!/bin/sh
-echo "$USER_HASH"
 
-noDupsHash=""
+## grab chars from hash
+pseudoRANDcapture1=${USER_HASH:2:1}
+pseudoRANDcapture2=${USER_HASH:3:1} ## LIAR IT WORKS
+pseudoRANDcapture3=${USER_HASH:4:1}
+pseudoRANDcapture4=${USER_HASH:5:1}
+pseudoRANDcapture5=${USER_HASH:6:1}
+pseudoRANDcapture6=${USER_HASH:7:1}
+pseudoRANDcapture7=${USER_HASH:8:1}
+pseudoRANDcapture8=${USER_HASH:9:1}
+pseudoRANDcapture9=${USER_HASH:10:1}
+pseudoRANDcapture10=${USER_HASH:11:1}
+pseudoRANDcapture11=${USER_HASH:12:1}
+pseudoRANDcapture12=${USER_HASH:13:1}
+pseudoRANDcapture13=${USER_HASH:14:1}
+pseudoRANDcapture14=${USER_HASH:15:1}
+pseudoRANDcapture15=${USER_HASH:16:1}
+pseudoRANDcapture16=${USER_HASH:17:1}
 
-## created by stripping any duplicate characters from the string
-#noDupsHash=$(echo "$USER_HASH" | sed 's/\([A-Za-z]\)\1\+/\1/g')
-
-echo "$noDupsHash ********"
-# possible loop for each character in USER_HASH
-#foo=string
-for char in $USER_HASH; do
-  echo "${USER_HASH:$char:1}"
-done
-
-# helper method for contains
-# contains()
-#  case "$1" in
-#    (*"$2"*) true;;
-#    (*) false;;
-#  esac
-
-#TMP=$(cd Folder && ls)
-#
-#for name in $TMP; do
-#
-#  if [[ "${name}" != *"a"* -a ${name} == *"b"* ]] ;then
-#   echo $name
-#  fi
-#
-#done
-
-
-pseudoRANDcapture1=${noDupsHash:2:1}
-pseudoRANDcapture2=${noDupsHash:3:1} ## LIAR IT WORKS
-pseudoRANDcapture3=${noDupsHash:4:1}
-pseudoRANDcapture4=${noDupsHash:5:1}
-pseudoRANDcapture5=${noDupsHash:6:1}
-pseudoRANDcapture6=${noDupsHash:7:1}
-pseudoRANDcapture7=${noDupsHash:8:1}
-pseudoRANDcapture8=${noDupsHash:9:1}
-pseudoRANDcapture9=${noDupsHash:10:1}
-pseudoRANDcapture10=${noDupsHash:11:1}
-pseudoRANDcapture11=${noDupsHash:12:1}
-pseudoRANDcapture12=${noDupsHash:13:1}
-pseudoRANDcapture13=${noDupsHash:14:1}
-pseudoRANDcapture14=${noDupsHash:15:1}
-pseudoRANDcapture15=${noDupsHash:16:1}
-pseudoRANDcapture16=${noDupsHash:17:1}
-
+## convert hash character from hex to decimal
 pseudoRAND1=$(echo "ibase=16; $pseudoRANDcapture1" | bc)
 pseudoRAND2=$(echo "ibase=16; $pseudoRANDcapture2" | bc)
 pseudoRAND3=$(echo "ibase=16; $pseudoRANDcapture3" | bc)
@@ -65,28 +36,30 @@ pseudoRAND14=$(echo "ibase=16; $pseudoRANDcapture14" | bc)
 pseudoRAND15=$(echo "ibase=16; $pseudoRANDcapture15" | bc)
 pseudoRAND16=$(echo "ibase=16; $pseudoRANDcapture16" | bc)
 
-## add 1 to everything
-pseudoRAND1=$((pseudoRAND1+1))
-pseudoRAND2=$((pseudoRAND2+1))
-pseudoRAND3=$((pseudoRAND3+1))
-pseudoRAND4=$((pseudoRAND4+1))
-pseudoRAND5=$((pseudoRAND5+1))
-pseudoRAND6=$((pseudoRAND6+1))
-pseudoRAND7=$((pseudoRAND7+1))
-pseudoRAND8=$((pseudoRAND8+1))
-pseudoRAND9=$((pseudoRAND9+1))
-pseudoRAND10=$((pseudoRAND10+1))
-pseudoRAND11=$((pseudoRAND11+1))
-pseudoRAND12=$((pseudoRAND12+1))
-pseudoRAND13=$((pseudoRAND13+1))
-pseudoRAND14=$((pseudoRAND14+1))
-pseudoRAND15=$((pseudoRAND15+1))
-pseudoRAND16=$((pseudoRAND16+1))
+## add steps of 16 to each value to ensure no duplicate directory names are created
+## 16 categories containing 16 items
+#pseudoRAND1=$((pseudoRAND1+16)) ## doesnt need changed
+pseudoRAND2=$(( $pseudoRAND2 + 16 ))
+pseudoRAND3=$(( $pseudoRAND3 + 32 ))
+pseudoRAND4=$(( $pseudoRAND4 + 48 ))
+pseudoRAND5=$(( $pseudoRAND5 + 64 ))
+pseudoRAND6=$(( $pseudoRAND6 + 80 ))
+pseudoRAND7=$(( $pseudoRAND7 + 96 ))
+pseudoRAND8=$(( $pseudoRAND8 + 112 ))
+pseudoRAND9=$(( $pseudoRAND9 + 128 ))
+pseudoRAND10=$(( $pseudoRAND10 + 144 ))
+pseudoRAND11=$(( $pseudoRAND11 + 160 ))
+pseudoRAND12=$(( $pseudoRAND12 + 176 ))
+pseudoRAND13=$(( $pseudoRAND13 + 192 ))
+pseudoRAND14=$(( $pseudoRAND14 + 208 ))
+pseudoRAND15=$(( $pseudoRAND15 + 224 ))
+pseudoRAND16=$(( $pseudoRAND16 + 240 ))
 
+## select target directory and name of file to be created by user
 targetDirectory=$(head -n $pseudoRAND7 masterArray.txt | tail -1)
 createdFile=$(head -n $pseudoRAND4 masterArray.txt | tail -1)
 
-## set directories based on user hash
+## set directories based on pseudorands
 dir1=$(head -n $pseudoRAND1 masterArray.txt | tail -1)
 dir2=$(head -n $pseudoRAND2 masterArray.txt | tail -1)
 dir3=$(head -n $pseudoRAND3 masterArray.txt | tail -1)
@@ -104,7 +77,7 @@ dir14=$(head -n $pseudoRAND14 masterArray.txt | tail -1)
 dir15=$(head -n $pseudoRAND15 masterArray.txt | tail -1)
 dir16=$(head -n $pseudoRAND16 masterArray.txt | tail -1)
 
-## copy verify script into level directory
+## create level-related directories
 mkdir level1/
 mkdir level1/"$dir1"
 mkdir level1/"$dir2"
@@ -123,16 +96,13 @@ mkdir level1/"$dir14"
 mkdir level1/"$dir15"
 mkdir level1/"$dir16"
 
-cp level1Verify.sh /home/polylinuxgame/level1/
+## copy verify script to correct level directory
+cp "$workingDir"/level1Verify.sh /home/"$userName"/level1/
 
+## create instruction set
 echo "*"
 echo "*"
 echo "*"
 echo "* Level 1 *" >> level1/README
 echo "Create a new file named $createdFile.txt in the $targetDirectory directory" >> level1/README
 echo "Once finished, run the verify.sh script." >> level1/README
-
-## remove generated directory list for this level
-rm directoryList.txt
-
-## fix for arch, also upload to buildroot (monkey around with array functionality with the broken 2d array in bash)

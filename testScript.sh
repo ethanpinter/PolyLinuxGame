@@ -2,14 +2,10 @@
 
 USER_HASH="9f06243abcb89c70e0c331c61d871fa7"
 
-noDupsHash=""
+noDupsHash=$(echo $USER_HASH | grep -o '^\S\+')
 
-## created by stripping any duplicate characters from the string
-#noDupsHash=$(echo "$USER_HASH" | sed 's/\([A-Za-z]\)\1\+/\1/g')
+echo "$noDupsHash"
 
-echo "$noDupsHash ********"
-# possible loop for each character in USER_HASH
-#foo=string
-for char in $USER_HASH; do
-  printf '%s' "$char" | cut -c 1
-done
+## nick's solution with grep instead of sed
+## level_HASH=$(echo -n "$USER_ID$currentDate$newPass$levelPassword" | md5sum | grep -o '^\S\+')
+## firstChar=${level_HASH::1}

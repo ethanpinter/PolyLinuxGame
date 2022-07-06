@@ -1,27 +1,35 @@
 #!/bin/sh
 
 ## get system date and psu email, create hash for directories
+workingDir=$(pwd)
+ourPass="supersecure"
 currentDate=$(date +"%Y-%m-%d")
 USER_ID=""
+## need to do some validation for email input
 echo "Enter your PSU email (xyz1234@psu.edu): "
 read -r USER_ID
-USER_HASH=$(echo "$USER_ID$currentDate" | md5sum)
+
+## generate user hash based on ID, date, and backend pass
+USER_HASH=$(echo "$USER_ID$currentDate$ourPass" | md5sum | grep -o '^\S\+' | tr 'a-z' 'A-Z')
+echo "$USER_HASH"
 
 ## export for level and verify scripts
-export currentDate
-export USER_ID
 export USER_HASH
+export workingDir
+
+## buildroot doesn't have a home directory by default, so we add one
 mkdir /home/
-#python pythonSetup.py "$USER_HASH"
-## create new user with home directory (-m) and password
+
+## create new user in the home directory, set password
 userName="polylinuxgame"
-newPass="Password1"
-mkdir -p /home/$userName
-adduser -h /home/$userName -D $userName
-passwd $userName -d "$newPass"
+userPass="Password1"
+
+mkdir /home/$userName
+adduser -h /home/$userName --disabled-password $userName
+passwd $userName -d $userPass
 
 ## create levels
-/bin/sh level1.sh
+/bin/sh $workingDir/level1.sh
 #bash level2.sh
 #bash level3.sh
 #bash level4.sh
@@ -33,7 +41,7 @@ passwd $userName -d "$newPass"
 #bash level10.sh
 
 ## remove install scripts
-rm level1.sh
+#rm level1.sh
 #rm level2.sh
 #rm level3.sh
 #rm level4.sh
@@ -43,14 +51,14 @@ rm level1.sh
 #rm level8.sh
 #rm level9.sh
 #rm level10.sh
-rm -rf dictionaries
-rm README.md
+#rm -rf dictionaries
+#rm README.md
 
 ## copy create levels into new user folder
-cp -r /root/* /home/"$userName"/
+cp -r /$workingDir/* /home/"$userName"/
 
 ## remove install scripts from home directory
-rm /home/"$userName"/level1Verify.sh
+#rm /home/"$userName"/level1Verify.sh
 #rm /home/polylinuxgame/level2Verify.sh
 #rm /home/polylinuxgame/level3Verify.sh
 #rm /home/polylinuxgame/level4Verify.sh
@@ -62,12 +70,11 @@ rm /home/"$userName"/level1Verify.sh
 #rm /home/polylinuxgame/level10Verify.sh
 
 ## remove root clone of game
-rm -rf /root/*
+#rm -rf /root/*
 ## change permissions of levels to new user
-chown -R $userName /home/polylinuxgame
+chown -R $userName /home/$userName
 
-#clear
-
+clear
 
 echo "Done!" 
 echo "***************************************"
