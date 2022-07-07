@@ -39,7 +39,7 @@ pseudoRAND16=$(echo "ibase=16; $pseudoRANDcapture16" | bc)
 ## add steps of 16 to each value to ensure no duplicate directory names are created
 ## 16 categories containing 16 items
 ## change the integer added to keep value in certain range while still being polymorphic
-#pseudoRAND1=$((pseudoRAND1+16)) ## doesnt need changed
+pseudoRAND1=$(( $pseudoRAND1 + 1 )) ## ensures value isn't 0
 pseudoRAND2=$(( $pseudoRAND2 + 15 ))
 pseudoRAND3=$(( $pseudoRAND3 + 31 ))
 pseudoRAND4=$(( $pseudoRAND4 + 47 ))
