@@ -35,7 +35,7 @@ passwd $userName -d $userPass
 /bin/sh $workingDir/level4.sh
 /bin/sh $workingDir/level5.sh
 /bin/sh $workingDir/level6.sh
-#/bin/sh $workingDir/level7.sh
+/bin/sh $workingDir/level7.sh
 #/bin/sh $workingDir/level8.sh
 #/bin/sh $workingDir/level9.sh
 #/bin/sh $workingDir/level10.sh
@@ -47,7 +47,7 @@ rm $workingDir/level3.sh
 rm $workingDir/level4.sh
 rm $workingDir/level5.sh
 rm $workingDir/level6.sh
-#rm $workingDir/level7.sh
+rm $workingDir/level7.sh
 #rm $workingDir/level8.sh
 #rm $workingDir/level9.sh
 #rm $workingDir/level10.sh
@@ -61,6 +61,7 @@ cp -r $workingDir/level3 /home/"$userName"/
 cp -r $workingDir/level4 /home/"$userName"/
 cp -r $workingDir/level5 /home/"$userName"/
 cp -r $workingDir/level6 /home/"$userName"/
+cp -r $workingDir/level7 /home/"$userName"/
 
 ## copy verify scripts into respective level directories
 cp level1Verify.sh /home/"$userName"/level1/
@@ -69,6 +70,7 @@ cp level3Verify.sh /home/"$userName"/level3/
 cp level4Verify.sh /home/"$userName"/level4/
 cp level5Verify.sh /home/"$userName"/level5/
 cp level6Verify.sh /home/"$userName"/level6/
+cp level7Verify.sh /home/"$userName"/level7/
 
 ## change permissions of levels to new user
 chown -R $userName /home/$userName
