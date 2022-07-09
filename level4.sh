@@ -116,7 +116,3 @@ echo "* Level 4" >> level4/README
 echo "* Move the file named $createdFile.txt in the $targetDirectory directory into " >> level4/README
 echo "* the $secondTargetDirectory directory." >> level4/README
 echo "* Once finished, run the verify.sh script." >> level4/README
-
-rm directoryList.txt
-
-

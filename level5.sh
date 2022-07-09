@@ -115,4 +115,3 @@ echo "* Level 4" >> level5/README
 echo "* Remove the file named $createdFile.txt in the $targetDirectory directory." >> level5/README
 echo "* Once finished, run the verify.sh script." >> level5/README
 
-rm directoryList.txt
