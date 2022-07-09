@@ -146,3 +146,4 @@ echo "* Create a new file named $createdFile.txt in the directory unlike the oth
 echo "* Once finished, run the verify.sh script." >> level6/README
 
 rm dirList.txt
+
