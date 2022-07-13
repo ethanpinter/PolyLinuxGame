@@ -102,8 +102,87 @@ echo "remove me" > level5/"$targetDirectory"/"$createdFile.txt"
 
 ## gen noise data
 
+noiseData1=$(head -n $pseudoRAND2 masterArray.txt | tail -1)
+noiseData2=$(head -n $pseudoRAND4 masterArray.txt | tail -1)
+noiseData3=$(head -n $pseudoRAND6 masterArray.txt | tail -1)
+noiseData4=$(head -n $pseudoRAND3 masterArray.txt | tail -1)
+noiseData5=$(head -n $pseudoRAND1 masterArray.txt | tail -1)
+noiseData6=$(head -n $pseudoRAND13 masterArray.txt | tail -1)
+noiseData7=$(head -n $pseudoRAND9 masterArray.txt | tail -1)
+noiseData8=$(head -n $pseudoRAND10 masterArray.txt | tail -1)
 
 
+touch level5/"$dir1"/"$noiseData1".csv
+touch level5/"$dir1"/"$noiseData2".cab
+touch level5/"$dir1"/"$noiseData3".iso
+touch level5/"$dir1"/"$noiseData4".jar
+touch level5/"$dir1"/"$noiseData5".iso
+touch level5/"$dir1"/"$noiseData6".html
+touch level5/"$dir1"/"$noiseData7".lnk
+touch level5/"$dir1"/"$noiseData8".doc
+
+touch level5/"$dir2"/"$noiseData1".log
+touch level5/"$dir2"/"$noiseData2".docx
+touch level5/"$dir2"/"$noiseData3".huh
+touch level5/"$dir2"/"$noiseData4".dat
+touch level5/"$dir2"/"$noiseData5".txt
+touch level5/"$dir2"/"$noiseData6".rar
+touch level5/"$dir2"/"$noiseData7".txt
+touch level5/"$dir2"/"$noiseData8".txt
+
+touch level5/"$dir3"/"$noiseData1".txt
+touch level5/"$dir3"/"$noiseData2".csv
+touch level5/"$dir3"/"$noiseData3".txt
+touch level5/"$dir3"/"$noiseData4".txt
+touch level5/"$dir3"/"$noiseData5".csv
+touch level5/"$dir3"/"$noiseData6".
+touch level5/"$dir3"/"$noiseData7".txt
+touch level5/"$dir3"/"$noiseData8".txt
+
+touch level5/"$dir4"/"$noiseData1".jpeg
+touch level5/"$dir4"/"$noiseData2".iso
+touch level5/"$dir4"/"$noiseData3".rar
+touch level5/"$dir4"/"$noiseData4".fortnite
+touch level5/"$dir4"/"$noiseData5".rar
+touch level5/"$dir4"/"$noiseData6".log
+touch level5/"$dir4"/"$noiseData7".dat
+touch level5/"$dir4"/"$noiseData8".dat
+
+touch level5/"$dir5"/"$noiseData1".csv
+touch level5/"$dir5"/"$noiseData2".txt
+touch level5/"$dir5"/"$noiseData3".txt
+touch level5/"$dir5"/"$noiseData4".txt
+touch level5/"$dir5"/"$noiseData5".txt
+touch level5/"$dir5"/"$noiseData6".txt
+touch level5/"$dir5"/"$noiseData7".csv
+touch level5/"$dir5"/"$noiseData8".csv
+
+touch level5/"$dir6"/"$noiseData1".mov
+touch level5/"$dir6"/"$noiseData2".txt
+touch level5/"$dir6"/"$noiseData3".txt
+touch level5/"$dir6"/"$noiseData4".txt
+touch level5/"$dir6"/"$noiseData5".mov
+touch level5/"$dir6"/"$noiseData6".dat
+touch level5/"$dir6"/"$noiseData7".dat
+touch level5/"$dir6"/"$noiseData8".mov
+
+touch level5/"$dir7"/"$noiseData1".css
+touch level5/"$dir7"/"$noiseData2".css
+touch level5/"$dir7"/"$noiseData3".html
+touch level5/"$dir7"/"$noiseData4".html
+touch level5/"$dir7"/"$noiseData5".html
+touch level5/"$dir7"/"$noiseData6".html
+touch level5/"$dir7"/"$noiseData7".html
+touch level5/"$dir7"/"$noiseData8".html
+
+touch level5/"$dir8"/"$noiseData1".txt
+touch level5/"$dir8"/"$noiseData2".txt
+touch level5/"$dir8"/"$noiseData3".txt
+touch level5/"$dir8"/"$noiseData4".txt
+touch level5/"$dir8"/"$noiseData5".dmg
+touch level5/"$dir8"/"$noiseData6".dmg
+touch level5/"$dir8"/"$noiseData7".dmg
+touch level5/"$dir8"/"$noiseData8".dmg
 
 
 ## create instruction set
@@ -111,7 +190,7 @@ echo "remove me" > level5/"$targetDirectory"/"$createdFile.txt"
 echo "*"
 echo "*"
 echo "*"
-echo "* Level 4" >> level5/README
+echo "* Level 5" >> level5/README
 echo "* Remove the file named $createdFile.txt in the $targetDirectory directory." >> level5/README
 echo "* Once finished, run the verify.sh script." >> level5/README
 

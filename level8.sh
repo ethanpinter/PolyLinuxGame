@@ -1,251 +1,151 @@
-#!/bin/bash
+#!/bin/sh
 
-declare -a dict1
-declare -a dict2
-declare -a dict3
-declare -a dict4
-declare -a dict5
-declare -a dict6
-declare -a dict7
-declare -a dict8
-declare -a dict9
-declare -a dict10
-declare -a dict11
-declare -a dict12
-declare -a dict13
-declare -a dict14
-declare -a dict15
-declare -a dict16
+## grab chars from hash
+pseudoRANDcapture1=${USER_HASH:2:1}
+pseudoRANDcapture2=${USER_HASH:3:1}
+pseudoRANDcapture3=${USER_HASH:4:1}
+pseudoRANDcapture4=${USER_HASH:5:1}
+pseudoRANDcapture5=${USER_HASH:6:1}
+pseudoRANDcapture6=${USER_HASH:7:1}
+#pseudoRANDcapture7=${USER_HASH:8:1}
+#pseudoRANDcapture8=${USER_HASH:9:1}
+#pseudoRANDcapture9=${USER_HASH:10:1}
+#pseudoRANDcapture10=${USER_HASH:11:1}
+#pseudoRANDcapture11=${USER_HASH:12:1}
+#pseudoRANDcapture12=${USER_HASH:13:1}
+#pseudoRANDcapture13=${USER_HASH:14:1}
+#pseudoRANDcapture14=${USER_HASH:15:1}
+#pseudoRANDcapture15=${USER_HASH:16:1}
+#pseudoRANDcapture16=${USER_HASH:17:1}
 
-readarray -t dict3 <dictionaries/airlines.txt
-readarray -t dict11 <dictionaries/appliances.txt
-readarray -t dict4 <dictionaries/colleges.txt
-readarray -t dict1 <dictionaries/candy.txt
-readarray -t dict9 <dictionaries/carBrands.txt
-readarray -t dict5 <dictionaries/cheese.txt
-readarray -t dict8 <dictionaries/cities.txt
-readarray -t dict7 <dictionaries/clothingBrands.txt
-readarray -t dict6 <dictionaries/instruments.txt
-readarray -t dict12 <dictionaries/countries.txt
-readarray -t dict13 <dictionaries/dogBreeds.txt
-readarray -t dict10 <dictionaries/fruits.txt
-readarray -t dict14 <dictionaries/operatingSystems.txt
-readarray -t dict2 <dictionaries/seasonings.txt
-readarray -t dict16 <dictionaries/sports.txt
-readarray -t dict15 <dictionaries/fastFood.txt
-
-# https://stackoverflow.com/questions/22466704/assign-each-line-of-file-to-be-a-variable
-# Thereafter, you can refer to the lines by number. The first line is "${lines[0]}" and the second is "${lines[1]}", etc.
-
-## read in user ID and generate hash with combined password
-
-secondCapture=$(cut -c 7 userHash.txt)
-thirdCapture=$(cut -c 1 userHash.txt)
-secondRAND=$(echo "ibase=16; $secondCapture" | bc)
-thirdRAND=$(echo "ibase=16; $thirdCapture" | bc)
-
-loc1=$(cut -c 1 userHash.txt)
-loc2=$(cut -c 2 userHash.txt)
-loc3=$(cut -c 3 userHash.txt)
-loc4=$(cut -c 4 userHash.txt)
-loc5=$(cut -c 5 userHash.txt)
-loc6=$(cut -c 6 userHash.txt)
-loc7=$(cut -c 7 userHash.txt)
-loc8=$(cut -c 8 userHash.txt)
-loc9=$(cut -c 9 userHash.txt)
-loc10=$(cut -c 10 userHash.txt)
-loc11=$(cut -c 11 userHash.txt)
-loc12=$(cut -c 12 userHash.txt)
-loc13=$(cut -c 13 userHash.txt)
-loc14=$(cut -c 14 userHash.txt)
-loc15=$(cut -c 15 userHash.txt)
-loc16=$(cut -c 16 userHash.txt)
-
-dir1Seed=$(echo "ibase=16; $loc1" | bc) 
-dir2Seed=$(echo "ibase=16; $loc2" | bc)
-dir3Seed=$(echo "ibase=16; $loc3" | bc)
-dir4Seed=$(echo "ibase=16; $loc4" | bc)
-dir5Seed=$(echo "ibase=16; $loc5" | bc)
-dir6Seed=$(echo "ibase=16; $loc6" | bc) 
-dir7Seed=$(echo "ibase=16; $loc7" | bc)
-dir8Seed=$(echo "ibase=16; $loc8" | bc)
-dir9Seed=$(echo "ibase=16; $loc9" | bc)
-dir10Seed=$(echo "ibase=16; $loc10" | bc)
-dir11Seed=$(echo "ibase=16; $loc11" | bc) 
-dir12Seed=$(echo "ibase=16; $loc12" | bc)
-dir13Seed=$(echo "ibase=16; $loc13" | bc)
-dir14Seed=$(echo "ibase=16; $loc14" | bc)
-dir15Seed=$(echo "ibase=16; $loc15" | bc)
-dir16Seed=$(echo "ibase=16; $loc16" | bc)
+## convert hash character from hex to decimal
+pseudoRAND1=$(echo "ibase=16; $pseudoRANDcapture1" | bc)
+pseudoRAND2=$(echo "ibase=16; $pseudoRANDcapture2" | bc)
+pseudoRAND3=$(echo "ibase=16; $pseudoRANDcapture3" | bc)
+pseudoRAND4=$(echo "ibase=16; $pseudoRANDcapture4" | bc)
+pseudoRAND5=$(echo "ibase=16; $pseudoRANDcapture5" | bc)
+pseudoRAND6=$(echo "ibase=16; $pseudoRANDcapture6" | bc)
 
 
-dir1=$(echo -n "${dict1[$dir1Seed]}")
-dir2=$(echo -n "${dict2[$dir2Seed]}")
-dir3=$(echo -n "${dict3[$dir3Seed]}")
-dir4=$(echo -n "${dict4[$dir4Seed]}")
-dir5=$(echo -n "${dict5[$dir5Seed]}")
-dir6=$(echo -n "${dict6[$dir6Seed]}")
-dir7=$(echo -n "${dict7[$dir7Seed]}")
-dir8=$(echo -n "${dict8[$dir8Seed]}")
-dir9=$(echo -n "${dict9[$dir9Seed]}")
-dir10=$(echo -n "${dict10[$dir10Seed]}")
-dir11=$(echo -n "${dict11[$dir11Seed]}")
-dir12=$(echo -n "${dict12[$dir12Seed]}")
-dir13=$(echo -n "${dict13[$dir13Seed]}")
-dir14=$(echo -n "${dict14[$dir14Seed]}")
-dir15=$(echo -n "${dict15[$dir15Seed]}")
-dir16=$(echo -n "${dict16[$dir16Seed]}")
+## adds one to handle hash values of 0
+## in this more complex level, the names of the directories are handled differently
+pseudoRAND1=$(( $pseudoRAND1 + 1 ))
+pseudoRAND2=$(( $pseudoRAND2 + 1 ))
+pseudoRAND3=$(( $pseudoRAND3 + 1 ))
+pseudoRAND4=$(( $pseudoRAND4 + 1 ))
+pseudoRAND5=$(( $pseudoRAND5 + 1 ))
 
-echo "$dir1" >> directoryList.txt
-echo "$dir2" >> directoryList.txt
-echo "$dir3" >> directoryList.txt
-echo "$dir4" >> directoryList.txt
-echo "$dir5" >> directoryList.txt
-echo "$dir6" >> directoryList.txt
-echo "$dir7" >> directoryList.txt
-echo "$dir8" >> directoryList.txt
-echo "$dir9" >> directoryList.txt
-echo "$dir10" >> directoryList.txt
-echo "$dir11" >> directoryList.txt
-echo "$dir12" >> directoryList.txt
-echo "$dir13" >> directoryList.txt
-echo "$dir14" >> directoryList.txt
-echo "$dir15" >> directoryList.txt
-echo "$dir16" >> directoryList.txt
 
-declare -a directoryDict
-readarray -t directoryDict <directoryList.txt
+## based on the first character of the hash, select which set of 16 items should be chosen from masterArray
+case "$pseudoRAND5" in
+    "1") dictSelect=1   # airlines   
+    ;;
+    "2") dictSelect=17  # appliances
+    ;;
+    "3") dictSelect=33  # candy
+    ;;
+    "4") dictSelect=49  # car brands
+    ;;
+    "5") dictSelect=65  # cheese
+    ;;
+    "6") dictSelect=81  # cities
+    ;;
+    "7") dictSelect=97  # clothing brands
+    ;;
+    "8") dictSelect=113 # colleges
+    ;;
+    "9") dictSelect=129 # countries
+    ;;
+    "10") dictSelect=145    # letters
+    ;;
+    "11") dictSelect=161    # dog breeds
+    ;;
+    "12") dictSelect=177    # fast food
+    ;;
+    "13") dictSelect=193    # fruits
+    ;;
+    "14") dictSelect=209    # instruments
+    ;;
+    "15") dictSelect=225    # music artists
+    ;;
+    "16") dictSelect=241    # sports
+    ;;
+esac
 
-secondTargetDirectorySeed=$secondRAND
-thirdTargetDirectorySeed=$thirdRAND
-secondTargetDirectory=$(echo -n "${directoryDict[$secondTargetDirectorySeed]}")
-thirdTargetDirectory=$(echo -n "${directoryDict[$thirdTargetDirectorySeed]}")
-## create static directories
-mkdir "level8"
+
+## endRange adds 16 to get 15 directories the same plus 1 different directory at the tail
+endRange=$(( $dictSelect + 16 ))
+sed -n "$dictSelect","$endRange"p masterArray.txt > dirList.txt
+
+## select name of file to be created by user
+targetDirectory=$(head -n $pseudoRAND6 masterArray.txt | tail -1)
+
+## set directories based on pseudorands
+dir1=$(head -n 1 dirList.txt | tail -1)
+dir2=$(head -n 2 dirList.txt | tail -1)
+dir3=$(head -n 3 dirList.txt | tail -1)
+dir4=$(head -n 4 dirList.txt | tail -1)
+dir5=$(head -n 5 dirList.txt | tail -1)
+
+
+## create level-related directories
+mkdir level8/
 mkdir level8/"$dir1"
 mkdir level8/"$dir2"
 mkdir level8/"$dir3"
 mkdir level8/"$dir4"
 mkdir level8/"$dir5"
-mkdir level8/"$dir6"
-mkdir level8/"$dir7"
-mkdir level8/"$dir8"
-mkdir level8/"$dir9"
-mkdir level8/"$dir10"
-mkdir level8/"$dir11"
-mkdir level8/"$dir12"
-mkdir level8/"$dir13"
-mkdir level8/"$dir14"
-mkdir level8/"$dir15"
-mkdir level8/"$dir16"
 
+## jumble names using hashing
+noiseData1=$($dir1 | md5sum | base64)
+noiseData2=$($dir2 | md5sum | base64)
+noiseData3=$($dir3 | md5sum | base64)
+noiseData4=$($dir4 | md5sum | base64)
+noiseData5=$($dir5 | md5sum | base64)
 
-## pseudorandom
-secondRANDCapture=$(cut -c 2 userHash.txt)
-pseudoRAND=$(echo "ibase=16; $secondRANDCapture" | bc)
-noiseDirectory1=$(echo -n "${directoryDict[7]}")
-noiseDirectory2=$(echo -n "${directoryDict[5]}")
-noiseDirectory3=$(echo -n "${directoryDict[2]}")
-noiseDirectory4=$(echo -n "${directoryDict[9]}")
+#createdFile=$(head -n $pseudoRAND9 masterArray.txt | tail -1)
+targetFile=$(head -n $pseudoRAND3 masterArray.txt | tail -1 | md5sum | base64)
+touch -t 202201010232 level8/"$targetDirectory"/"$targetFile".log
 
-randDictSeed=$(echo -n "dict$pseudoRAND") ## returns dict2 for example
-#randDictSeed2=$(echo -n "dict$secondRAND") ## returns dict3 for example
-#echo "$randDictSeed"
-#echo "$randDictSeed2"
+## make noise files -- touch -t 2022-01-01-0:2:30
+touch -t 202201010132 level8/"$dir1"/$noiseData1.log
+touch -t 202201010133 level8/"$dir1"/$noiseData2.log
+touch -t 202201010734 level8/"$dir1"/$noiseData3.log
+touch -t 202201010935 level8/"$dir1"/$noiseData4.log
+touch -t 202201010736 level8/"$dir1"/$noiseData5.log
 
-declare -a randDictSelection
-declare -a dictNumber1
-#declare -a diffDict
-readarray -t randDictSelection < dictionaries/allDirectoryNames.txt
-number1=${randDictSelection[$randDictSeed]}
-#number2=${randDictSelection[$randDictSeed2]}
-readarray -t dictNumber1 < dictionaries/"$number1"
-#readarray -t diffDict < dictionaries/"$number2"
+touch -t 202201010130 level8/"$dir2"/"$noiseData1".log
+touch -t 202201010130 level8/"$dir2"/"$noiseData2".log
+touch -t 202201010730 level8/"$dir2"/"$noiseData3".log
+touch -t 202201010930 level8/"$dir2"/"$noiseData4".log
+touch -t 202201010730 level8/"$dir2"/"$noiseData5".log
 
-## pick 2 dictionaries, pick 5 strings from first dictionary, pick 1 from second dictionary
-## noise files
-mkdir level8/"$secondTargetDirectory"/"${dictNumber1[6]}"
-mkdir level8/"$secondTargetDirectory"/"${dictNumber1[1]}"
-mkdir level8/"$secondTargetDirectory"/"${dictNumber1[9]}"
-mkdir level8/"$secondTargetDirectory"/"${dictNumber1[10]}"
-mkdir level8/"$secondTargetDirectory"/"${dictNumber1[12]}"
-mkdir level8/"$secondTargetDirectory"/"${dict7[2]}"
+touch -t 202201010130 level8/"$dir3"/"$noiseData1".log
+touch -t 202201010130 level8/"$dir3"/"$noiseData2".log
+touch -t 202201010730 level8/"$dir3"/"$noiseData3".log
+touch -t 202201010930 level8/"$dir3"/"$noiseData4".log
+touch -t 202201010730 level8/"$dir3"/"$noiseData5".log
 
-mkdir level8/"$noiseDirectory1"/"${dictNumber1[6]}"
-mkdir level8/"$noiseDirectory1"/"${dictNumber1[1]}"
-mkdir level8/"$noiseDirectory1"/"${dictNumber1[9]}"
-mkdir level8/"$noiseDirectory1"/"${dictNumber1[10]}"
-mkdir level8/"$noiseDirectory1"/"${dictNumber1[12]}"
-mkdir level8/"$noiseDirectory1"/"${dict7[2]}"
-#############
-mkdir level8/"$noiseDirectory2"/"${dictNumber1[6]}"
-mkdir level8/"$noiseDirectory2"/"${dictNumber1[1]}"
-mkdir level8/"$noiseDirectory2"/"${dictNumber1[9]}"
-mkdir level8/"$noiseDirectory2"/"${dictNumber1[10]}"
-mkdir level8/"$noiseDirectory2"/"${dictNumber1[12]}"
-mkdir level8/"$noiseDirectory2"/"${dict7[2]}"
+touch -t 202201010130 level8/"$dir4"/"$noiseData1".log
+touch -t 202201010130 level8/"$dir4"/"$noiseData2".log
+touch -t 202201010730 level8/"$dir4"/"$noiseData3".log
+touch -t 202201010930 level8/"$dir4"/"$noiseData4".log
+touch -t 202201010730 level8/"$dir4"/"$noiseData5".log
 
-mkdir level8/"$noiseDirectory3"/"${dictNumber1[6]}"
-mkdir level8/"$noiseDirectory3"/"${dictNumber1[1]}"
-mkdir level8/"$noiseDirectory3"/"${dictNumber1[9]}"
-mkdir level8/"$noiseDirectory3"/"${dictNumber1[10]}"
-mkdir level8/"$noiseDirectory3"/"${dictNumber1[12]}"
-mkdir level8/"$noiseDirectory3"/"${dict7[2]}"
+touch -t 202201010130 level8/"$dir5"/"$noiseData1".log
+touch -t 202201010130 level8/"$dir5"/"$noiseData2".log
+touch -t 202201010730 level8/"$dir5"/"$noiseData3".log
+touch -t 202201010930 level8/"$dir5"/"$noiseData4".log
+touch -t 202201010730 level8/"$dir5"/"$noiseData5".log
+## create instruction set
 
-mkdir level8/"$noiseDirectory4"/"${dictNumber1[6]}"
-mkdir level8/"$noiseDirectory4"/"${dictNumber1[1]}"
-mkdir level8/"$noiseDirectory4"/"${dictNumber1[9]}"
-mkdir level8/"$noiseDirectory4"/"${dictNumber1[10]}"
-mkdir level8/"$noiseDirectory4"/"${dictNumber1[12]}"
-mkdir level8/"$noiseDirectory4"/"${dict7[2]}"
+echo "* Last night, our incident response team detected an attack on our network. " >> level8/README
+echo "* They need your help locating the log file containing the attacker's IP address. " >> level8/README
+echo "* Your supervisor tells you the attack happened between 2:30am and 3:00am, and that " >> level8/README
+echo "* the log file is in the $targetDirectory, but due to an error in the logging system, " >> level8/README
+echo "* the names of the log files are jumbled. Can you locate and move the correct log file? " >> level8/README
+echo "* ( cd Hint: explore the ls command flags using ' ls--help ' ) " >> level8/README
+echo "*" >> level8/README
+echo "* Once finished, run the verify.sh script." >> level8/README
 
-cp level8Verify.sh level8/
-
-firstDataFile=$(echo -n "${directoryDict[4]}.jpg")
-secondDataFile=$(echo -n "${directoryDict[6]}.csv")
-thirdDataFile=$(echo -n "${directoryDict[2]}.csv")
-fourthDataFile=$(echo -n "${directoryDict[13]}.txt")
-fifthDataFile=$(echo -n "${directoryDict[11]}.pcap")
-sixthDataFile=$(echo -n "${directoryDict[1]}.csv")
-
-touch level8/"$secondTargetDirectory"/"$firstDataFile"
-touch level8/"$secondTargetDirectory"/"$secondDataFile"
-touch level8/"$secondTargetDirectory"/"$thirdDataFile"
-touch level8/"$secondTargetDirectory"/"$fourthDataFile"
-touch level8/"$secondTargetDirectory"/"$fifthDataFile"
-touch level8/"$secondTargetDirectory"/"$sixthDataFile"
-### 
-touch level8/"$noiseDirectory1"/"$firstDataFile"
-touch level8/"$noiseDirectory1"/"$secondDataFile"
-touch level8/"$noiseDirectory1"/"$thirdDataFile"
-touch level8/"$noiseDirectory1"/"$fourthDataFile"
-touch level8/"$noiseDirectory1"/"$fifthDataFile"
-touch level8/"$noiseDirectory1"/"$sixthDataFile"
-
-touch level8/"$noiseDirectory2"/"$firstDataFile"
-touch level8/"$noiseDirectory2"/"$secondDataFile"
-touch level8/"$noiseDirectory2"/"$thirdDataFile"
-touch level8/"$noiseDirectory2"/"$fourthDataFile"
-touch level8/"$noiseDirectory2"/"$fifthDataFile"
-touch level8/"$noiseDirectory2"/"$sixthDataFile"
-
-touch level8/"$noiseDirectory3"/"$firstDataFile"
-touch level8/"$noiseDirectory3"/"$secondDataFile"
-touch level8/"$noiseDirectory3"/"$thirdDataFile"
-touch level8/"$noiseDirectory3"/"$fourthDataFile"
-touch level8/"$noiseDirectory3"/"$fifthDataFile"
-touch level8/"$noiseDirectory3"/"$sixthDataFile"
-
-touch level8/"$noiseDirectory4"/"$firstDataFile"
-touch level8/"$noiseDirectory4"/"$secondDataFile"
-touch level8/"$noiseDirectory4"/"$thirdDataFile"
-touch level8/"$noiseDirectory4"/"$fourthDataFile"
-touch level8/"$noiseDirectory4"/"$fifthDataFile"
-touch level8/"$noiseDirectory4"/"$sixthDataFile"
-
-
-echo "* Level 8" >> level8/README
-echo " Move all the .csv files inside the $secondTargetDirectory directory to the $thirdTargetDirectory" >> level8/README
-echo " Next, blah blah blah" >> level8/README
-echo " Once finished, run the verify.sh script." >> level8/README
-rm directoryList.txt
+rm dirList.txt
