@@ -56,7 +56,7 @@ pseudoRAND15=$(( $pseudoRAND15 + 1 ))
 pseudoRAND16=$(( $pseudoRAND16 + 1 ))
 
 ## based on the first character of the hash, select which set of 16 items should be chosen from masterArray
-case "$pseudoRAND1" in
+case "$pseudoRAND12" in
     "1") dictSelect=1   # airlines   
     ;;
     "2") dictSelect=17  # appliances

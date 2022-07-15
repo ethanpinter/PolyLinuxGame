@@ -143,7 +143,7 @@ echo "* Last night, our incident response team detected an attack on our network
 echo "* They need your help locating the log file containing the attacker's IP address. " >> level8/README
 echo "* Your supervisor tells you the attack happened between 2:30am and 3:00am, and that " >> level8/README
 echo "* the log file is in the $targetDirectory, but due to an error in the logging system, " >> level8/README
-echo "* the names of the log files are jumbled. Can you locate and move the correct log file? " >> level8/README
+echo "* the names of the log files are jumbled. Can you locate and delete the correct log file? " >> level8/README
 echo "* ( cd Hint: explore the ls command flags using ' ls--help ' ) " >> level8/README
 echo "*" >> level8/README
 echo "* Once finished, run the verify.sh script." >> level8/README
