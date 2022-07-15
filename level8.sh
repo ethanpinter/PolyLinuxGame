@@ -97,11 +97,11 @@ mkdir level8/"$dir4"
 mkdir level8/"$dir5"
 
 ## jumble names using hashing
-noiseData1=$($dir1 | md5sum | base64)
-noiseData2=$($dir2 | md5sum | base64)
-noiseData3=$($dir3 | md5sum | base64)
-noiseData4=$($dir4 | md5sum | base64)
-noiseData5=$($dir5 | md5sum | base64)
+noiseData1=$(echo "$dir1" | md5sum | base64)
+noiseData2=$(echo "$dir2" | md5sum | base64)
+noiseData3=$(echo "$dir3" | md5sum | base64)
+noiseData4=$(echo "$dir4" | md5sum | base64)
+noiseData5=$(echo "$dir5" | md5sum | base64)
 
 #createdFile=$(head -n $pseudoRAND9 masterArray.txt | tail -1)
 targetFile=$(head -n $pseudoRAND3 masterArray.txt | tail -1 | md5sum | base64)

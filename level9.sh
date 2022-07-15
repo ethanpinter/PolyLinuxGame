@@ -57,7 +57,7 @@ pseudoRAND15=$(( $pseudoRAND15 + 231 ))
 pseudoRAND16=$(( $pseudoRAND16 + 240 ))
 
 ## select target directory and name of file to be created by user
-targetDirectory=$(head -n $pseudoRAND12 masterArray.txt | tail -1)
+targetDirectory=$(head -n $pseudoRAND4 masterArray.txt | tail -1)
 secondTargetDirectory=$(head -n $pseudoRAND13 masterArray.txt | tail -1)
 
 ## set directories based on pseudorands
@@ -185,6 +185,77 @@ touch level9/"$dir8"/"$noiseData6".csv
 touch level9/"$dir8"/"$noiseData7".dmg
 touch level9/"$dir8"/"$noiseData8".dmg
 
+touch level9/"$dir9"/"$noiseData1".txt
+touch level9/"$dir9"/"$noiseData2".txt
+touch level9/"$dir9"/"$noiseData3".txt
+touch level9/"$dir9"/"$noiseData4".csv
+touch level9/"$dir9"/"$noiseData5".csv
+touch level9/"$dir9"/"$noiseData6".csv
+touch level9/"$dir9"/"$noiseData7".dmg
+touch level9/"$dir9"/"$noiseData8".dmg
+
+touch level9/"$dir10"/"$noiseData1".txt
+touch level9/"$dir10"/"$noiseData2".txt
+touch level9/"$dir10"/"$noiseData3".txt
+touch level9/"$dir10"/"$noiseData4".csv
+touch level9/"$dir10"/"$noiseData5".csv
+touch level9/"$dir10"/"$noiseData6".csv
+touch level9/"$dir10"/"$noiseData7".dmg
+touch level9/"$dir10"/"$noiseData8".dmg
+
+touch level9/"$dir11"/"$noiseData1".txt
+touch level9/"$dir11"/"$noiseData2".txt
+touch level9/"$dir11"/"$noiseData3".txt
+touch level9/"$dir11"/"$noiseData4".csv
+touch level9/"$dir11"/"$noiseData5".csv
+touch level9/"$dir11"/"$noiseData6".csv
+touch level9/"$dir11"/"$noiseData7".dmg
+touch level9/"$dir11"/"$noiseData8".dmg
+
+touch level9/"$dir12"/"$noiseData1".txt
+touch level9/"$dir12"/"$noiseData2".txt
+touch level9/"$dir12"/"$noiseData3".txt
+touch level9/"$dir12"/"$noiseData4".csv
+touch level9/"$dir12"/"$noiseData5".csv
+touch level9/"$dir12"/"$noiseData6".csv
+touch level9/"$dir12"/"$noiseData7".dmg
+touch level9/"$dir12"/"$noiseData8".dmg
+
+touch level9/"$dir13"/"$noiseData1".txt
+touch level9/"$dir13"/"$noiseData2".txt
+touch level9/"$dir13"/"$noiseData3".txt
+touch level9/"$dir13"/"$noiseData4".csv
+touch level9/"$dir13"/"$noiseData5".csv
+touch level9/"$dir13"/"$noiseData6".csv
+touch level9/"$dir13"/"$noiseData7".dmg
+touch level9/"$dir13"/"$noiseData8".dmg
+
+touch level9/"$dir14"/"$noiseData1".txt
+touch level9/"$dir14"/"$noiseData2".txt
+touch level9/"$dir14"/"$noiseData3".txt
+touch level9/"$dir14"/"$noiseData4".csv
+touch level9/"$dir14"/"$noiseData5".csv
+touch level9/"$dir14"/"$noiseData6".csv
+touch level9/"$dir14"/"$noiseData7".dmg
+touch level9/"$dir14"/"$noiseData8".dmg
+
+touch level9/"$dir15"/"$noiseData1".txt
+touch level9/"$dir15"/"$noiseData2".txt
+touch level9/"$dir15"/"$noiseData3".txt
+touch level9/"$dir15"/"$noiseData4".csv
+touch level9/"$dir15"/"$noiseData5".csv
+touch level9/"$dir15"/"$noiseData6".csv
+touch level9/"$dir15"/"$noiseData7".dmg
+touch level9/"$dir15"/"$noiseData8".dmg
+
+touch level9/"$dir16"/"$noiseData1".txt
+touch level9/"$dir16"/"$noiseData2".txt
+touch level9/"$dir16"/"$noiseData3".txt
+touch level9/"$dir16"/"$noiseData4".csv
+touch level9/"$dir16"/"$noiseData5".csv
+touch level9/"$dir16"/"$noiseData6".csv
+touch level9/"$dir16"/"$noiseData7".dmg
+touch level9/"$dir16"/"$noiseData8".dmg
 
 
 
@@ -194,4 +265,4 @@ echo "* Level 9" >> level9/README
 echo " Remove all the .csv files inside the $targetDirectory directory" >> level9/README
 echo " Remove the $secondTargetDirectory directory" >> level9/README
 echo " Once finished, run the verify.sh script." >> level9/README
-rm directoryList.txt
+#rm directoryList.txt
