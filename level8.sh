@@ -106,7 +106,7 @@ noiseData5=$(echo "$dir5" | md5sum | base64)
 #createdFile=$(head -n $pseudoRAND9 masterArray.txt | tail -1)
 targetFile=$(head -n $pseudoRAND3 masterArray.txt | tail -1 | md5sum | base64)
 touch -t 202201010232 level8/"$targetDirectory"/"$targetFile".log
-
+#touch -t 202201010232 testFile
 ## make noise files -- touch -t 2022-01-01-0:2:30
 touch -t 202201010132 level8/"$dir1"/$noiseData1.log
 touch -t 202201010133 level8/"$dir1"/$noiseData2.log

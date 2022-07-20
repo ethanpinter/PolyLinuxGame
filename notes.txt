@@ -29,3 +29,14 @@
 / created new git branch for buildroot in polybandit3
 / FIXED THIS - need to find a way around lack of append (not concatentation) in order to make verify work
     / FIXED THIS - no way to for loop cat contents of files and append them to verify hash output?
+
+
+// begin adding levels involving these commands:
+    - head
+    - tail
+    - cut
+    - paste
+    - pipes
+    - redirection I/O
+    - wc
+    
