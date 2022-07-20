@@ -39,6 +39,7 @@ passwd $userName -d $userPass
 /bin/sh $workingDir/level8.sh
 /bin/sh $workingDir/level9.sh
 /bin/sh $workingDir/level10.sh
+/bin/sh $workingDir/level11.sh
 
 ## remove install scripts
 rm $workingDir/level1.sh
@@ -51,6 +52,8 @@ rm $workingDir/level7.sh
 rm $workingDir/level8.sh
 rm $workingDir/level9.sh
 rm $workingDir/level10.sh
+rm $workingDir/level11.sh
+
 #rm -rf dictionaries
 #rm README.md
 
@@ -65,6 +68,7 @@ cp -r $workingDir/level7 /home/"$userName"/
 cp -r $workingDir/level8 /home/"$userName"/
 cp -r $workingDir/level9 /home/"$userName"/
 cp -r $workingDir/level10 /home/"$userName"/
+cp -r $workingDir/level11 /home/"$userName"/
 
 
 
@@ -79,6 +83,7 @@ cp level7Verify.sh /home/"$userName"/level7/
 cp level8Verify.sh /home/"$userName"/level8/
 cp level9Verify.sh /home/"$userName"/level9/
 cp level10Verify.sh /home/"$userName"/level10/
+cp level11Verify.sh /home/"$userName"/level11/
 
 ## change permissions of levels to new user
 chown -R $userName /home/$userName
