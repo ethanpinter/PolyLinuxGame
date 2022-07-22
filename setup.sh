@@ -73,17 +73,17 @@ cp -r $workingDir/level11 /home/"$userName"/
 
 
 ## copy verify scripts into respective level directories
-cp level1Verify.sh /home/"$userName"/level1/
-cp level2Verify.sh /home/"$userName"/level2/
-cp level3Verify.sh /home/"$userName"/level3/
-cp level4Verify.sh /home/"$userName"/level4/
-cp level5Verify.sh /home/"$userName"/level5/
-cp level6Verify.sh /home/"$userName"/level6/
-cp level7Verify.sh /home/"$userName"/level7/
-cp level8Verify.sh /home/"$userName"/level8/
-cp level9Verify.sh /home/"$userName"/level9/
-cp level10Verify.sh /home/"$userName"/level10/
-cp level11Verify.sh /home/"$userName"/level11/
+cp verify.sh /home/"$userName"/level1/
+cp verify.sh /home/"$userName"/level2/
+cp verify.sh /home/"$userName"/level3/
+cp verify.sh /home/"$userName"/level4/
+cp verify.sh /home/"$userName"/level5/
+cp verify.sh /home/"$userName"/level6/
+cp verify.sh /home/"$userName"/level7/
+cp verify.sh /home/"$userName"/level8/
+cp verify.sh /home/"$userName"/level9/
+cp verify.sh /home/"$userName"/level10/
+cp verify.sh /home/"$userName"/level11/
 
 ## change permissions of levels to new user
 chown -R $userName /home/$userName

@@ -39,4 +39,8 @@
     - pipes
     - redirection I/O
     - wc
-    
+
+// redirect level11 to answer.txt
+// change verify scripts 
+// use grep to check history
+// levels 1-3, 4-7, 8-11, indivual directories and install scripts + verify scripts
