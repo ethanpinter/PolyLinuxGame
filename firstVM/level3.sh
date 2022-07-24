@@ -101,11 +101,6 @@ mkdir level3/"$dir16"
 ## generate file to be moved by user
 touch level3/"$targetDirectory"/"$createdFile.txt"
 
-## gen noise data
-
-
-
-
 
 ## create instruction set
 echo "*"

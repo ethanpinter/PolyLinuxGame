@@ -97,14 +97,6 @@ mkdir level1/"$dir14"
 mkdir level1/"$dir15"
 mkdir level1/"$dir16"
 
-
-
-## gen noise data
-
-
-
-
-
 ## create instruction set
 echo "*"
 echo "*"
