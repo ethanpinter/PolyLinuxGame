@@ -169,7 +169,7 @@ echo "*"
 echo "*"
 echo "* Level 11" >> level11/README
 echo "* Use the head command to print the first 3 lines of the $createdFile file." >> level11/README
-echo "* Create 3 new directories in the level11 directory named after the lines of the $createdFile file." >> level11/README
+echo "* Add these to a new file in the level11 directory named answer.txt" >> level11/README
+echo "* Hint: Use redirection." >> level11/README
 echo "* Once finished, run the verify.sh script." >> level11/README
 
-## potential for reuse of level scripts with different set of fileections
