@@ -40,8 +40,8 @@ pseudoRAND16=$(echo "ibase=16; $pseudoRANDcapture16" | bc)
 ## 16 categories containing 16 items
 ## change the integer added to keep value in certain range while still being polymorphic
 pseudoRAND1=$(( $pseudoRAND1 + 1 )) ## ensures value isn't 0
-pseudoRAND2=$(( $pseudoRAND2 + 5 ))
-pseudoRAND3=$(( $pseudoRAND3 + 11 ))
+pseudoRAND2=$(( $pseudoRAND2 + 7 ))
+pseudoRAND3=$(( $pseudoRAND3 + 12 ))
 pseudoRAND4=$(( $pseudoRAND4 + 43 ))
 pseudoRAND5=$(( $pseudoRAND5 + 59 ))
 pseudoRAND6=$(( $pseudoRAND6 + 85 ))
