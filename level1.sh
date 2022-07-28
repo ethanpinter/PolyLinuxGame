@@ -106,9 +106,6 @@ mkdir level1/"$dir16"
 
 
 ## create instruction set
-echo "*"
-echo "*"
-echo "*"
 echo "* Level 1 *" >> level1/README
 echo "Create a new file named $createdFile.txt in the $targetDirectory directory" >> level1/README
 echo "Once finished, run the verify.sh script." >> level1/README

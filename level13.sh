@@ -165,12 +165,11 @@ echo "$file15" >> level13/"$file8"
 echo "$file16" >> level13/"$file8"
 
 
-echo "*"
-echo "*"
-echo "*"
+## add directions
+
 echo "* Level 13" >> level13/README
-echo "* Use the paste command to combine the $createdFile file with the $secondCreatedFile file." >> level13/README
-echo "* Add these to a new file in the level13 directory named answer.txt" >> level13/README
-echo "* Hint: Use redirection." >> level13/README
-echo "* Once finished, run the verify.sh script." >> level13/README
+echo "Use the paste command to combine the $createdFile file with the $secondCreatedFile file." >> level13/README
+echo "Add these to a new file in the level13 directory named answer.txt" >> level13/README
+echo "Hint: Use redirection." >> level13/README
+echo "Once finished, run the verify.sh script." >> level13/README
 

@@ -163,13 +163,10 @@ echo "$file14" >> level11/"$file8"
 echo "$file15" >> level11/"$file8"
 echo "$file16" >> level11/"$file8"
 
-
-echo "*"
-echo "*"
-echo "*"
+## add directions
 echo "* Level 11" >> level11/README
-echo "* Use the head command to print the first 3 lines of the $createdFile file." >> level11/README
-echo "* Add these to a new file in the level11 directory named answer.txt" >> level11/README
-echo "* Hint: Use redirection." >> level11/README
-echo "* Once finished, run the verify.sh script." >> level11/README
+echo "Use the head command to print the first 3 lines of the $createdFile file." >> level11/README
+echo "Add these to a new file in the level11 directory named answer.txt" >> level11/README
+echo "Hint: Use redirection." >> level11/README
+echo "Once finished, run the verify.sh script." >> level11/README
 

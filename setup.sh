@@ -98,7 +98,7 @@ cp verify.sh /home/"$userName"/level13/
 chown -R $userName /home/$userName
 
 ## cleanup
-#clear
+clear
 
 ## print welcome message
 echo "Done!"

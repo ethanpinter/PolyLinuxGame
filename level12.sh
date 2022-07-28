@@ -164,12 +164,11 @@ echo "$file15" >> level12/"$file8"
 echo "$file16" >> level12/"$file8"
 
 
-echo "*"
-echo "*"
-echo "*"
+## add directions 
+
 echo "* Level 12" >> level12/README
-echo "* Use the cut command to print the first 2 characters of each line in the $createdFile file." >> level12/README
-echo "* Add these to a new file in the level12 directory named answer.txt" >> level12/README
-echo "* Hint: Use redirection." >> level12/README
-echo "* Once finished, run the verify.sh script." >> level12/README
+echo "Use the cut command to print the first 2 characters of each line in the $createdFile file." >> level12/README
+echo "Add these to a new file in the level12 directory named answer.txt" >> level12/README
+echo "Hint: Use redirection." >> level12/README
+echo "Once finished, run the verify.sh script." >> level12/README
 

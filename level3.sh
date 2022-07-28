@@ -58,7 +58,7 @@ pseudoRAND16=$(( $pseudoRAND16 + 236 ))
 
 ## select target directory and name of file to be created by user
 targetDirectory=$(head -n $pseudoRAND4 masterArray.txt | tail -1)
-secondTargetDirectory=$(head -n $pseudoRAND11 masterArray.txt | tail -1)
+secondTargetDirectory=$(head -n $pseudoRAND6 masterArray.txt | tail -1)
 createdFile=$(head -n $pseudoRAND14 masterArray.txt | tail -1)
 
 ## set directories based on pseudorands
@@ -70,14 +70,7 @@ dir5=$(head -n $pseudoRAND5 masterArray.txt | tail -1)
 dir6=$(head -n $pseudoRAND6 masterArray.txt | tail -1)
 dir7=$(head -n $pseudoRAND7 masterArray.txt | tail -1)
 dir8=$(head -n $pseudoRAND8 masterArray.txt | tail -1)
-dir9=$(head -n $pseudoRAND9 masterArray.txt | tail -1)
-dir10=$(head -n $pseudoRAND10 masterArray.txt | tail -1)
-dir11=$(head -n $pseudoRAND11 masterArray.txt | tail -1)
-dir12=$(head -n $pseudoRAND12 masterArray.txt | tail -1)
-dir13=$(head -n $pseudoRAND13 masterArray.txt | tail -1)
-dir14=$(head -n $pseudoRAND14 masterArray.txt | tail -1)
-dir15=$(head -n $pseudoRAND15 masterArray.txt | tail -1)
-dir16=$(head -n $pseudoRAND16 masterArray.txt | tail -1)
+
 
 ## create level-related directories
 mkdir level3/
@@ -89,30 +82,107 @@ mkdir level3/"$dir5"
 mkdir level3/"$dir6"
 mkdir level3/"$dir7"
 mkdir level3/"$dir8"
-mkdir level3/"$dir9"
-mkdir level3/"$dir10"
-mkdir level3/"$dir11"
-mkdir level3/"$dir12"
-mkdir level3/"$dir13"
-mkdir level3/"$dir14"
-mkdir level3/"$dir15"
-mkdir level3/"$dir16"
+#mkdir level3/"$dir9"
+#mkdir level3/"$dir10"
+#mkdir level3/"$dir11"
+#mkdir level3/"$dir12"
+#mkdir level3/"$dir13"
+#mkdir level3/"$dir14"
+#mkdir level3/"$dir15"
+#mkdir level3/"$dir16"
 
 ## generate file to be moved by user
 touch level3/"$targetDirectory"/"$createdFile.txt"
 
 ## gen noise data
 
+noiseData1=$(head -n $pseudoRAND1 masterArray.txt | tail -1)
+noiseData2=$(head -n $pseudoRAND7 masterArray.txt | tail -1)
+noiseData3=$(head -n $pseudoRAND9 masterArray.txt | tail -1)
+noiseData4=$(head -n $pseudoRAND4 masterArray.txt | tail -1)
+noiseData5=$(head -n $pseudoRAND15 masterArray.txt | tail -1)
+noiseData6=$(head -n $pseudoRAND2 masterArray.txt | tail -1)
+noiseData7=$(head -n $pseudoRAND13 masterArray.txt | tail -1)
+noiseData8=$(head -n $pseudoRAND11 masterArray.txt | tail -1)
 
+
+touch level3/"$dir1"/"$noiseData1".csv
+touch level3/"$dir1"/"$noiseData2".cab
+touch level3/"$dir1"/"$noiseData3".iso
+touch level3/"$dir1"/"$noiseData4".jar
+touch level3/"$dir1"/"$noiseData5".iso
+touch level3/"$dir1"/"$noiseData6".html
+touch level3/"$dir1"/"$noiseData7".lnk
+touch level3/"$dir1"/"$noiseData8".doc
+
+touch level3/"$dir2"/"$noiseData1".log
+touch level3/"$dir2"/"$noiseData2".docx
+touch level3/"$dir2"/"$noiseData3".huh
+touch level3/"$dir2"/"$noiseData4".dat
+touch level3/"$dir2"/"$noiseData5".txt
+touch level3/"$dir2"/"$noiseData6".rar
+touch level3/"$dir2"/"$noiseData7".txt
+touch level3/"$dir2"/"$noiseData8".txt
+
+touch level3/"$dir3"/"$noiseData1".txt
+touch level3/"$dir3"/"$noiseData2".csv
+touch level3/"$dir3"/"$noiseData3".txt
+touch level3/"$dir3"/"$noiseData4".txt
+touch level3/"$dir3"/"$noiseData5".csv
+touch level3/"$dir3"/"$noiseData6".yeet
+touch level3/"$dir3"/"$noiseData7".txt
+touch level3/"$dir3"/"$noiseData8".txt
+
+touch level3/"$dir4"/"$noiseData1".jpeg
+touch level3/"$dir4"/"$noiseData2".iso
+touch level3/"$dir4"/"$noiseData3".rar
+touch level3/"$dir4"/"$noiseData4".fortnite
+touch level3/"$dir4"/"$noiseData5".rar
+touch level3/"$dir4"/"$noiseData6".log
+touch level3/"$dir4"/"$noiseData7".dat
+touch level3/"$dir4"/"$noiseData8".dat
+
+touch level3/"$dir5"/"$noiseData1".csv
+touch level3/"$dir5"/"$noiseData2".txt
+touch level3/"$dir5"/"$noiseData3".txt
+touch level3/"$dir5"/"$noiseData4".txt
+touch level3/"$dir5"/"$noiseData5".txt
+touch level3/"$dir5"/"$noiseData6".txt
+touch level3/"$dir5"/"$noiseData7".csv
+touch level3/"$dir5"/"$noiseData8".csv
+
+touch level3/"$dir6"/"$noiseData1".mov
+touch level3/"$dir6"/"$noiseData2".txt
+touch level3/"$dir6"/"$noiseData3".txt
+touch level3/"$dir6"/"$noiseData4".txt
+touch level3/"$dir6"/"$noiseData5".mov
+touch level3/"$dir6"/"$noiseData6".dat
+touch level3/"$dir6"/"$noiseData7".dat
+touch level3/"$dir6"/"$noiseData8".mov
+
+touch level3/"$dir7"/"$noiseData1".css
+touch level3/"$dir7"/"$noiseData2".css
+touch level3/"$dir7"/"$noiseData3".html
+touch level3/"$dir7"/"$noiseData4".html
+touch level3/"$dir7"/"$noiseData5".html
+touch level3/"$dir7"/"$noiseData6".html
+touch level3/"$dir7"/"$noiseData7".html
+touch level3/"$dir7"/"$noiseData8".html
+
+touch level3/"$dir8"/"$noiseData1".txt
+touch level3/"$dir8"/"$noiseData2".txt
+touch level3/"$dir8"/"$noiseData3".txt
+touch level3/"$dir8"/"$noiseData4".txt
+touch level3/"$dir8"/"$noiseData5".dmg
+touch level3/"$dir8"/"$noiseData6".dmg
+touch level3/"$dir8"/"$noiseData7".dmg
+touch level3/"$dir8"/"$noiseData8".dmg
 
 
 
 ## create instruction set
-echo "*"
-echo "*"
-echo "*"
 echo "* Level 3 ">> level3/README
-echo "* Copy the file named $createdFile.txt in the $targetDirectory directory" >> level3/README
-echo "* into the $secondTargetDirectory directory." >> level3/README
-echo "* Once finished, run the verify.sh script." >> level3/README
+echo "Copy the file named $createdFile.txt in the $targetDirectory directory" >> level3/README
+echo "into the $secondTargetDirectory directory." >> level3/README
+echo "Once finished, run the verify.sh script." >> level3/README
 

@@ -138,12 +138,9 @@ mkdir level6/"$dir16"
 
 ## create instruction set
 
-echo "*"
-echo "*"
-echo "*"
-echo "* Level 6" >> level6/README
-echo "* Create a new file named $createdFile.txt in the directory unlike the others." >> level6/README
-echo "* Once finished, run the verify.sh script." >> level6/README
+echo "Level 6" >> level6/README
+echo "Create a new file named $createdFile.txt in the directory unlike the others." >> level6/README
+echo "Once finished, run the verify.sh script." >> level6/README
 
 rm dirList.txt
 

@@ -186,11 +186,7 @@ touch level5/"$dir8"/"$noiseData8".dmg
 
 
 ## create instruction set
-
-echo "*"
-echo "*"
-echo "*"
-echo "* Level 5" >> level5/README
-echo "* Remove the file named $createdFile.txt in the $targetDirectory directory." >> level5/README
-echo "* Once finished, run the verify.sh script." >> level5/README
+echo "Level 5" >> level5/README
+echo "Remove the file named $createdFile.txt in the $targetDirectory directory." >> level5/README
+echo "Once finished, run the verify.sh script." >> level5/README
 

@@ -107,9 +107,6 @@ mkdir level2/"$dir16"
 
 
 ## create instruction set
-echo "*"
-echo "*"
-echo "*"
 echo "* Level 2 *" >> level2/README
 echo "Create a new directory named $createdDict in the $targetDirectory directory" >> level2/README
 echo "Once finished, run the verify.sh script." >> level2/README
