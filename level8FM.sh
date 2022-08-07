@@ -78,7 +78,7 @@ endRange=$(( $dictSelect + 16 ))
 sed -n "$dictSelect","$endRange"p masterArray.txt > dirList.txt
 
 ## select name of file to be created by user
-targetDirectory=$(head -n $pseudoRAND6 masterArray.txt | tail -1)
+targetDirectory=$(head -n $pseudoRAND2 masterArray.txt | tail -1)
 
 ## set directories based on pseudorands
 dir1=$(head -n 1 dirList.txt | tail -1)
